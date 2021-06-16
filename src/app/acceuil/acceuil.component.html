@@ -1,0 +1,14 @@
+<p>Rechercher un pro</p>
+<!-- <input type="text" placeholder="name" name="name"> -->
+<input type="text" placeholder="type" name="type" [(ngModel)]="texteRecherchePro">
+<button (click)="onTrouverPro()">Trouver un pro !</button>
+
+<h2>Résultat de la recherche</h2>
+<div *ngFor="let pro of listePro">
+  <div>
+    Nom pro : {{pro.nomPro}}
+  </div>
+  <div>
+    Description pro : {{pro.descriptif}}
+  </div>
+</div>
