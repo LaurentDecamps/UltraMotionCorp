@@ -1,0 +1,11 @@
+Laurent propose de reprendre la feuille de route
+Besoin de se redynamiser
+
+LN nous a montré le rétroplanning sur Excel
+Point demain soir à 17h30 sur GitFlow pour ne pas en avoir peur, Laurent le prépare
+
+Laurent a fait une démo qui a planté autant sur le front que sur le back
+=> s'occupe de le corriger
+
+LN s'occupe de mettre la création de projet
+/ de devis sur JIRA
