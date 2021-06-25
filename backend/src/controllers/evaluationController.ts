@@ -17,7 +17,7 @@ class EvaluationController {
   }
 
   create = async (req, res, next) => {
-    res.status(200)
+    res.status(201)
       .send(await Evaluation.create(req.body))
       .end();
     next();
@@ -33,7 +33,7 @@ class EvaluationController {
 
   delete = async (req, res, next) => {
     res.status(200)
-      .send(await Evaluation.findByIdAndRemove(req.params.id))
+      .send(await Evaluation.findByIdAndDelete(req.params.id))
       .end();
     next();
   }

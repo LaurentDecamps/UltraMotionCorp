@@ -17,7 +17,7 @@ class ProjetController {
   }
 
   create = async (req, res, next) => {
-    res.status(200)
+    res.status(201)
       .send(await Projet.create(req.body))
       .end();
     next();
@@ -33,7 +33,7 @@ class ProjetController {
 
   delete = async (req, res, next) => {
     res.status(200)
-      .send(await Projet.findByIdAndRemove(req.params.id))
+      .send(await Projet.findByIdAndDelete(req.params.id))
       .end();
     next();
   }

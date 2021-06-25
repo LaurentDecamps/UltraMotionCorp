@@ -17,7 +17,7 @@ class EntrepriseController {
   }
 
   create = async (req, res, next) => {
-    res.status(200)
+    res.status(201)
       .send(await Entreprise.create(req.body))
       .end();
     next();
@@ -33,7 +33,7 @@ class EntrepriseController {
 
   delete = async (req, res, next) => {
     res.status(200)
-      .send(await Entreprise.findByIdAndRemove(req.params.id))
+      .send(await Entreprise.findByIdAndDelete(req.params.id))
       .end();
     next();
   }

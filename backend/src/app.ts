@@ -1,6 +1,12 @@
 import express from 'express';
 import { setMongoConnection } from './config/mongo.config';
-import { setPrestationsRouting } from './routes/prestationRoutes';
+import { setClientRouting } from './routes/clientRoutes';
+// import { setDevisRouting } from './routes/devisRoutes';
+import { setEntrepriseRouting } from './routes/entrepriseRoutes';
+import { setEvaluationRouting } from './routes/evaluationRoutes';
+// import { setNotificationRouting } from './routes/notificationRoutes';
+import { setPrestationRouting } from './routes/prestationRoutes';
+import { setProjetRouting } from './routes/projetRoutes';
 
 const app = express();
 const port = 8080;
@@ -12,4 +18,10 @@ app.listen(port, () => {
     console.log(`Serveur listening on port : ${port}`);
 });
 
-setPrestationsRouting(app);
+setClientRouting(app);
+// setDevisRouting(app);
+setEntrepriseRouting(app);
+setEvaluationRouting(app);
+// setNotificationRouting(app);
+setPrestationRouting(app);
+setProjetRouting(app);

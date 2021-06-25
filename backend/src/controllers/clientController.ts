@@ -1,24 +1,24 @@
-import { Prestation } from "../models/prestation";
+import { Client } from "../models/client";
 
-class PrestationController {
+class ClientController {
 
   findAll = async (req, res, next) => {
     res.status(200)
-      .send(await Prestation.find())
+      .send(await Client.find())
       .end();
     next();
   }
 
   findById = async (req, res, next) => {
     res.status(200)
-      .send(await Prestation.findById(req.params.id))
+      .send(await Client.findById(req.params.id))
       .end();
     next();
   }
 
   create = async (req, res, next) => {
-    res.status(200)
-      .send(await Prestation.create(req.body))
+    res.status(201)
+      .send(await Client.create(req.body))
       .end();
     next();
   }
@@ -26,16 +26,16 @@ class PrestationController {
   update = async (req, res, next) => {
     console.log(req.body);
     res.status(200)
-      .send(await Prestation.findByIdAndUpdate(req.params.id, req.body))
+      .send(await Client.findByIdAndUpdate(req.params.id, req.body))
       .end();
     next();
   }
 
   delete = async (req, res, next) => {
     res.status(200)
-      .send(await Prestation.findByIdAndRemove(req.params.id))
+      .send(await Client.findByIdAndDelete(req.params.id))
       .end();
     next();
   }
 }
-export const prestationController = Object.freeze(new PrestationController());
+export const clientController = Object.freeze(new ClientController());

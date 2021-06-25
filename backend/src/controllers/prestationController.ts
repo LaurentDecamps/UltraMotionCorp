@@ -17,7 +17,7 @@ class PrestationController {
   }
 
   create = async (req, res, next) => {
-    res.status(200)
+    res.status(201)
       .send(await Prestation.create(req.body))
       .end();
     next();
@@ -33,7 +33,7 @@ class PrestationController {
 
   delete = async (req, res, next) => {
     res.status(200)
-      .send(await Prestation.findByIdAndRemove(req.params.id))
+      .send(await Prestation.findByIdAndDelete(req.params.id))
       .end();
     next();
   }
