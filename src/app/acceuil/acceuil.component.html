@@ -1,14 +1,42 @@
-<p>Rechercher un pro</p>
-<!-- <input type="text" placeholder="name" name="name"> -->
-<input type="text" placeholder="type" name="type" [(ngModel)]="texteRecherchePro">
-<button (click)="onTrouverPro()">Trouver un pro !</button>
+<header>
+  <div>
+    <nav>
+      <img class="logoBricool" src="../../assets/images/Bricool.png" alt="Logo Bricool">
+      <ul>
+        <li><a href="">MES PROJETS</a></li>
+        <li><a class="newProjet" href="">NOUVEAU PROJET</a></li>
+      </ul>
+      <img class="imgNav" src="../../assets/images/profil.png" alt="Profil">
+      <img src="../../assets/images/mail.png" alt="Mail">
+    </nav>
+  </div>
+</header>
 
-<h2>Résultat de la recherche</h2>
-<div *ngFor="let pro of listePro">
-  <div>
-    Nom pro : {{pro.name}}
+<body>
+
+
+  <div class="container">
+    <img class="imgBricool01" src="../../assets/images/bricolage01.jpg" alt="Bricool Photo">
+    <div class="text">
+      <h2>TROUVEZ LE PRO QU'IL VOUS FAUT</h2>
+      <h2>ET RÉALISEZ VOS PROJETS !</h2>
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="type" name="type" [(ngModel)]="texteRecherchePro">
+      <button (click)="onTrouverPro()">Trouver un pro !</button>
+
+      <div *ngFor="let pro of listePro">
+        <div>
+          Nom pro : {{pro.name}}
+        </div>
+        <div>
+          Description pro : {{pro.type}}
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    Description pro : {{pro.type}}
+
+  <div class="boxBricool">
+    <h1>Les artisants à votre écoute !</h1>
   </div>
-</div>
+
+</body>
