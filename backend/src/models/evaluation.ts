@@ -10,14 +10,14 @@ const EvaluationSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Client"
   },
-  entreprise: {
+  prestation: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Entreprise"
+    ref: "Prestation"
   },
-  note: [{
+  note: {
     type: Number,
     required: true
-  }],
+  },
   description: {
     type: String,
     required: true

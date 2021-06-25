@@ -14,9 +14,9 @@ const EntrepriseSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  Evaluations: [{
+  Prestations: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Evaluation"
+    ref: "Prestation"
   }]
 });
 
