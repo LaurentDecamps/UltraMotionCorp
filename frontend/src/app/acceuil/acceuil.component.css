@@ -1,14 +1,16 @@
 @font-face {
-    font-family: lato;
+    font-family: "caviar_dreams";
     src: url(../../assets/font/caviar_dreams/CaviarDreams.ttf) format("opentype");
 }
 
 * {
-    font-family: 'caviar_dreams', 'arial', sans-serif;
+    font-family: "caviar_dreams", 'arial', sans-serif;
 }
 
 nav {
+    
     margin: 30px;
+
 }
 
 li {
@@ -47,9 +49,13 @@ a {
 }
 
 .imgBricool01 {
-    min-width: 100%;
+
+    height: 650px;
+    width: 1360px;
+    /* min-width: 100%;
     min-height: 100%;
-    height: 700px;
+    height: 700px; */
+
 }
 
 .container {
@@ -62,21 +68,117 @@ a {
     z-index: 1;
     position: absolute;
     text-align: center;
-    font-family: Georgia;
-    margin: 0 auto;
-    left: 0;
+    font-family: "caviar_dreams";
+    margin: auto;
+    /* left: 0; */
     right: 0;
     top: 30%;
     color: white;
-    width: 70%;
+    width: 80%;
 }
 
 .boxBricool {
     margin: 5%;
+    padding-left: 3%;
 }
 
 h1 {
     color: #7BC248
+}
+
+
+
+h6 {
+
+    font-weight: bold;
+    padding-bottom: 3%;
+}
+
+.containerArtisans {
+
+    padding-bottom: 5%;
+}
+
+.artisansBox{
+
+    width: 400px;
+    display: inline-block;
+    background-color: white;
+    padding-left: 8%;
+    overflow: hidden;
+}
+
+.avisClientFond {
+
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 7%;
+    background-color: #7BC248;
+}
+
+
+
+
+.picture {
+
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.avisClient h6 {
+
+    text-align: center;
+
+}
+
+.artisansBox span{
+
+    display: block;
+    padding-bottom: 5%;
+}
+
+.avisClientFond h2 {
+    padding-bottom: 3%;
+    color: white;
+    font-weight: bold;
+}
+
+.avisClient {
+
+    width: 250px;
+    margin: 20px;
+    display: inline-block;
+    background-color: white;
+    padding-bottom: 15px;
+    border: 0px black solid;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    
+}
+
+.avisClient span{
+
+    display: block;
+    padding: 8%;
+
+}
+
+.bouton {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.artisanBouton {
+
+    background-color: #7BC248;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    
 }
 
 @media all and (max-width: 1000px) {}
