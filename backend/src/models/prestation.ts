@@ -6,7 +6,7 @@ export interface IPrestationDocument extends mongoose.Document {
 }
 
 const PrestationSchema = new mongoose.Schema({
-    type: {
+  type: {
     type: String,
     required: true
   },

@@ -14,6 +14,22 @@ const EntrepriseSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  email: {
+    type: String,
+    required: true
+  },
+  motDePasse: {
+    type: String,
+    required: true
+  },
+  numeroTelephone: {
+    type: String,
+    required: true
+  },
+  adresse: {
+    type: String,
+    required: true
+  },
   Prestations: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Prestation"

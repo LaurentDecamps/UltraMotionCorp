@@ -18,6 +18,10 @@ const ClientSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  motDePasse: {
+    type: String,
+    required: true
+  },
   numeroTelephone: {
     type: String,
     required: false
