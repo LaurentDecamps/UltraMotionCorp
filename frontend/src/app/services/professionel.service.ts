@@ -9,6 +9,6 @@ export class ProfessionelService {
   constructor(private http: HttpClient) { }
 
   GetProfessionel(){
-    return this.http.get('http://localhost:3000/');
+    return this.http.get('http://localhost:8080/entreprises/');
   }
 }

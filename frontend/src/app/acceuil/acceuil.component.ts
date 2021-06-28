@@ -16,9 +16,8 @@ export class AcceuilComponent implements OnInit {
 
   ngOnInit(): void {
     this.professionelService.GetProfessionel().subscribe((professionels) => {
-      this.listePro = professionels;
       console.log(professionels);
-
+      this.listePro = professionels;
     })
   }
 

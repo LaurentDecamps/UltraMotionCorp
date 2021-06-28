@@ -26,6 +26,17 @@ Entreprise
   "motDePasse": "CarreleurAndCo",
   "numeroTelephone": "0630313234",
   "adresse": "59 rue d'Arras 59000 Lille",
-  "prestations": []
+  "prestations": [
+    {
+      "type": "carrelage",
+      "description": "on carrelle très proprement. Avec CarreleurAndCo, vous serez satisfait",
+      "tauxHoraire": "20"
+    },
+    {
+      "type": "retrait de carrelage",
+      "description": "on enlève le carrelage existant très proprement.",
+      "tauxHoraire": "15"
+    }
+  ]
 }
 

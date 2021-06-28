@@ -3,15 +3,16 @@ import { Entreprise } from "../models/entreprise";
 class EntrepriseController {
 
   findAll = async (req, res, next) => {
+    console.log("Appel à get sur entreprises");    
     res.status(200)
-      .send(await Entreprise.find())
+      .send(await Entreprise.find().populate("Prestations"))
       .end();
     next();
   }
 
   findById = async (req, res, next) => {
     res.status(200)
-      .send(await Entreprise.findById(req.params.id))
+      .send(await Entreprise.findById(req.params.id).populate("Prestations"))
       .end();
     next();
   }
