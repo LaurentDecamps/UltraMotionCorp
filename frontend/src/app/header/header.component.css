@@ -1,0 +1,38 @@
+.logoBricool {
+    padding-right: 30em;
+}
+
+nav {
+    margin: 30px;
+}
+
+li {
+    list-style-type: none;
+    display: inline;
+    margin: 20px;
+}
+
+ul {
+    padding: 0;
+    display: inline;
+}
+
+li:hover {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #7BC248;
+}
+
+.imgNav {
+    margin: 30px
+}
+
+.newProjet {
+    border-radius: 15px;
+    background-color: #7BC248;
+    color: white;
+    padding: 10px;
+}
