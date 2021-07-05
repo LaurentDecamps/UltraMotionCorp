@@ -1,0 +1,18 @@
+{
+    "nom": "Décamps",
+    "prénom": "Laurent",
+    "email": "decamps.laurent@gmail.com",
+    "motDePasse": "totololo",
+    "numeroTelephone": "0621817803",
+    "adresse": "59 rue Sainte Catherine 59800 Lille",
+    "projet": [
+      {
+        "typeBien": "Appartement",
+        "NiveauBien": "Principale",
+        "Description": "Il faut refaire toute la salle de bain",
+        "SurfaceM2": "30",
+        "DateDebut": "2021-09-01T00:00:00.000Z",
+        "prestations": []
+      }
+    ]
+  }

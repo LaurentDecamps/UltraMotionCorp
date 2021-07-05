@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
 export interface IPrestationDocument extends mongoose.Document {
-  nom: String,
+  type: String,
+  description: String,
   duree: Number
 }
 

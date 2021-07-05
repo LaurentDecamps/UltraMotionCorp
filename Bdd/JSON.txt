@@ -18,7 +18,8 @@ Client
   ]
 }
 
-Entreprise
+Entreprises
+
 {
   "nom": "CarreleurAndCo",
   "description": "Des supers carreleurs",
@@ -35,6 +36,27 @@ Entreprise
     {
       "type": "retrait de carrelage",
       "description": "on enlève le carrelage existant très proprement.",
+      "tauxHoraire": "15"
+    }
+  ]
+}
+
+{
+  "nom": "GerardLePlombier",
+  "description": "La plomberie simplifiée",
+  "email": "contact@gerardleplombier.com",
+  "motDePasse": "GerardLePlombier",
+  "numeroTelephone": "0640414243",
+  "adresse": "59 rue de la liberté 59500 Arras",
+  "prestations":
+    {
+      "type": "plomberie",
+      "description": "Service de réparation de plomberie classique",
+      "tauxHoraire": "20"
+    },
+    {
+      "type": "plomberie",
+      "description": "retrait de la plomberie existante",
       "tauxHoraire": "15"
     }
   ]

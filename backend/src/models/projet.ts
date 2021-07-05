@@ -28,6 +28,10 @@ const ProjetSchema = new mongoose.Schema({
   prestations: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Prestation"
+  }],
+  devis: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Devis"
   }]
 });
 
