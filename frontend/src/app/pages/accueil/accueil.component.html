@@ -4,11 +4,18 @@
   <div class="container">
     <img class="imgBricool01" src="../../assets/images/bricolage01.jpg" alt="Bricool Photo">
     <div class="text">
-      <h2>TROUVEZ LE PRO QU'IL VOUS FAUT</h2>
-      <h2>ET RÉALISEZ VOS PROJETS !</h2>
-      <input type="text" placeholder="name" name="name">
-      <input type="text" placeholder="type" name="type" [(ngModel)]="texteRecherchePro">
-      <button (click)="onTrouverPro()">Trouver un pro !</button>
+      <div class="imgA">
+        <h2>TROUVEZ LE PRO QU'IL VOUS FAUT</h2>
+      </div>
+      <div class="imgB">
+        <h2>ET RÉALISEZ VOS PROJETS !</h2>
+      </div>
+      <div class="inputPro">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="type" name="type" [(ngModel)]="texteRecherchePro">
+        <button (click)="onTrouverPro()">Trouver un pro !</button>
+      </div>
+
 
       <div *ngFor="let pro of listePro">
         <div>
