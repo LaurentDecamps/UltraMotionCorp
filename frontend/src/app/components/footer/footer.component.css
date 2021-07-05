@@ -28,7 +28,7 @@ footer {
 
 .rsBricool {
     display: inline-block;
-    padding-left: 10%;
+    padding-left: 15%;
     width: 300px;
     margin: 20px;
 }
@@ -73,16 +73,17 @@ footer {
 
 .facebook {
     padding-top: 15%;
+    padding-left: 20%;
 }
 
 .instagram {
     padding-top: 15%;
-    padding-left: 15%;
+    padding-left: 30%;
 }
 
 .twitter {
     padding-top: 20%;
-    padding-left: 15%;
+    padding-left: 30%;
 }
 
 .resBricool img {
