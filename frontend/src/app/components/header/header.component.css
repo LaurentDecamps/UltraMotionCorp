@@ -13,8 +13,9 @@ li {
 }
 
 ul {
-    padding: 0;
+    padding-left: 10% ;
     display: inline;
+
 }
 
 li:hover {
@@ -27,7 +28,8 @@ a {
 }
 
 .imgNav {
-    margin: 30px
+    margin: 30px;
+
 }
 
 .newProjet {
