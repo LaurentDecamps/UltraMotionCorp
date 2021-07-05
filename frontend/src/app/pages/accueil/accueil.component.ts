@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfessionelService } from '../services/professionel.service';
+import { ProfessionelService } from '../../services/professionel.service';
 
 @Component({
   selector: 'app-accueil',
