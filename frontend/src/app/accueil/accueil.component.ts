@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ProfessionelService } from '../services/professionel.service';
 
 @Component({
-  selector: 'app-acceuil',
-  templateUrl: './acceuil.component.html',
-  styleUrls: ['./acceuil.component.css']
+  selector: 'app-accueil',
+  templateUrl: './accueil.component.html',
+  styleUrls: ['./accueil.component.css']
 })
-export class AcceuilComponent implements OnInit {
+export class AccueilComponent implements OnInit {
 
   texteRecherchePro = 'Plombier, Domoticien, ...';
 
