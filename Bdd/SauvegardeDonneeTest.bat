@@ -1,0 +1,1 @@
+mongodump.exe --db=bricocool --out=.
