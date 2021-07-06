@@ -23,6 +23,7 @@ const routes: Routes = [
   ]},
   {path: "fnprst", component: RecherchePrestationComponent},
   {path: "newprjct", component: NouveauProjetComponent},
+  {path: "mncpt/:id", component: MonCompteComponent},
   {path: "mncpt", component: MonCompteComponent, children: [
     {path: "devis", component: DevisComponent},
     {path: "projets", component: ProjetsComponent},

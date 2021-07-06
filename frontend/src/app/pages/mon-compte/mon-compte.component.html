@@ -1,7 +1,12 @@
-<p>mon-compte works!</p>
-<button type="button" routerLink="prestas">Prestations</button>
-<button type="button" routerLink="devis">Devis</button>
-<button type="button" routerLink="projets">Projets</button>
-<button type="button" routerLink="infos">Informations</button>
-<button type="button" routerLink="notifs">notifications</button>
+<h1>Bonjour {{entrepriseConnectee?.nom}},</h1>
+<div>
+  Information du compte :
+</div>
+<div>
+  <button type="button" routerLink="prestas">Prestations</button>
+  <button type="button" routerLink="devis">Devis</button>
+  <button type="button" routerLink="projets">Projets</button>
+  <button type="button" routerLink="infos">Informations</button>
+  <button type="button" routerLink="notifs">notifications</button>
+</div>
 <router-outlet></router-outlet>
