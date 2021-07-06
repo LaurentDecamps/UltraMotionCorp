@@ -1,0 +1,30 @@
+.container {
+
+    background-color: whitesmoke;
+}
+
+.container h1 {
+
+    text-align: center;
+    padding-bottom: 3%;
+
+}
+
+.container h5 {
+
+    font-weight: bold;
+
+}
+
+.container h6 {
+
+    padding-top: 2%;
+}
+
+.formulaire {
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1%;
+}
+
