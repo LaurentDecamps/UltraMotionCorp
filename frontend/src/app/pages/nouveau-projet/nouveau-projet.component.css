@@ -1,0 +1,56 @@
+.contact {
+  margin: 0 30px 100px 30px;
+  color: #231F20;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+h1 {
+  width: 100%;
+  font-weight: bold;
+}
+
+.container {
+  width: 50%;
+  margin-top: 40px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact label {
+  font-weight: bold;
+  font-size: 18pt;
+  font-variant: small-caps;
+}
+
+.red {
+  color: #FF0000;
+}
+
+.green {
+  color: #7BC248;
+}
+
+.greenInput {
+  width: 80%;
+  border: 4px solid #7BC248;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.needs {
+  padding: 0 30px;
+  background-color: #7BC248;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+.needs label {
+  font-variant: small-caps;
+}
