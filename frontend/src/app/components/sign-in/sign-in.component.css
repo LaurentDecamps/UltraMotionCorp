@@ -1,0 +1,43 @@
+.container {
+
+    background-color: whitesmoke;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.container h1 {
+
+    text-align: center;
+    padding-bottom: 3%;
+
+}
+
+.container h5 {
+
+    font-weight: bold;
+
+}
+
+.container h6 {
+
+    padding-top: 2%;
+}
+
+.formulaire {
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1%;
+}
+
+button {
+    margin-top: 1%;
+}
+
+span {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}

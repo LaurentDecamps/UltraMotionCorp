@@ -38,7 +38,7 @@ import { NotifsComponent } from './components/notifs/notifs.component';
     ProjetsComponent,
     InfosComponent,
     PrestasComponent,
-    NotifsComponent
+    NotifsComponent,
   ],
   imports: [
     BrowserModule,
