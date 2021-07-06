@@ -1,6 +1,8 @@
 .container {
 
     background-color: whitesmoke;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .container h1 {
@@ -28,3 +30,10 @@
     padding-bottom: 1%;
 }
 
+span {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
