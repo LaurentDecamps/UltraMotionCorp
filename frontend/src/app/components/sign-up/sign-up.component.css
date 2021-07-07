@@ -5,6 +5,18 @@
     margin-bottom: 2%;
 }
 
+a {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+
+.list-group {
+
+    display: flex;
+    flex-direction: row;
+}
+
 .container h1 {
 
     text-align: center;
@@ -15,6 +27,7 @@
 .container h5 {
 
     font-weight: bold;
+    padding-top: 3%
 
 }
 
