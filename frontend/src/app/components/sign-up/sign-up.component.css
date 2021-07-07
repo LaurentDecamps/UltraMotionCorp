@@ -5,9 +5,14 @@
     margin-bottom: 2%;
 }
 
+.list-group a {
+    display: flex;
+    margin-left: 30px;
+    justify-content: center;
+}
+
 a {
     display: flex;
-    margin: 10px;
     justify-content: center;
 }
 
