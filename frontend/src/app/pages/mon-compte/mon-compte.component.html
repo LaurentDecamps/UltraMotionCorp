@@ -1,47 +1,10 @@
-<div *ngIf="entrepriseConnectee">
-  <h1>Bonjour {{entrepriseConnectee?.nom}},</h1>
-  <div>
-    Information du compte :
-  </div>
-  <div>
-    description : {{entrepriseConnectee.description}}
-  </div>
-  <div>
-    numeroTelephone : {{entrepriseConnectee.numeroTelephone}}
-  </div>
-  <div>
-    email : {{entrepriseConnectee.email}}
-  </div>
-  <div>
-    adresse : {{entrepriseConnectee.adresse}}
-  </div>
-</div>
-<div>
-  <div *ngIf="!entrepriseConnectee && clientconnecte">
-    <h1>Bonjour {{clientconnecte?.prenom}},</h1>
-    <!-- <div>
-      Information du compte :
-    </div>
-    <div>
-      description : {{entrepriseConnectee.description}}
-    </div>
-    <div>
-      numeroTelephone : {{entrepriseConnectee.numeroTelephone}}
-    </div>
-    <div>
-      email : {{entrepriseConnectee.email}}
-    </div>
-    <div>
-      adresse : {{entrepriseConnectee.adresse}}
-    </div> -->
-  </div>
   <div class="containerCompte">
     <div class="navCompte">
-      <button type="button" routerLink="infos">Informations</button>
-      <button type="button" routerLink="prestas" *ngIf="entrepriseConnectee">Prestations proposées</button>
+      <button type="button" routerLink="infos" >Informations</button>
+      <button type="button" routerLink="prestas" *ngIf="compteEntreprise">Prestations proposées</button>
       <button type="button" routerLink="devis">Devis</button>
-      <button type="button" routerLink="projets" *ngIf="!entrepriseConnectee">Projets</button>
-      <button type="button" routerLink="notifs">notifications</button>
+      <button type="button" routerLink="projets" *ngIf="compteClient">Projets</button>
+      <button type="button" routerLink="notifs">Notifications</button>
     </div>
     <router-outlet></router-outlet>
   </div>

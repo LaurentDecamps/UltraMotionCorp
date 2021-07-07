@@ -13,22 +13,24 @@ import { EntreprisesService } from 'src/app/services/entreprises.service';
 })
 export class MonCompteComponent implements OnInit {
 
-  entrepriseConnectee : Entreprise;
-  clientconnecte : Client;
+  idConnexion: String | null;
+  compteEntreprise: boolean = false;
+  compteClient: boolean = false;
+  compteAdmin: boolean = false;
 
-  constructor(private entreprisesService : EntreprisesService,
-      private clientsService : ClientService,
-    private route : ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.entreprisesService.findById(this.route.snapshot.params.id).subscribe((data) =>{
-      this.entrepriseConnectee = data;
-    });
-    if (!this.entrepriseConnectee){
-      this.clientsService.findById(this.route.snapshot.params.id).subscribe((data) =>{
-        this.clientconnecte = data;
-      });
+    this.idConnexion = localStorage.getItem('clientCourant');
+    // Si on a pas de client Courant on essaie de
+    if (this.idConnexion) {
+      this.compteClient = true;
+    }
+    else {
+      this.idConnexion = localStorage.getItem('entrepriseCourante');
+      if (this.idConnexion) {
+        this.compteEntreprise = true;
+      }
     }
   }
-
 }
