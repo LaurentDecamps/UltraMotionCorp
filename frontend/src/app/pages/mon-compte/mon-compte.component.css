@@ -1,0 +1,10 @@
+.navCompte{
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  margin-right: 20px;
+}
+
+.containerCompte{
+  display: flex;
+}

@@ -1,8 +1,9 @@
 import { Projet } from "./projets";
 
-export class clients {
+export class Client {
   private _id: String;
   private _nom: String;
+  private _prenom: String;
   private _email: String;
   private _motDePasse: String;
   private _numeroDeTelephone: String;
@@ -12,6 +13,7 @@ export class clients {
 
   constructor(id: String,
               nom: String,
+              prenom: String,
               email: String,
               motDePasse: String,
               numeroDeTelephone: String,
@@ -20,6 +22,7 @@ export class clients {
               notifications: Notification[]) {
     this._id = id;
     this._nom = nom;
+    this._prenom = prenom;
     this._email = email;
     this._motDePasse = motDePasse;
     this._numeroDeTelephone = numeroDeTelephone;
@@ -34,6 +37,13 @@ export class clients {
 
   public get nom(): String {
     return this._nom;
+  }
+
+  public get prenom(): String {
+    return this._prenom;
+  }
+  public set prenom(value: String) {
+    this._prenom = value;
   }
 
   public get email(): String {

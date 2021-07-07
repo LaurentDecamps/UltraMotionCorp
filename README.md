@@ -1,9 +1,17 @@
 # UltraMotionCorp
-Projet fil rouge de la formation POEC Front End IB Formation CEGOS - Groupe 3 - Hélène - Yassine - Kevin et Laurent 
 
 # Description
+Projet fil rouge de la formation POEC Front End IB Formation CEGOS - Groupe 3 - Hélène - Yassine - Kevin et Laurent 
 
 Le besoin est disponible dans le répertoire doc\spec\Projet_fil_rouge_-_POE_Front.docx
+
+# Analyse
+
+Les wireframes se trouvent dans le répertoire doc\wireframe
+
+## Suivi des tâches
+
+https://lameilleuredesequipes.atlassian.net/
 
 # BRICOOL : LA BRICOLE A LA COOL
 
