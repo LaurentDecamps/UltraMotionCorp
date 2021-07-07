@@ -20,21 +20,20 @@
   <div>
     <div *ngIf="clientconnecte">
       <h1>Bonjour {{clientconnecte?.prenom}},</h1>
-
-      <!-- <div>
+      <div>
         Information du compte :
       </div>
       <div>
-        description : {{entrepriseConnectee.description}}
+        Nom Prénom : {{clientconnecte?.nom}} {{clientconnecte?.prenom}}
       </div>
       <div>
-        numeroTelephone : {{entrepriseConnectee.numeroTelephone}}
+        NumeroTelephone : {{clientconnecte.numeroTelephone}}
       </div>
       <div>
-        email : {{entrepriseConnectee.email}}
+        Email : {{clientconnecte.email}}
       </div>
       <div>
-        adresse : {{entrepriseConnectee.adresse}}
-      </div> -->
+        Adresse : {{clientconnecte.adresse}}
+      </div>
     </div>
 </div>
