@@ -1,21 +1,83 @@
 <div class="container">
     <h1>Créer mon compte</h1>
 
-    <h5>Mes informations personnelles</h5>
+    <div>
+
+        <div class="row">
+            <div class="col-3">
+                <h2>Vous êtes : </h2>
+            </div>
+
+            <div class="col-3">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                        href="#list-home" role="tab" aria-controls="list-home">Client</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                        href="#list-profile" role="tab" aria-controls="list-profile">Entreprise</a>
+                </div>
+            </div>
+        </div>
+
+
+        <h5>Mes informations personnelles</h5>
 
         <form class="formulaire">
+            <label>Nom* :
+            </label>
+            <input type="text">
+            <label>Prenom* :
+            </label>
+            <input type="text">
+            <label>Email* :
+            </label>
+            <input type="email" pattern=".+@globex\.com" size="30" required>
+            <label>Numéro de téléphone* :
+            </label>
+            <input type="tel">
+            <label> Mot de passe*:
+            </label>
+            <input type="text">
+
+            <h6>Adresse :</h6>
+            <div class="formulaire">
+                <label>Numéro :
+                </label>
+                <input type="text">
+
+                <label>Rue :
+                </label>
+                <input type="text">
+
+                <label>Ville :
+                </label>
+                <input type="text">
+
+                <label>Code Postal :
+                </label>
+                <input type="text">
+
+            </div>
+            <button>CRÉER MON COMPTE</button>
+
+        </form>
+
+
+        <!-- <form class="formulaire">
             <label>Nom* :     
             </label>
             <input type="text">
-            <label>Prenom* :    
+            <label>Description* :    
             </label>
             <input type="text">
+            <label>Logo URL* :    
+            </label>
+            <input type="url">
             <label>Email*  :               
             </label>
-            <input type="text">
+            <input type="email" pattern=".+@globex\.com" size="30" required>
             <label>Numéro de téléphone* : 
             </label>
-            <input type="text">
+            <input type="tel">
             <label> Mot de passe*: 
             </label>
             <input type="text">
@@ -41,8 +103,8 @@
             </div>
         <button>CRÉER MON COMPTE</button>
 
-        </form>
+        </form>  -->
 
         <span>Vous possédez déjà un compte ? <a routerLink="/auth/signin"> Identifiez-vous</a> </span>
-    
-</div>
+
+    </div>
