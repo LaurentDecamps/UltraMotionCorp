@@ -1,3 +1,40 @@
 <div class="containerInfos">
+  <div *ngIf="entrepriseConnectee">
+    <h1>Bonjour {{entrepriseConnectee?.nom}},</h1>
+    <div>
+      Information du compte :
+    </div>
+    <div>
+      description : {{entrepriseConnectee.description}}
+    </div>
+    <div>
+      numeroTelephone : {{entrepriseConnectee.numeroTelephone}}
+    </div>
+    <div>
+      email : {{entrepriseConnectee.email}}
+    </div>
+    <div>
+      adresse : {{entrepriseConnectee.adresse}}
+    </div>
+  </div>
+  <div>
+    <div *ngIf="clientconnecte">
+      <h1>Bonjour {{clientconnecte?.prenom}},</h1>
 
+      <!-- <div>
+        Information du compte :
+      </div>
+      <div>
+        description : {{entrepriseConnectee.description}}
+      </div>
+      <div>
+        numeroTelephone : {{entrepriseConnectee.numeroTelephone}}
+      </div>
+      <div>
+        email : {{entrepriseConnectee.email}}
+      </div>
+      <div>
+        adresse : {{entrepriseConnectee.adresse}}
+      </div> -->
+    </div>
 </div>

@@ -1,5 +1,7 @@
+import { isNull } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Entreprise } from 'src/app/models/entreprise';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +10,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  id : String | null;
+  idConnexion : String | null;
+  compteEntreprise : boolean = false;
+  compteClient : boolean = false;
+  compteAdmin : boolean = false;
 
-  constructor(private route : ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
 
-    this.id = localStorage.getItem('currentUser');
+    this.idConnexion = localStorage.getItem('clientCourant');
+    // Si on a pas de client Courant on essaie de
+    if (this.idConnexion) {
+      this.compteClient = true;
+    }
+    else {
+      this.idConnexion = localStorage.getItem('entrepriseCourante');
+      if (this.idConnexion){
+        this.compteEntreprise = true;
+      }
+    }
   }
-
 }
