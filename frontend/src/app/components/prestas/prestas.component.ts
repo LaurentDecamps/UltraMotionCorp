@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Prestations } from 'src/app/models/prestations';
-import { PrestationsService } from 'src/app/services/prestations.service';
+import { EntreprisesService } from 'src/app/services/entreprises.service';
 
 @Component({
   selector: 'app-prestas',
@@ -11,7 +11,7 @@ export class PrestasComponent implements OnInit {
 
   prestations : Prestations;
 
-  constructor(private prestationsService : PrestationsService) { }
+  constructor(private entrepriseService : EntreprisesService) { }
 
   ngOnInit(): void {
   }
