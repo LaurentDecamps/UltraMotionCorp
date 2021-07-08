@@ -1,4 +1,4 @@
-import { evaluation } from './../../models/evaluations';
+import { Evaluation} from './../../models/evaluations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EvaluationsComponent implements OnInit {
 
-  evaluations : evaluation[];
+  evaluations : Evaluation[];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.evaluations.push(
+      new Evaluation(5,"C'était trop bien",
+      5,"C'était facile",
+      5, "C'était très quali",
+      5, "Des vrais experts", null, null));
   }
 
 }
