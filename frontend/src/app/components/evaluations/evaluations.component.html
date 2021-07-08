@@ -1,7 +1,17 @@
 <div class="evaluationContainer">
   <div class="mesAvis" *ngFor="let evaluation of evaluations">
-    <p>{{evaluation.noteGlobale}}</p>
-    <p>{{evaluation.commentaireGlobal}}</p>
-    <p>{{evaluation.prestation}}</p>
+    <p>Note globale : {{evaluation.noteGlobale}}</p>
+    <p>Commentaire global : {{evaluation.commentaireGlobal}}</p>
+    <p>La prestation :{{evaluation.prestation}}</p>
+  </div>
+  <div class="mesAvis" *ngFor="let evaluationFaite of evaluationsFaites">
+    <p>Note globale : {{evaluationFaite.noteGlobale}}</p>
+    <p>Commentaire global : {{evaluationFaite.commentaireGlobal}}</p>
+    <p>La prestation :{{evaluationFaite.prestation}}</p>
+  </div>
+  <div class="mesAvis" *ngFor="let evaluationAFaire of evaluationsAFaire">
+    <p>Note globale : {{evaluationAFaire.noteGlobale}}</p>
+    <p>Commentaire global : {{evaluationAFaire.commentaireGlobal}}</p>
+    <p>La prestation :{{evaluationAFaire.prestation}}</p>
   </div>
 </div>
