@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
+  isDisplay = true;
+  entrepriseIsDisplay = true;
+  
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  clientDisplay = () => {
+    this.isDisplay = !this.isDisplay;
+  }
+  entrepriseDisplay = () => {
+    this.entrepriseIsDisplay = !this.entrepriseIsDisplay;
+  }
+
+  to
 }
