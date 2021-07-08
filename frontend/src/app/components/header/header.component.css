@@ -15,7 +15,6 @@ li {
 ul {
     padding-left: 10% ;
     display: inline;
-
 }
 
 li:hover {
@@ -29,7 +28,6 @@ a {
 
 .imgNav {
     margin: 30px;
-
 }
 
 .newProjet {
@@ -40,11 +38,9 @@ a {
 }
 
 @media all and (max-width: 1000px) {
-
-    
     ul {
         padding-left: 15% ;
         display: inline;
-    
+
     }
 }

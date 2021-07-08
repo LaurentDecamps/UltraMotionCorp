@@ -6,7 +6,7 @@ export class Client {
   private _prenom: String;
   private _email: String;
   private _motDePasse: String;
-  private _numeroDeTelephone: String;
+  private _numeroTelephone: String;
   private _adresse: String;
   private _projets: Projet[];
   private _notifications: Notification[]
@@ -16,7 +16,7 @@ export class Client {
               prenom: String,
               email: String,
               motDePasse: String,
-              numeroDeTelephone: String,
+              numeroTelephone: String,
               adresse: String,
               projets: Projet[],
               notifications: Notification[]) {
@@ -25,7 +25,7 @@ export class Client {
     this._prenom = prenom;
     this._email = email;
     this._motDePasse = motDePasse;
-    this._numeroDeTelephone = numeroDeTelephone;
+    this._numeroTelephone = numeroTelephone;
     this._adresse = adresse;
     this._projets = projets;
     this._notifications = notifications;
@@ -54,8 +54,8 @@ export class Client {
     return this._motDePasse;
   }
 
-  public get numeroDeTelephone(): String {
-    return this._numeroDeTelephone;
+  public get numeroTelephone(): String {
+    return this._numeroTelephone;
   }
 
   public get adresse(): String {

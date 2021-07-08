@@ -1,13 +1,19 @@
 <header>
-    <div>
-        <nav>
-            <img class="logoBricool" src="../../assets/images/Bricool.png" alt="Logo Bricool">
-            <ul>
-                <li><a *ngIf="id" routerLink="mncpt/{{id}}/projets">MES PROJETS</a></li>
-                <li><a class="newProjet" routerLink="newprjct">NOUVEAU PROJET</a></li>
-            </ul>
-            <img class="imgNav" src="../../assets/images/profil.png" alt="Profil">
-            <img src="../../assets/images/mail.png" alt="Notifications">
-        </nav>
-    </div>
+  <div>
+    <nav>
+      <a routerLink="">
+        <img class="logoBricool" src="../../assets/images/Bricool.png" alt="Logo Bricool">
+      </a>
+      <ul *ngIf="compteClient">
+        <li><a routerLink="mncpt/projets">MES PROJETS</a></li>
+        <li><a routerLink="newprjct" class="newProjet">NOUVEAU PROJET</a></li>
+      </ul>
+      <a routerLink="mncpt/infos">
+        <img class="imgNav" src="../../assets/images/profil.png" alt="Profil">
+      </a>
+      <a routerLink="mncpt/notifs">
+        <img src="../../assets/images/mail.png" alt="Notifications">
+      </a>
+    </nav>
+  </div>
 </header>
