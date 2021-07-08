@@ -6,7 +6,7 @@ import { setClientRouting } from './routes/clientRoutes';
 import { setEntrepriseRouting } from './routes/entrepriseRoutes';
 import { setEvaluationRouting } from './routes/evaluationRoutes';
 import { setPrestationsRouting } from './routes/prestationRoutes';
-// // import { setNotificationRouting } from './routes/notificationRoutes';
+import { setNotificationRouting } from './routes/notificationRoutes';
 import { setProjetRouting } from './routes/projetRoutes';
 
 const port = 8080;
@@ -27,6 +27,6 @@ setClientRouting(app);
 // setDevisRouting(app);
 setEntrepriseRouting(app);
 setEvaluationRouting(app);
-// setNotificationRouting(app);
+setNotificationRouting(app);
 setPrestationsRouting(app);
 setProjetRouting(app);
