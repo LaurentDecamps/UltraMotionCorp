@@ -1,3 +1,4 @@
+import { evaluation } from './../../models/evaluations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./evaluations.component.css']
 })
 export class EvaluationsComponent implements OnInit {
+
+  evaluations : evaluation[];
 
   constructor() { }
 
