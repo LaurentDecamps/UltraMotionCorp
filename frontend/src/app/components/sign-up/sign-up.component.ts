@@ -22,6 +22,4 @@ export class SignUpComponent implements OnInit {
   entrepriseDisplay = () => {
     this.entrepriseIsDisplay = !this.entrepriseIsDisplay;
   }
-
-  to
 }
