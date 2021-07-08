@@ -11,20 +11,19 @@
         <h2>ET RÉALISEZ VOS PROJETS !</h2>
       </div>
       <div class="inputPro">
-        <input type="text" placeholder="name" name="name">
-        <input type="text" placeholder="type" name="type" [(ngModel)]="texteRecherchePro">
-        <button (click)="onTrouverPro()">Trouver un pro !</button>
+        <input type="text" placeholder="un carreleur, un plombier, ..." name="name">
+        <button (click)="onTrouverPro()">TROUVEZ !</button>
       </div>
-
-
-      <div *ngFor="let pro of listePro">
-        <div>
-          Nom pro : {{pro.Prestations[0].type}}
+      <div class="srchRslts">
+        <div *ngFor="let pro of listePro">
+          <div>
+            Nom pro : {{pro.Prestations[0].type}}
+          </div>
+          <div>
+            Description pro : {{pro.Prestations[0].description}}
+          </div>
         </div>
-        <div>
-          Description pro : {{pro.Prestations[0].description}}
-        </div>
-      </div>
+      </div>      
     </div>
   </div>
 

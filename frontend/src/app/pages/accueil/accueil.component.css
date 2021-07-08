@@ -1,12 +1,3 @@
-@font-face {
-    font-family: "caviar_dreams";
-    src: url(../../../assets/font/caviar_dreams/CaviarDreams.ttf) format("opentype");
-}
-
-* {
-    font-family: "caviar_dreams", 'arial', sans-serif;
-}
-
 .imgBricool01 {
     height: 650px;
     width: 1495px;
@@ -15,41 +6,67 @@
     height: 700px; */
 }
 
-.imgA {
+.imgA h2, .imgB h2 {
+  font-weight: bold;
+}
 
-   
+.imgA {
     margin-right: 20%;
     margin-left: 5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-right: 15%;
+    padding: 1% 10% 1% 5%;
     background-color: #7BC248;
     border-top-right-radius: 200px;
     border-bottom-left-radius: 200px;
-
 }
 
 .imgB {
-
     margin-right: 22%;
     margin-left: 20%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 15%;
+    padding: 1% 5% 1% 10%;
     background-color: #DBBD45;
     border-bottom-right-radius: 20px;
-border-bottom-left-radius: 100px;
-
-
+    border-bottom-left-radius: 100px;
 }
 
 .inputPro {
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
 
-    margin-top: 1%;
-    border:#7BC248;
-    width: 100%;
+.inputPro input {
+  outline: none;
+  width: 50%;
+  border: 4px solid #7BC248;
+  border-radius: 15px;
+  text-align: center;
+  z-index: 10;
+}
 
+.inputPro button {
+  position: relative;
+  left: -15px;
+  border: 4px solid #7BC248;
+  border-radius: 0 15px 15px 0;
+  padding: 0 30px 0 41px;
+  background-color: #7BC248;
+  font-weight: bold;
+  font-size: 16pt;
+  color: #FFFFFF;
+}
 
+.srchRslts {
+  position: relative;
+  top: -4px;
+  left: -7px;
+  height: 200px;
+  width: calc(50% + 176px);
+  border: 4px solid #7BC248;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  visibility: hidden;
 }
 
 .container {
@@ -58,17 +75,16 @@ border-bottom-left-radius: 100px;
 }
 
 .text {
-    /* background: rgba(123, 194, 72, 0.8); */
     z-index: 1;
     position: absolute;
     text-align: center;
-    font-family: "caviar_dreams";
-    margin: auto;
-    /* left: 0; */
     right: 0;
     top: 30%;
     color: white;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .boxBricool {
@@ -210,5 +226,5 @@ h6 {
         height: 650px;
         width: 1560px;
     }
-    
+
 }

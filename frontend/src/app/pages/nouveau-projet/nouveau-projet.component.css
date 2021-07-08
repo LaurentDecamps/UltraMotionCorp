@@ -96,7 +96,7 @@ h1 {
   border-radius: 4px;
   content: "";
   background-color: #FFFFFF;
-  vertical-align: 6px;
+  vertical-align: middle;
   color: #000000;
   font-size: 26pt;
   display: inline-flex;
@@ -105,12 +105,10 @@ h1 {
 
 .checkboxes input:checked + label::before {
   content: "✓";
-  vertical-align: -6px;
 }
 
 .checkboxes label {
   font-variant: small-caps;
-  vertical-align: middle;
 }
 
 .checkboxes label:not(:last-child) {
