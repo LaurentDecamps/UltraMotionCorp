@@ -19,6 +19,13 @@ class EntrepriseController {
     next();
   }
 
+  // findByPrestationId = async (req, res, next) => {
+  //   res.status(200)
+  //     .send(await Entreprise.find({ client : req.params.id}))
+  //     .end();
+  //   next();
+  // }
+
   create = async (req, res, next) => {
     res.status(201)
       .send(await Entreprise.create(req.body))
