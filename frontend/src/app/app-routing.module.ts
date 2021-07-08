@@ -13,6 +13,7 @@ import { ProjetsComponent } from './components/projets/projets.component';
 import { InfosComponent } from './components/infos/infos.component';
 import { PrestasComponent } from './components/prestas/prestas.component';
 import { NotifsComponent } from './components/notifs/notifs.component';
+import { EvaluationsComponent } from './components/evaluations/evaluations.component';
 
 
 const routes: Routes = [
@@ -24,11 +25,13 @@ const routes: Routes = [
   {path: "fnprst", component: RecherchePrestationComponent},
   {path: "newprjct", component: NouveauProjetComponent},
   {path: "mncpt", component: MonCompteComponent, children: [
-    {path: "devis", component: DevisComponent},
-    {path: "projets", component: ProjetsComponent},
     {path: "infos", component: InfosComponent},
     {path: "prestas", component: PrestasComponent},
+    {path: "projets", component: ProjetsComponent},
+    {path: "devis", component: DevisComponent},
+    {path: "evalutions", component: EvaluationsComponent},
     {path: "notifs", component: NotifsComponent}
+
   ]},
   {path: "**", component: NotFoundComponent}
 ];
