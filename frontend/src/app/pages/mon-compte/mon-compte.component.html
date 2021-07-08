@@ -4,6 +4,7 @@
       <button type="button" routerLink="prestas" *ngIf="compteEntreprise" class="boutonCompte">PRESTATIONS</button>
       <button type="button" routerLink="projets" *ngIf="compteClient" class="boutonCompte">PROJETS</button>
       <button type="button" routerLink="devis" class="boutonCompte">DEVIS</button>
+      <button type="button" routerLink="evalutions" *ngIf="compteClient" class="boutonCompte">MES EVALUATIONS</button>
       <button type="button" routerLink="notifs" class="boutonCompte">NOTIFICATIONS</button>
     </div>
     <router-outlet></router-outlet>

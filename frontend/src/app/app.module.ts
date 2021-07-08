@@ -20,6 +20,9 @@ import { ProjetsComponent } from './components/projets/projets.component';
 import { InfosComponent } from './components/infos/infos.component';
 import { PrestasComponent } from './components/prestas/prestas.component';
 import { NotifsComponent } from './components/notifs/notifs.component';
+import { EvaluationsComponent } from './components/evaluations/evaluations.component';
+import { EvaluationComponent } from './components/evaluation/evaluation.component';
+import { EvaluationFormComponent } from './components/evaluation-form/evaluation-form.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { NotifsComponent } from './components/notifs/notifs.component';
     InfosComponent,
     PrestasComponent,
     NotifsComponent,
+    EvaluationsComponent,
+    EvaluationComponent,
+    EvaluationFormComponent,
   ],
   imports: [
     BrowserModule,
