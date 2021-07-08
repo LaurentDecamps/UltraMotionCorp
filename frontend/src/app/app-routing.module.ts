@@ -1,3 +1,4 @@
+import { EvaluationComponent } from './components/evaluation/evaluation.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './pages/accueil/accueil.component';
@@ -29,9 +30,8 @@ const routes: Routes = [
     {path: "prestas", component: PrestasComponent},
     {path: "projets", component: ProjetsComponent},
     {path: "devis", component: DevisComponent},
-    {path: "evalutions", component: EvaluationsComponent},
+    {path: "evaluation", component: EvaluationComponent},
     {path: "notifs", component: NotifsComponent}
-
   ]},
   {path: "**", component: NotFoundComponent}
 ];
