@@ -13,5 +13,11 @@ export class ClientService {
 
   findById(id : string) : Observable<Client> {
     return this.httpClient.get<Client>(`${environment.apiUrl}/clients/${id}`)
+  };
+
+  create(client: Client) : Observable<Client> {
+    console.log(`client ds le service ${client}`);
+    
+    return this.httpClient.post<Client>(`${environment.apiUrl}/clients`, client);
   }
 }
