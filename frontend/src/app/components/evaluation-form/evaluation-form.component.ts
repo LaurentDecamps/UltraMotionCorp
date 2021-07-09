@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EvaluationFormComponent implements OnInit {
 
+  evaluationsAFaire
+
   constructor() { }
 
   ngOnInit(): void {

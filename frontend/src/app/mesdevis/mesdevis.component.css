@@ -1,0 +1,28 @@
+h3{
+  width : 100%;
+  background-color : #7BC248;
+  color:white;
+  text-transform: uppercase;
+  padding : 5px;
+  padding-left : 25px;
+}
+
+h4 {
+
+  margin : 15px 0 30px 15px;
+  border-bottom: #7BC248 1px solid;
+  width :18%;
+}
+
+.myDevis {
+  border: 3px solid #DBBD45;
+  border-radius: 15px;
+  padding : 15px;
+}
+
+.myDevis p {
+  display: inline;
+  vertical-align: center;
+  font-size: 1rem;
+  margin: auto 50px;
+}

@@ -1,6 +1,9 @@
-<h1>Titre de ma prestation à noter</h1>
+<h2>Mes évaluations à faire</h2>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in quia sed fugiat sequi ea ex harum reprehenderit excepturi? Deleniti, cupiditate id. Quibusdam odio nisi earum minima neque veniam libero!</p>
 <form>
+  <select>
+    <option *ngFor="let evaluationAFaire of evaluationsAFaire">{{evaluationAFaire.prestation}</option>
+  </select>
   <label>
     <h3>Facilité de communication</h3>
     <div class="myRating">

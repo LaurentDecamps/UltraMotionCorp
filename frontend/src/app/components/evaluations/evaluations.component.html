@@ -1,17 +1,25 @@
 <div class="evaluationContainer">
-  <div class="mesAvis" *ngFor="let evaluation of evaluations">
-    <p>Note globale : {{evaluation.noteGlobale}}</p>
-    <p>Commentaire global : {{evaluation.commentaireGlobal}}</p>
-    <p>La prestation :{{evaluation.prestation}}</p>
+  <div>
+    <h2>Mes dernières évaluations</h2>
+    <div class="mesAvis" *ngFor="let evaluation of evaluations">
+      <p><span>Note globale </span>: {{evaluation.noteGlobale}}/5</p>
+      <p><span>Commentaire global</span> : {{evaluation.commentaireGlobal}}</p>
+      <p><span>La prestation </span>:{{evaluation.prestation}}</p>
+    </div>
+
+
+      <div class="mesAvis" *ngFor="let evaluationFaite of evaluationsFaites">
+        <p><span>Note globale</span> : {{evaluationFaite.noteGlobale}}/5</p>
+        <p><span>Commentaire global</span> : {{evaluationFaite.commentaireGlobal}}</p>
+        <p><span>La prestation</span> :{{evaluationFaite.prestation}}</p>
+      </div>
+    </div>
+
+
   </div>
-  <div class="mesAvis" *ngFor="let evaluationFaite of evaluationsFaites">
-    <p>Note globale : {{evaluationFaite.noteGlobale}}</p>
-    <p>Commentaire global : {{evaluationFaite.commentaireGlobal}}</p>
-    <p>La prestation :{{evaluationFaite.prestation}}</p>
-  </div>
-  <div class="mesAvis" *ngFor="let evaluationAFaire of evaluationsAFaire">
-    <p>Note globale : {{evaluationAFaire.noteGlobale}}</p>
-    <p>Commentaire global : {{evaluationAFaire.commentaireGlobal}}</p>
-    <p>La prestation :{{evaluationAFaire.prestation}}</p>
-  </div>
-</div>
+
+
+
+
+
+
