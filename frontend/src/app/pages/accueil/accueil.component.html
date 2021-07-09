@@ -10,20 +10,15 @@
       <div class="imgB">
         <h2>ET RÉALISEZ VOS PROJETS !</h2>
       </div>
-      <div class="inputPro">
-        <input type="text" placeholder="un carreleur, un plombier, ..." name="name">
+      <form class="inputPro">
+        <input type="text" placeholder="un carreleur, un plombier, ..." name="name" (input)="getInput($event.target['value'])" autocomplete="off">
         <button (click)="onTrouverPro()">TROUVEZ !</button>
-      </div>
-      <div class="srchRslts">
-        <div *ngFor="let pro of listePro">
-          <div>
-            Nom pro : {{pro.Prestations[0].type}}
-          </div>
-          <div>
-            Description pro : {{pro.Prestations[0].description}}
-          </div>
+      </form>
+      <div class="srchRslts" *ngIf="proFiltered">
+        <div *ngFor="let pro of proFiltered">
+          <p>{{pro.nom}}</p>
         </div>
-      </div>      
+      </div>
     </div>
   </div>
 

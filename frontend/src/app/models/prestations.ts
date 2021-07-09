@@ -10,4 +10,8 @@ export class Prestations {
     this._tauxHoraire = tauxHoraire;
     this._TVA = TVA;
   }
+
+  public get type(): String {
+    return this._type;
+  }
 }

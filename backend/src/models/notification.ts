@@ -1,12 +1,4 @@
 import mongoose from 'mongoose';
-import { IDevisDocument } from './devis';
-
-export interface INotificationDocument extends mongoose.Document {
-    devis: IDevisDocument,
-    type: String,
-    description: String,
-    lue: Boolean
-}
 
 const NotificationSchema = new mongoose.Schema({
     devis: {
@@ -27,4 +19,4 @@ const NotificationSchema = new mongoose.Schema({
     }
 });
 
-export const Notification = mongoose.model<INotificationDocument>('Notification', NotificationSchema);
+export const Notification = mongoose.model('Notification', NotificationSchema);

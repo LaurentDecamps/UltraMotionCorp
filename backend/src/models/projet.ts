@@ -1,9 +1,5 @@
 import mongoose from 'mongoose';
 
-export interface IProjetDocument extends mongoose.Document {
-
-}
-
 const ProjetSchema = new mongoose.Schema({
   typeBien: {
     type: String,
@@ -24,15 +20,15 @@ const ProjetSchema = new mongoose.Schema({
   dateDebut: {
     type: Number,
     required: true
-  },  
-  prestations: [{
-    type: mongoose.Schema.Types.ObjectId,
+  },
+  prestations: {
+    type: [mongoose.Schema.Types.ObjectId],
     ref: "Prestation"
-  }],
-  devis: [{
-    type: mongoose.Schema.Types.ObjectId,
+  },
+  devis: {
+    type: [mongoose.Schema.Types.ObjectId],
     ref: "Devis"
-  }]
+  }
 });
 
-export const Projet = mongoose.model<IProjetDocument>('Projet', ProjetSchema);
+export const Projet = mongoose.model('Projet', ProjetSchema);

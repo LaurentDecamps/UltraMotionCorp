@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessionelService } from '../../services/professionel.service';
+import { Entreprise } from '../../models/entreprise';
 
 @Component({
   selector: 'app-accueil',
@@ -8,21 +9,31 @@ import { ProfessionelService } from '../../services/professionel.service';
 })
 export class AccueilComponent implements OnInit {
 
-  texteRecherchePro = 'Plombier, Domoticien, ...';
-
-  listePro: any;
+  listePro: Entreprise[];
+  proFiltered: Entreprise[] = undefined;
 
   constructor(private professionelService: ProfessionelService) { }
 
   ngOnInit(): void {
-    this.professionelService.GetProfessionel().subscribe((professionels) => {
-      console.log(professionels);
+    this.professionelService.getProfessionel().subscribe((professionels) => {
       this.listePro = professionels;
+      console.log(this.listePro)
     })
   }
 
-  onTrouverPro(): void {
-    this.texteRecherchePro = '';
+  getInput = (search) => {
+    console.log(search)
+    if (search.length > 2) {
+      let regex = new RegExp(search, "i")
+      this.proFiltered = this.listePro.filter(pro => pro.nom.match(regex))      
+    }
+    else {
+      if (this.proFiltered) {
+        this.proFiltered = undefined
+      }
+    }
   }
+
+  onTrouverPro(): void {}
 
 }

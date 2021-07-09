@@ -1,11 +1,5 @@
 import mongoose from 'mongoose';
-import { IPrestationDocument } from './prestation';
 
-export interface IDevisDocument extends mongoose.Document {
-    etat: String,
-    titre: String,
-    prestations: [IPrestationDocument]
-}
 const DevisSchema = new mongoose.Schema({
   titre: {
     type: String,
@@ -15,10 +9,10 @@ const DevisSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  prestations: [{
-    type: mongoose.Schema.Types.ObjectId,
+  prestations: {
+    type: [mongoose.Schema.Types.ObjectId],
     ref: "Prestation"
-  }]
+  }
 });
 
-export const devis = mongoose.model<IDevisDocument>('Devis', DevisSchema);
+export const devis = mongoose.model('Devis', DevisSchema);

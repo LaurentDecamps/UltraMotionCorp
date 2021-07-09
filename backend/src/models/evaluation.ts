@@ -1,13 +1,4 @@
 import mongoose from 'mongoose';
-import { IClientDocument } from './client';
-import { IPrestationDocument } from './prestation';
-
-export interface IEvaluationDocument extends mongoose.Document {
-  client: IClientDocument,
-  prestation: IPrestationDocument,
-  note: Number,
-  description: String
-}
 
 const EvaluationSchema = new mongoose.Schema({
   client: {
@@ -28,4 +19,4 @@ const EvaluationSchema = new mongoose.Schema({
   }
 });
 
-export const Evaluation = mongoose.model<IEvaluationDocument>('Evaluation', EvaluationSchema);
+export const Evaluation = mongoose.model('Evaluation', EvaluationSchema);
