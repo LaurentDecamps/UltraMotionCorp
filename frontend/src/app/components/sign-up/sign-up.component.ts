@@ -24,12 +24,7 @@ export class SignUpComponent implements OnInit {
       numeroTelephone : 0,
       motDePasse : "",
       adresse : ""
-      // this.fb.group({
-      //   num : 0,
-      //   rue : "",
-      //   ville : "",
-      //   cp: "",
-      // })
+
     })
    }
 
