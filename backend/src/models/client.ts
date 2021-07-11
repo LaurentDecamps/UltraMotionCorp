@@ -9,8 +9,8 @@ export interface IClientDocument extends mongoose.Document {
   motDePasse: String,
   numeroTelephone: String,
   adresse: String,
-  projets: [IProjetDocument],
-  notifications: [INotificationDocument]
+  projets: IProjetDocument[],
+  notifications: INotificationDocument[]
 }
 
 const ClientSchema = new mongoose.Schema({
@@ -40,7 +40,7 @@ const ClientSchema = new mongoose.Schema({
   },
   projets: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "projets"
+    ref: "Projet"
   }],
   notifications: [{
     type: mongoose.Schema.Types.ObjectId,

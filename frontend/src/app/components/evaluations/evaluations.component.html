@@ -1,17 +1,29 @@
-<div class="evaluationContainer">
-  <div class="mesAvis" *ngFor="let evaluation of evaluations">
-    <p>Note globale : {{evaluation.noteGlobale}}</p>
-    <p>Commentaire global : {{evaluation.commentaireGlobal}}</p>
-    <p>La prestation :{{evaluation.prestation}}</p>
-  </div>
-  <div class="mesAvis" *ngFor="let evaluationFaite of evaluationsFaites">
+<main class="evaluationContainer">
+  <section>
+    <h2>Mes avis donnés</h2>
+    <div class="mesAvis" *ngFor="let evaluation of evaluations">
+      <p>Note globale : {{evaluation.noteGlobale}}</p>
+      <p>Commentaire global : {{evaluation.commentaireGlobal}}</p>
+      <p>La prestation :{{evaluation.prestation}}</p>
+    </div>
+  </section>
+  <section>
+    <h2>Mes avis à donner</h2>
+    <div class="mesAvis" *ngFor="let evaluation of evaluations">
+      <p>Note globale : {{evaluation.noteGlobale}}</p>
+      <p>Commentaire global : {{evaluation.commentaireGlobal}}</p>
+      <p>La prestation :{{evaluation.prestation}}</p>
+    </div>
+  </section>
+  <!-- <section class="mesAvis" *ngFor="let evaluationFaite of evaluationsFaites">
+
     <p>Note globale : {{evaluationFaite.noteGlobale}}</p>
     <p>Commentaire global : {{evaluationFaite.commentaireGlobal}}</p>
     <p>La prestation :{{evaluationFaite.prestation}}</p>
-  </div>
-  <div class="mesAvis" *ngFor="let evaluationAFaire of evaluationsAFaire">
+  </section>
+  <section class="mesAvis" *ngFor="let evaluationAFaire of evaluationsAFaire">
     <p>Note globale : {{evaluationAFaire.noteGlobale}}</p>
     <p>Commentaire global : {{evaluationAFaire.commentaireGlobal}}</p>
     <p>La prestation :{{evaluationAFaire.prestation}}</p>
-  </div>
-</div>
+  </section> -->
+</main>

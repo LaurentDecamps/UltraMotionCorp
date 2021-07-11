@@ -6,7 +6,7 @@ class ProjetController {
 
   findAll = async (req, res, next) => {
     res.status(200)
-      .send(await Projet.find())
+      .send(await Projet.find().populate('devis'))
       .end();
     next();
   }

@@ -13,7 +13,7 @@ export class Projet {
   Description : String;
   surfacem2 : Number;
   dateDebut : Date;
-  prestations : Prestations
+  prestations : Prestations[]
 
   constructor(typeBien : string, niveauBien : string, description : string, surfacem2 : number, dateDebut : Date, prestations : Prestations) {
     this._typeBien = typeBien;

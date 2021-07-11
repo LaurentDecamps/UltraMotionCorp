@@ -1,0 +1,11 @@
+.mesAvis p {
+  display: inline-block;
+  margin-left: 5vw;
+}
+
+.mesAvis {
+  width: 80%;
+  margin: auto;
+  border: 1px solid #7bc248;
+  border-radius: 15px;
+}

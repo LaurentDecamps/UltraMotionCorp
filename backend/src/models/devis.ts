@@ -4,7 +4,7 @@ import { IPrestationDocument } from './prestation';
 export interface IDevisDocument extends mongoose.Document {
     etat: String,
     titre: String,
-    prestations: [IPrestationDocument]
+    prestations: IPrestationDocument[]
 }
 const DevisSchema = new mongoose.Schema({
   titre: {
@@ -21,4 +21,4 @@ const DevisSchema = new mongoose.Schema({
   }]
 });
 
-export const devis = mongoose.model<IDevisDocument>('Devis', DevisSchema);
+export const Devis = mongoose.model<IDevisDocument>('Devis', DevisSchema);
