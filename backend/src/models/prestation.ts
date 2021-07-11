@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 export interface IPrestationDocument extends mongoose.Document {
   type: String,
   description: String,
-  duree: Number
+  tauxHoraire: Number
 }
 
 const PrestationSchema = new mongoose.Schema({

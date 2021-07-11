@@ -1,1 +1,44 @@
-<p>projets works!</p>
+<div *ngIf="clientConnecte?.projets;else pasdeProjet">
+  Mes projets :
+  <div *ngFor="let projet of clientConnecte?.projets">
+    <div>
+      Type de bien : {{projet.typeBien}}
+    </div>
+    <div>
+      Description du projet : {{projet.Description}}
+    </div>
+    <div>
+      Surface : {{projet.surfacem2}} m²
+    </div>
+    <div>
+      Date de début {{projet.dateDebut | date }}
+    </div>
+    Les prestations du projet :
+    <div *ngFor="let prestation of projet.prestations; let i = index">
+      Prestation {{i}} :
+      <div>
+        Type de prestation : {{prestation.type}}
+      </div>
+      <div>
+        Nombre d'entreprise ayant répondu à ne demande de devis :
+      </div>
+      <div >
+        Rechercher d'autres professionels
+      </div>
+    </div>
+  </div>
+  <div>
+    Envie d'un projet ? Créer votre projet pour trouver LE professionnel de vos rêves !
+  </div>
+  <div>
+    <a routerLink="newprjct" class="newProjet">NOUVEAU PROJET</a>
+  </div>
+</div>
+<ng-template #pasdeProjet>
+  <div>
+    Pas encore de projet. Créer votre projet pour trouver LE professionnel de vos rêves !
+  </div>
+  <div>
+    <a routerLink="newprjct" class="newProjet">NOUVEAU PROJET</a>
+  </div>
+</ng-template>

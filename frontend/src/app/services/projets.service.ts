@@ -1,9 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Projet } from '../models/projets';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjetsService {
 
-  constructor() { }
+  constructor(private httpClient : HttpClient) { }
+
+  getProjetsByClient(idClient : string) : Observable<Projet[]>{
+    return this.httpClient.get<Projet[]>(`${environment.apiUrl}/projets/clients/${idClient}`);
+  }
 }

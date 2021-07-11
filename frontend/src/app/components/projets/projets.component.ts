@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/app/models/client';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-projets',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjetsComponent implements OnInit {
 
-  constructor() { }
+  clientConnecte : Client;
+
+  constructor(private clientService : ClientService) { }
 
   ngOnInit(): void {
+    this.clientService.findById(localStorage.getItem('clientCourant')).subscribe((data) => {
+      this.clientConnecte = data;
+      console.log(this.clientConnecte);
+
+    });
   }
 
 }

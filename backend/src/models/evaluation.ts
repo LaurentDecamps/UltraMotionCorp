@@ -18,11 +18,35 @@ const EvaluationSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Prestation"
   },
-  note: {
+  noteGlobale: {
     type: Number,
     required: true
   },
-  description: {
+  commentaireGlobal: {
+    type: String,
+    required: true
+  },
+  noteFacilite: {
+    type: Number,
+    required: true
+  },
+  commentaireFacilite: {
+    type: String,
+    required: true
+  },
+  noteQualite: {
+    type: Number,
+    required: true
+  },
+  commentaireQualite: {
+    type: String,
+    required: true
+  }, 
+  noteExpertise: {
+    type: Number,
+    required: true
+  },
+  commentaireExpertise: {
     type: String,
     required: true
   }

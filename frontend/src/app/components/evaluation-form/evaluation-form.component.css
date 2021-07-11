@@ -1,0 +1,40 @@
+label {
+  display: block;
+  margin : 25px auto;
+}
+form, .noteResult {
+  width:50%;
+  margin: auto;
+}
+input {
+  border: none;
+  border-bottom : 1px solid #7BC248;
+  padding-bottom : 5px;
+  width : 100%
+}
+
+i {
+  margin-right : 5px;
+}
+i:hover{
+  color:#DBBD45;
+  transition :0.5s;
+}
+
+
+button {
+  border: none;
+  font-weight: 700;
+  width:33%;
+  margin:25px auto;
+  background-color: #7BC248;
+  padding : 5 20px;
+  border-radius:5px;;
+  color : white;
+  text-transform: uppercase;
+  text-align: center;
+}
+button:hover{
+  background-color : #DBBD45;
+  transition : 0.5s;
+}

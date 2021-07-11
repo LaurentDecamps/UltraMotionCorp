@@ -1,7 +1,15 @@
 import mongoose from 'mongoose';
+import { IDevisDocument } from './devis';
+import { IPrestationDocument } from './prestation';
 
 export interface IProjetDocument extends mongoose.Document {
-
+  typeBien: String,
+  niveauBien: String,
+  description: String,
+  surfaceM2: String,
+  dateDebut: Date,
+  prestations: IPrestationDocument,
+  devis: IDevisDocument
 }
 
 const ProjetSchema = new mongoose.Schema({
@@ -22,7 +30,7 @@ const ProjetSchema = new mongoose.Schema({
     required: true
   },
   dateDebut: {
-    type: Number,
+    type: Date,
     required: true
   },  
   prestations: [{

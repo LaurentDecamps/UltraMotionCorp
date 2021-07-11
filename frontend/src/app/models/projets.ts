@@ -8,6 +8,13 @@ export class Projet {
   private _dateDebut : Date;
   private _prestations : Prestations
 
+  typeBien : String;
+  niveauBien : String;
+  Description : String;
+  surfacem2 : Number;
+  dateDebut : Date;
+  prestations : Prestations[]
+
   constructor(typeBien : string, niveauBien : string, description : string, surfacem2 : number, dateDebut : Date, prestations : Prestations) {
     this._typeBien = typeBien;
     this._niveauBien = niveauBien;
