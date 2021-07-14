@@ -17,6 +17,8 @@ class NotificationController {
     }
 
     create = async (req, res, next) => {
+        console.log(req.body);
+        
         res.status(201)
             .send(await Notification.create(req.body))
             .end();

@@ -1,5 +1,5 @@
 import { Client } from "./client";
-import { Prestations } from "./prestations";
+import { Prestation } from "./prestation";
 
 export class Evaluation {
   private _noteGlobale: number;
@@ -53,11 +53,11 @@ export class Evaluation {
   public set client(value: Client) {
     this._client = value;
   }
-  private _prestation: Prestations;
-  public get prestation(): Prestations {
+  private _prestation: Prestation;
+  public get prestation(): Prestation {
     return this._prestation;
   }
-  public set prestation(value: Prestations) {
+  public set prestation(value: Prestation) {
     this._prestation = value;
   }
 
@@ -70,7 +70,7 @@ export class Evaluation {
     noteExpertise: number,
     commentaireExpertise: string,
     client: Client,
-    prestation: Prestations
+    prestation: Prestation
   ) {
     this._noteGlobale = noteGlobale;
     this._commentaireGlobal = commentaireGlobal;

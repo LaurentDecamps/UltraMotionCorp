@@ -1,6 +1,6 @@
 <div *ngIf="clientConnecte?.projets;else pasdeProjet">
   Mes projets :
-  <div *ngFor="let projet of clientConnecte?.projets">
+  <div *ngFor="let projet of clientConnecte?.projets; let indexprojet = index">
     <div>
       Type de bien : {{projet.typeBien}}
     </div>
@@ -8,30 +8,32 @@
       Description du projet : {{projet.Description}}
     </div>
     <div>
-      Surface : {{projet.surfacem2}} m²
+      Surface : {{projet.SurfaceM2}} m²
     </div>
     <div>
-      Date de début {{projet.dateDebut | date }}
+      Date de début {{projet.dateDebut | date:'d MMM YYYY' }}
     </div>
     Les prestations du projet :
-    <div *ngFor="let prestation of projet.prestations; let i = index">
-      Prestation {{i}} :
+    <div *ngFor="let prestation of projet.prestations; let indexPrestation = index">
+      <div class="prestation">
+        Prestation {{indexPrestation+1}} :
+      </div>
       <div>
         Type de prestation : {{prestation.type}}
       </div>
-      <div>
-        Nombre d'entreprise ayant répondu à ne demande de devis :
-      </div>
       <div >
-        Rechercher d'autres professionels
+        <div>
+          Entreprise préselectionné pour cette prestation : {{entreprisePreSelectionnee?.nom}}
+        </div>
+        <app-devis [idProjet]="projet._id" [idPrestation]="prestation._id" [idEntreprise]="idEntrepriseSelectionnee"></app-devis>
       </div>
     </div>
   </div>
   <div>
-    Envie d'un projet ? Créer votre projet pour trouver LE professionnel de vos rêves !
+    Envie d'un nouveau projet ? Créer votre projet pour trouver LE professionnel de vos rêves !
   </div>
   <div>
-    <a routerLink="newprjct" class="newProjet">NOUVEAU PROJET</a>
+    <a routerLink="newprjct" class="bouton">NOUVEAU PROJET</a>
   </div>
 </div>
 <ng-template #pasdeProjet>
@@ -39,6 +41,6 @@
     Pas encore de projet. Créer votre projet pour trouver LE professionnel de vos rêves !
   </div>
   <div>
-    <a routerLink="newprjct" class="newProjet">NOUVEAU PROJET</a>
+    <a routerLink="newprjct" class="bouton">NOUVEAU PROJET</a>
   </div>
 </ng-template>

@@ -1,9 +1,10 @@
-export class Prestations {
+export class Prestation {
   private _type: string;
   private _description: string;
   private _tauxHoraire: Number;
   private _TVA: Number;
 
+  _id: string;
   type: string;
   description: string;
   tauxHoraire: Number;

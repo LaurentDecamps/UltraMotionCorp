@@ -1,1 +1,20 @@
-<p>devis works!</p>
+<div *ngIf="listedevis?.length === 0">
+  <!-- On appelle la demande de devis pour CarreleurCo -->
+  Pas de devis demandée pour cette prestation
+  <button type="submit" (click)="demanderDevis()">Demander un devis</button>
+</div>
+<div>
+  <a routerLink="/fnprst" class="bouton">Rechercher une entreprise pour cette prestation</a>
+</div>
+<!-- ;else devisEncours<ng-template #devisEncours> </ng-template> -->
+<div *ngIf="listedevis?.length > 0">
+  <div *ngFor="let devis of listedevis">
+    <div>
+      Devis {{devis.etat}}
+    </div>
+    <div *ngIf="devis.etat === 'validé'">
+      Prestation terminé ? Merci de l'<a routerLink="/mncpt/evaluation">évaluer</a>
+    </div>
+  </div>
+</div>
+

@@ -16,8 +16,7 @@ export class ClientService {
   };
 
   create(client: Client) : Observable<Client> {
-    console.log(`client ds le service ${client}`);
-    
+
     return this.httpClient.post<Client>(`${environment.apiUrl}/clients`, client);
   }
 }
