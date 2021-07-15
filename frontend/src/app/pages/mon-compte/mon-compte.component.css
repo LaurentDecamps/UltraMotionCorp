@@ -10,10 +10,15 @@
 }
 
 .boutonCompte {
-  border-radius: 15px;
+  border : none;
   background-color: #7bc248;
   color: white;
   padding: 10px;
+}
+.boutonCompte:hover {
+  background-color: #DBBD45;
+  transition: 0.2s;;
+
 }
 
 a {

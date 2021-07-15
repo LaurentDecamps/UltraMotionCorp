@@ -17,23 +17,47 @@
       adresse : {{entrepriseConnectee.adresse}}
     </div>
   </div>
-  <div>
+  <div class="containerInfos">
     <div *ngIf="clientconnecte">
       <h1>Bonjour {{clientconnecte?.prenom}},</h1>
       <div>
-        Information du compte :
+        <h2>Information du compte :</h2>
       </div>
       <div>
-        Nom Prénom : {{clientconnecte?.nom}} {{clientconnecte?.prenom}}
+        <span>Nom Prénom :</span> {{clientconnecte?.nom}} {{clientconnecte?.prenom}}
       </div>
       <div>
-        NumeroTelephone : {{clientconnecte.numeroTelephone}}
+        <span>Numero de Telephone :</span> {{clientconnecte.numeroTelephone}}
       </div>
       <div>
-        Email : {{clientconnecte.email}}
+        <span>Email :</span> {{clientconnecte.email}}
       </div>
       <div>
-        Adresse : {{clientconnecte.adresse}}
+        <span>Adresse :</span> {{clientconnecte.adresse}}
       </div>
     </div>
+    <div class="everywhereInfo">
+  <label>
+    <input type="checkbox" id="scales" name="scales"
+         checked>
+      COOKIES
+  </label>
+  <label>
+    <input type="checkbox" id="scales" name="scales"
+        >
+      NEWSLETTER
+  </label>
+  <label>
+  <input type="checkbox" id="scales" name="scales"
+        >
+      SOMETHING
+  </label>
+  </div>
+  <a href="#" class="modify"><i class="fas fa-user-cog fa-2x"></i></a>
+  <a href="#" class="supress"><i class="fas fa-dumpster fa-2x"></i></a>
+
 </div>
+
+
+
+
