@@ -1,4 +1,6 @@
+import { Client } from "../models/client";
 import { Projet } from "../models/projet";
+import { clientController } from "./clientController";
 
 class ProjetController {
 
@@ -15,6 +17,13 @@ class ProjetController {
       .end();
     next();
   }
+
+  // findByClientId = async (req, res, next) => {
+  //   res.status(200)
+  //     .send(await clientController.findProjet(req.params.id))
+  //     .end();
+  //   next();
+  // }
 
   create = async (req, res, next) => {
     res.status(201)

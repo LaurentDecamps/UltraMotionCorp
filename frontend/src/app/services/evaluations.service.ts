@@ -12,8 +12,6 @@ export class EvaluationsService {
   constructor(private httpClient : HttpClient) { }
 
   getEvaluationByClient(idClient : string) : Observable<Evaluation[]>{
-    console.log(`${environment.apiUrl}/evaluations/clients/${idClient}`);
-
     return this.httpClient.get<Evaluation[]>(`${environment.apiUrl}/evaluations/clients/${idClient}`);
   }
 }
