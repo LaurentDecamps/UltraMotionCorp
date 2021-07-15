@@ -1,8 +1,8 @@
 export class Prestations {
   private _type : string;
   private _description : string;
-  private _tauxHoraire : Number;
-  private _TVA : Number;
+  private _tauxHoraire : number;
+  private _TVA : number;
 
   constructor(type : string, description : string, tauxHoraire : number, TVA : number) {
     this._type = type;
@@ -11,7 +11,11 @@ export class Prestations {
     this._TVA = TVA;
   }
 
-  public get type(): String {
+  public get type(): string {
     return this._type;
+  }
+
+  public get description(): string {
+    return this._description
   }
 }

@@ -11,21 +11,22 @@ export class AccueilComponent implements OnInit {
 
   listePro: Entreprise[];
   proFiltered: Entreprise[] = undefined;
+  typesPrestation: Set<string> = new Set([])
+  search: RegExp
 
   constructor(private professionelService: ProfessionelService) { }
 
   ngOnInit(): void {
     this.professionelService.getProfessionel().subscribe((professionels) => {
       this.listePro = professionels;
-      console.log(this.listePro)
     })
   }
 
   getInput = (search) => {
-    console.log(search)
     if (search.length > 2) {
-      let regex = new RegExp(search, "i")
-      this.proFiltered = this.listePro.filter(pro => pro.nom.match(regex))      
+      this.search = new RegExp(search, "i")
+      this.proFiltered = this.listePro.filter(pro => pro.nom.match(this.search) || pro.prestations.some(pres => this.search.test(pres.type)))
+      this.proFiltered.forEach(pro => pro.prestations.forEach(pres => this.typesPrestation.add(pres.type)))
     }
     else {
       if (this.proFiltered) {

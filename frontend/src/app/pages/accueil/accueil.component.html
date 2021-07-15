@@ -1,225 +1,222 @@
-<body>
-
-
-  <div class="container">
-    <img class="imgBricool01" src="../../assets/images/bricolage01.jpg" alt="Bricool Photo">
-    <div class="text">
-      <div class="imgA">
-        <h2>TROUVEZ LE PRO QU'IL VOUS FAUT</h2>
-      </div>
-      <div class="imgB">
-        <h2>ET RÉALISEZ VOS PROJETS !</h2>
-      </div>
-      <form class="inputPro">
-        <input type="text" placeholder="un carreleur, un plombier, ..." name="name" (input)="getInput($event.target['value'])" autocomplete="off">
-        <button (click)="onTrouverPro()">TROUVEZ !</button>
-      </form>
-      <div class="srchRslts" *ngIf="proFiltered">
-        <div *ngFor="let pro of proFiltered">
-          <p>{{pro.nom}}</p>
-        </div>
-      </div>
+<div class="text">
+  <div class="imgA">
+    <h2>TROUVEZ LE PRO QU'IL VOUS FAUT</h2>
+  </div>
+  <div class="imgB">
+    <h2>ET RÉALISEZ VOS PROJETS !</h2>
+  </div>
+  <form class="inputPro">
+    <input type="text" placeholder="un carreleur, un plombier, ..." name="name" (input)="getInput($event.target['value'])" autocomplete="off">
+    <button (click)="onTrouverPro()">TROUVEZ !</button>
+  </form>
+  <div class="searchResults" *ngIf="proFiltered">
+    <p *ngIf="proFiltered.length === 0">Aucun Résultats</p>
+    <div *ngFor="let pro of proFiltered">
+      <p class="result" *ngIf="pro.nom.match(search)">{{pro.nom}} - {{pro.adresse.split(" ").pop()}}</p>
+    </div>
+    <div *ngFor="let type of typesPrestation">
+      <p class="result" *ngIf=type.match(search)>{{type}}</p>
     </div>
   </div>
-
-  <div class="containerArtisans">
-
-    <div class="boxBricool">
-      <h1>Les artisans à votre écoute !</h1>
-    </div>
+</div>
 
 
-    <div class="artisansBox">
+<div class="containerArtisans">
 
-      <h6>1. CRÉEZ UN NOUVEAU PROJET</h6>
+  <div class="boxBricool">
+    <h1>Les artisans à votre écoute !</h1>
+  </div>
 
-      <span>Aenean volutpat ultrices ligula. In
-        tincidunt. Aenean viverra suscipit tellus.
-      </span>
+  <div class="artisansBox">
 
-      <span>Suspendisse sem lorem, ornare non,
-        vestibulum ut, tempor porttitor, est.
-        Quisque convallis aliquet eros. Nunc nec
-        nulla eget urna convallis eleifend. Nulla
-        feugiat eros at augue. Integer feugiat nisi
-        vitae velit. Cras cursus ipsum vel dolor.
-        Sed pulvinar. Etiam velit orci, pellentesque
-        at, porttitor blandit, luctus eu, justo.
-        Donec in odio sed nisl venenatis feugiat.
-        Phasellus sodales, pede dapibus rhoncus
-        dignissim, justo turpis ornare felis, in
-        imperdiet pede metus quis tellus. Proin</span>
+    <h6>1. CRÉEZ UN NOUVEAU PROJET</h6>
 
-    </div>
+    <span>Aenean volutpat ultrices ligula. In
+      tincidunt. Aenean viverra suscipit tellus.
+    </span>
 
-    <div class="artisansBox">
-
-      <h6>2. CHOISISSEZ VOS ARTISANS</h6>
-
-      <span>Aenean volutpat ultrices ligula. In
-        tincidunt. Aenean viverra suscipit tellus.
-      </span>
-
-      <span>Suspendisse sem lorem, ornare non,
-        vestibulum ut, tempor porttitor, est.
-        Quisque convallis aliquet eros. Nunc nec
-        nulla eget urna convallis eleifend. Nulla
-        feugiat eros at augue. Integer feugiat nisi
-        vitae velit. Cras cursus ipsum vel dolor.
-        Sed pulvinar. Etiam velit orci, pellentesque
-        at, porttitor blandit, luctus eu, justo.
-        Donec in odio sed nisl venenatis feugiat.
-        Phasellus sodales, pede dapibus rhoncus
-        dignissim, justo turpis ornare felis, in
-        imperdiet pede metus quis tellus. Proin</span>
-
-    </div>
-
-    <div class="artisansBox">
-
-      <h6>3. PROFITEZ DE LA VIE</h6>
-
-      <span>Aenean volutpat ultrices ligula. In
-        tincidunt. Aenean viverra suscipit tellus.
-      </span>
-
-      <span>Suspendisse sem lorem, ornare non,
-        vestibulum ut, tempor porttitor, est.
-        Quisque convallis aliquet eros. Nunc nec
-        nulla eget urna convallis eleifend. Nulla
-        feugiat eros at augue. Integer feugiat nisi
-        vitae velit. Cras cursus ipsum vel dolor.
-        Sed pulvinar. Etiam velit orci, pellentesque
-        at, porttitor blandit, luctus eu, justo.
-        Donec in odio sed nisl venenatis feugiat.
-        Phasellus sodales, pede dapibus rhoncus
-        dignissim, justo turpis ornare felis, in
-        imperdiet pede metus quis tellus. Proin</span>
-
-
-    </div>
+    <span>Suspendisse sem lorem, ornare non,
+      vestibulum ut, tempor porttitor, est.
+      Quisque convallis aliquet eros. Nunc nec
+      nulla eget urna convallis eleifend. Nulla
+      feugiat eros at augue. Integer feugiat nisi
+      vitae velit. Cras cursus ipsum vel dolor.
+      Sed pulvinar. Etiam velit orci, pellentesque
+      at, porttitor blandit, luctus eu, justo.
+      Donec in odio sed nisl venenatis feugiat.
+      Phasellus sodales, pede dapibus rhoncus
+      dignissim, justo turpis ornare felis, in
+      imperdiet pede metus quis tellus. Proin</span>
 
   </div>
 
-  <div class="avisClientFond">
+  <div class="artisansBox">
 
-    <h2>C'est vous qui en parlez le mieux</h2>
+    <h6>2. CHOISISSEZ VOS ARTISANS</h6>
 
-    <div class="avisClient">
+    <span>Aenean volutpat ultrices ligula. In
+      tincidunt. Aenean viverra suscipit tellus.
+    </span>
 
-      <div class="picture">
-        <img src="../../assets/images/photoProfil.png" alt="Photo Profil">
-      </div>
-      <h6>Ma nouvelle salle de bain
-      </h6>
-      <span>Duis vulputate cursus orci. Mauris
-        justo lorem, scelerisque sit amet,
-        placerat sed, condimentum in, leo.
-        Donec urna est, semper quis,
-        auctor eget, ultrices in, purus.</span>
-      <div class="bouton">
-        <button class="artisanBouton">contacter cet artisan
-        </button>
-
-      </div>
-
-    </div>
-
-    <div class="avisClient">
-
-      <div class="picture">
-        <img src="../../assets/images/photoProfil.png" alt="Photo Profil">
-      </div>
-      <h6>Ma nouvelle salle de bain
-      </h6>
-      <span>Duis vulputate cursus orci. Mauris
-        justo lorem, scelerisque sit amet,
-        placerat sed, condimentum in, leo.
-        Donec urna est, semper quis,
-        auctor eget, ultrices in, purus.</span>
-      <div class="bouton">
-        <button class="artisanBouton">contacter cet artisan
-        </button>
-
-      </div>
-
-    </div>
-
-    <div class="avisClient">
-
-      <div class="picture">
-        <img src="../../assets/images/photoProfil.png" alt="Photo Profil">
-      </div>
-      <h6>Ma nouvelle salle de bain
-      </h6>
-      <span>Duis vulputate cursus orci. Mauris
-        justo lorem, scelerisque sit amet,
-        placerat sed, condimentum in, leo.
-        Donec urna est, semper quis,
-        auctor eget, ultrices in, purus.</span>
-      <div class="bouton">
-        <button class="artisanBouton">contacter cet artisan
-        </button>
-
-      </div>
-
-    </div>
-
-    <div class="avisClient">
-
-      <div class="picture">
-        <img src="../../assets/images/photoProfil.png" alt="Photo Profil">
-      </div>
-      <h6>Ma nouvelle salle de bain
-      </h6>
-      <span>Duis vulputate cursus orci. Mauris
-        justo lorem, scelerisque sit amet,
-        placerat sed, condimentum in, leo.
-        Donec urna est, semper quis,
-        auctor eget, ultrices in, purus.</span>
-      <div class="bouton">
-        <button class="artisanBouton">contacter cet artisan
-        </button>
-
-      </div>
-
-    </div>
+    <span>Suspendisse sem lorem, ornare non,
+      vestibulum ut, tempor porttitor, est.
+      Quisque convallis aliquet eros. Nunc nec
+      nulla eget urna convallis eleifend. Nulla
+      feugiat eros at augue. Integer feugiat nisi
+      vitae velit. Cras cursus ipsum vel dolor.
+      Sed pulvinar. Etiam velit orci, pellentesque
+      at, porttitor blandit, luctus eu, justo.
+      Donec in odio sed nisl venenatis feugiat.
+      Phasellus sodales, pede dapibus rhoncus
+      dignissim, justo turpis ornare felis, in
+      imperdiet pede metus quis tellus. Proin</span>
 
   </div>
 
-  <div class="containerStat">
-    <div class="statBricool">
+  <div class="artisansBox">
 
-      <h3>54 000</h3>
+    <h6>3. PROFITEZ DE LA VIE</h6>
 
-      <span>Artisans</span>
+    <span>Aenean volutpat ultrices ligula. In
+      tincidunt. Aenean viverra suscipit tellus.
+    </span>
 
-    </div>
+    <span>Suspendisse sem lorem, ornare non,
+      vestibulum ut, tempor porttitor, est.
+      Quisque convallis aliquet eros. Nunc nec
+      nulla eget urna convallis eleifend. Nulla
+      feugiat eros at augue. Integer feugiat nisi
+      vitae velit. Cras cursus ipsum vel dolor.
+      Sed pulvinar. Etiam velit orci, pellentesque
+      at, porttitor blandit, luctus eu, justo.
+      Donec in odio sed nisl venenatis feugiat.
+      Phasellus sodales, pede dapibus rhoncus
+      dignissim, justo turpis ornare felis, in
+      imperdiet pede metus quis tellus. Proin</span>
 
-    <div class="statBricool">
 
-      <h3>147 458</h3>
-
-      <span>Projets réalisés</span>
-
-    </div>
-
-    <div class="statBricool">
-
-      <h3>57 000</h3>
-
-      <span>Avis positifs</span>
-
-    </div>
   </div>
 
-  <div class="containerBouton">
-    <div class="lancerProjet">
+</div>
 
-      <button class="boutonProjet">
-        LANCEZ VOTRE PROJET !
+<div class="avisClientFond">
+
+  <h2>C'est vous qui en parlez le mieux</h2>
+
+  <div class="avisClient">
+
+    <div class="picture">
+      <img src="../../assets/images/photoProfil.png" alt="Photo Profil">
+    </div>
+    <h6>Ma nouvelle salle de bain
+    </h6>
+    <span>Duis vulputate cursus orci. Mauris
+      justo lorem, scelerisque sit amet,
+      placerat sed, condimentum in, leo.
+      Donec urna est, semper quis,
+      auctor eget, ultrices in, purus.</span>
+    <div class="bouton">
+      <button class="artisanBouton">contacter cet artisan
       </button>
 
     </div>
+
   </div>
-</body>
+
+  <div class="avisClient">
+
+    <div class="picture">
+      <img src="../../assets/images/photoProfil.png" alt="Photo Profil">
+    </div>
+    <h6>Ma nouvelle salle de bain
+    </h6>
+    <span>Duis vulputate cursus orci. Mauris
+      justo lorem, scelerisque sit amet,
+      placerat sed, condimentum in, leo.
+      Donec urna est, semper quis,
+      auctor eget, ultrices in, purus.</span>
+    <div class="bouton">
+      <button class="artisanBouton">contacter cet artisan
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="avisClient">
+
+    <div class="picture">
+      <img src="../../assets/images/photoProfil.png" alt="Photo Profil">
+    </div>
+    <h6>Ma nouvelle salle de bain
+    </h6>
+    <span>Duis vulputate cursus orci. Mauris
+      justo lorem, scelerisque sit amet,
+      placerat sed, condimentum in, leo.
+      Donec urna est, semper quis,
+      auctor eget, ultrices in, purus.</span>
+    <div class="bouton">
+      <button class="artisanBouton">contacter cet artisan
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="avisClient">
+
+    <div class="picture">
+      <img src="../../assets/images/photoProfil.png" alt="Photo Profil">
+    </div>
+    <h6>Ma nouvelle salle de bain
+    </h6>
+    <span>Duis vulputate cursus orci. Mauris
+      justo lorem, scelerisque sit amet,
+      placerat sed, condimentum in, leo.
+      Donec urna est, semper quis,
+      auctor eget, ultrices in, purus.</span>
+    <div class="bouton">
+      <button class="artisanBouton">contacter cet artisan
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="containerStat">
+  <div class="statBricool">
+
+    <h3>54 000</h3>
+
+    <span>Artisans</span>
+
+  </div>
+
+  <div class="statBricool">
+
+    <h3>147 458</h3>
+
+    <span>Projets réalisés</span>
+
+  </div>
+
+  <div class="statBricool">
+
+    <h3>57 000</h3>
+
+    <span>Avis positifs</span>
+
+  </div>
+</div>
+
+<div class="containerBouton">
+  <div class="lancerProjet">
+
+    <button class="boutonProjet">
+      LANCEZ VOTRE PROJET !
+    </button>
+
+  </div>
+</div>
