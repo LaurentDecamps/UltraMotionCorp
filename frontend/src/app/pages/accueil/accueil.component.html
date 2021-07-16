@@ -5,17 +5,17 @@
   <div class="imgB">
     <h2>ET RÉALISEZ VOS PROJETS !</h2>
   </div>
-  <form class="inputPro">
-    <input type="text" placeholder="un carreleur, un plombier, ..." name="name" (input)="getInput($event.target['value'])" autocomplete="off">
-    <button (click)="onTrouverPro()">TROUVEZ !</button>
+  <form class="inputPro" (ngSubmit)="onTrouverPro($event.target.search.value)">
+    <input type="text" placeholder="un carreleur, un plombier, ..." id="search" (input)="getInput($event.target['value'])" autocomplete="off">
+    <button type="submit">TROUVEZ !</button>
   </form>
   <div class="searchResults" *ngIf="proFiltered">
     <p *ngIf="proFiltered.length === 0">Aucun Résultats</p>
     <div *ngFor="let pro of proFiltered">
-      <p class="result" *ngIf="pro.nom.match(search)">{{pro.nom}} - {{pro.adresse.split(" ").pop()}}</p>
+      <p class="result" (click)="getCompanies(pro.nom)"*ngIf="pro.nom.match(search)">{{pro.nom}} - {{pro.adresse.split(" ").pop()}}</p>
     </div>
     <div *ngFor="let type of typesPrestation">
-      <p class="result" *ngIf=type.match(search)>{{type}}</p>
+      <p class="result" (click)="getCompanies(type)" *ngIf=type.match(search)>{{type}}</p>
     </div>
   </div>
 </div>

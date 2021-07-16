@@ -35,6 +35,14 @@ export class AccueilComponent implements OnInit {
     }
   }
 
-  onTrouverPro(): void {}
+  getCompanies = (search) => {
+    document.querySelector("#search")["value"] = search
+    this.getInput(search)
+    this.onTrouverPro(search)
+  }
+
+  onTrouverPro(search): void {
+    console.log(search)
+  }
 
 }
