@@ -18,7 +18,7 @@ class EvaluationController {
 
   findByClientId = async (req, res, next) => {
     res.status(200)
-      .send(await Evaluation.find({ client : req.params.id}))
+      .send(await Evaluation.find({ client : req.params.id}).populate('prestations'))
       .end();
     next();
   }

@@ -1,4 +1,5 @@
-import { Prestations } from "./prestations";
+import { Prestation } from "./prestation";
+import { Notification } from 'src/app/models/notification';
 
 export class Entreprise {
   _id : String;
@@ -9,7 +10,7 @@ export class Entreprise {
   private _motDePasse: String;
   private _numeroTelephone: Number;
   private _adresse: String;
-  private _prestation: Prestations[];
+  private _prestation: Prestation[];
   private _notification: Notification[];
 
   constructor(nom : String,
@@ -19,7 +20,7 @@ export class Entreprise {
               motDePasse : String,
               numeroTelephone : number,
               adresse : String,
-              prestation: Prestations[],
+              prestation: Prestation[],
               notification: Notification[]) {
     this._nom = nom;
     this._description = description;
@@ -88,11 +89,11 @@ export class Entreprise {
     this._numeroTelephone = value;
   }
 
-  public get prestation(): Prestations[] {
+  public get prestation(): Prestation[] {
     return this._prestation;
   }
 
-  public set prestation(value: Prestations[]) {
+  public set prestation(value: Prestation[]) {
     this._prestation = value;
   }
 

@@ -9,99 +9,91 @@
             </div>
 
             <div class="col-3">
-                <div class="list-group">
-                    <a class="btn btn-info" >Client</a>
-                    <a class="btn btn-info" >Entreprise</a>
+                <div class="list-group" type="checkbox" id="toggle">
+                    <a class="btn btn-info" (click)="clientDisplay()">Client</a>
+                    <a class="btn btn-info" (click)="entrepriseDisplay()">Entreprise</a>
                 </div>
+            </div>
+
+
+            <div *ngIf="!isDisplay">
+                <h5>Mes informations personnelles</h5>
+
+                <form [formGroup]="clientForm" (ngSubmit)="envoyer()" class="formulaire">
+                    <label>Nom* :
+                    </label>
+                    <input type="text" formControlName="nom">
+                    <label>Prenom* :
+                    </label>
+                    <input type="text" formControlName="prenom">
+                    <label>Email* :
+                    </label>
+                    <input type="email" formControlName="email" pattern=".+@globex\.com" size="30" required>
+                    <label>Numéro de téléphone* :
+                    </label>
+                    <input type="tel" formControlName="numeroTelephone">
+                    <label> Mot de passe*:
+                    </label>
+                    <input type="password" formControlName="motDePasse">
+                    <label>Adresse* :
+                    </label>
+                    <input type="text" formControlName="adresse">
+
+                    <button class="btn btn-success">CRÉER MON COMPTE</button>
+
+                </form>
+            </div>
+
+
+            <div *ngIf="!entrepriseIsDisplay">
+                <h5>Mes informations personnelles</h5>
+
+                <form class="formulaire">
+                    <label>Nom* :
+                    </label>
+                    <input type="text">
+                    <label>Description* :
+                    </label>
+                    <input type="text">
+                    <label>Logo URL* :
+                    </label>
+                    <input type="url">
+                    <label>Email* :
+                    </label>
+                    <input type="email" pattern=".+@globex\.com" size="30" required>
+                    <label>Numéro de téléphone* :
+                    </label>
+                    <input type="tel">
+                    <label> Mot de passe*:
+                    </label>
+                    <input type="text">
+
+                    <h6>Adresse :</h6>
+                    <div class="formulaire">
+                        <label>Numéro :
+                        </label>
+                        <input type="text">
+
+                        <label>Rue :
+                        </label>
+                        <input type="text">
+
+                        <label>Ville :
+                        </label>
+                        <input type="text">
+
+                        <label>Code Postal :
+                        </label>
+                        <input type="text">
+
+                    </div>
+                    <button>CRÉER MON COMPTE</button>
+
+                </form>
+
+            </div>
+
+
+            <span>Vous possédez déjà un compte ? <a routerLink="/auth/signin"> Identifiez-vous</a> </span>
+
         </div>
-
-
-        <h5>Mes informations personnelles</h5>
-
-        <form class="formulaire">
-            <label>Nom* :
-            </label>
-            <input type="text">
-            <label>Prenom* :
-            </label>
-            <input type="text">
-            <label>Email* :
-            </label>
-            <input type="email" pattern=".+@globex\.com" size="30" required>
-            <label>Numéro de téléphone* :
-            </label>
-            <input type="tel">
-            <label> Mot de passe*:
-            </label>
-            <input type="text">
-
-            <h6>Adresse :</h6>
-            <div class="formulaire">
-                <label>Numéro :
-                </label>
-                <input type="text">
-
-                <label>Rue :
-                </label>
-                <input type="text">
-
-                <label>Ville :
-                </label>
-                <input type="text">
-
-                <label>Code Postal :
-                </label>
-                <input type="text">
-
-            </div>
-            <button class="btn btn-success">CRÉER MON COMPTE</button>
-
-        </form>
-
-
-        <!-- <form class="formulaire">
-            <label>Nom* :     
-            </label>
-            <input type="text">
-            <label>Description* :    
-            </label>
-            <input type="text">
-            <label>Logo URL* :    
-            </label>
-            <input type="url">
-            <label>Email*  :               
-            </label>
-            <input type="email" pattern=".+@globex\.com" size="30" required>
-            <label>Numéro de téléphone* : 
-            </label>
-            <input type="tel">
-            <label> Mot de passe*: 
-            </label>
-            <input type="text">
-
-            <h6>Adresse :</h6>
-            <div class="formulaire">
-                <label>Numéro :
-                </label>
-                <input type="text">
-        
-                <label>Rue :
-                </label>
-                <input type="text">
-    
-                <label>Ville :
-                </label>
-                <input type="text">
-        
-                <label>Code Postal :
-                </label>
-                <input type="text">
-
-            </div>
-        <button>CRÉER MON COMPTE</button>
-
-        </form>  -->
-
-        <span>Vous possédez déjà un compte ? <a routerLink="/auth/signin"> Identifiez-vous</a> </span>
-
-    </div>

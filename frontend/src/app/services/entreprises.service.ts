@@ -12,6 +12,10 @@ export class EntreprisesService {
   constructor(private httpClient: HttpClient) { }
 
   findById(id : string) : Observable<Entreprise> {
-    return this.httpClient.get<Entreprise>(`${environment.apiUrl}/entreprises/${id}`)
+    return this.httpClient.get<Entreprise>(`${environment.apiUrl}/entreprises/${id}`);
+  }
+
+  updateEntreprise = (entreprise : Entreprise) => {
+    return this.httpClient.put(`${environment.apiUrl}/entreprises/${entreprise._id}`, entreprise);
   }
 }

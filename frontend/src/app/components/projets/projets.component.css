@@ -1,0 +1,27 @@
+.bouton {
+  border-radius: 15px;
+  background-color: #7BC248;
+  color: white;
+  padding: 10px;
+}
+a {text-decoration: none;}
+.prestation {
+  font-weight: bold;
+}
+
+
+.container{
+  height : 650px;
+}
+
+.container div {
+  font-weight: 700;
+  margin-top : 25px;
+  margin-bottom : 25px;
+}
+h2 {
+  background-color: #7BC248;
+  width : 100%;
+  color:white;
+  padding : 5px 15px;
+}

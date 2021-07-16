@@ -2,11 +2,11 @@ import express from 'express';
 
 import { setMongoConnection } from './config/mongo.config';
 import { setClientRouting } from './routes/clientRoutes';
-// import { setDevisRouting } from './routes/devisRoutes';
+import { setDevisRouting } from './routes/devisRoutes';
 import { setEntrepriseRouting } from './routes/entrepriseRoutes';
 import { setEvaluationRouting } from './routes/evaluationRoutes';
 import { setPrestationsRouting } from './routes/prestationRoutes';
-// // import { setNotificationRouting } from './routes/notificationRoutes';
+import { setNotificationRouting } from './routes/notificationRoutes';
 import { setProjetRouting } from './routes/projetRoutes';
 
 const port = 8080;
@@ -24,9 +24,9 @@ app.listen(port, () => {
 });
 
 setClientRouting(app);
-// setDevisRouting(app);
+setDevisRouting(app);
 setEntrepriseRouting(app);
 setEvaluationRouting(app);
-// setNotificationRouting(app);
+setNotificationRouting(app);
 setPrestationsRouting(app);
 setProjetRouting(app);

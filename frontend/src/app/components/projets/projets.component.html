@@ -1,4 +1,46 @@
-Mes projets :
-<div *ngFor="let projet of clientConnecte?.projets">
-  {{projet.Description}}
+<div class="container" *ngIf="clientConnecte?.projets;else pasdeProjet">
+  <h2>Mes projets :</h2>
+  <div *ngFor="let projet of clientConnecte?.projets; let indexprojet = index">
+    <div>
+      Type de bien : {{projet.typeBien}}
+    </div>
+    <div>
+      Description du projet : {{projet.Description}}
+    </div>
+    <div>
+      Surface : {{projet.SurfaceM2}} m²
+    </div>
+    <div>
+      Date de début {{projet.dateDebut | date:'d MMM YYYY' }}
+    </div>
+    <h2>Les prestations du projet :</h2>
+    <div class="" *ngFor="let prestation of projet.prestations; let indexPrestation = index">
+      <div class="prestation">
+        Prestation {{indexPrestation+1}} :
+      </div>
+      <div>
+        Type de prestation : {{prestation.type}}
+      </div>
+      <div >
+        <div>
+          Entreprise préselectionné pour cette prestation : {{entreprisePreSelectionnee?.nom}}
+        </div>
+        <app-devis [idProjet]="projet._id" [idPrestation]="prestation._id" [idEntreprise]="idEntrepriseSelectionnee"></app-devis>
+      </div>
+    </div>
+  </div>
+  <div>
+    Envie d'un nouveau projet ? Créer votre projet pour trouver LE professionnel de vos rêves !
+  </div>
+  <div class="container">
+    <a routerLink="newprjct" class="bouton">NOUVEAU PROJET</a>
+  </div>
 </div>
+<ng-template #pasdeProjet>
+  <div class="container">
+    Pas encore de projet. Créer votre projet pour trouver LE professionnel de vos rêves !
+  </div>
+  <div class="container">
+    <a routerLink="newprjct" class="bouton">NOUVEAU PROJET</a>
+  </div>
+</ng-template>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Prestations } from 'src/app/models/prestations';
+import { Prestation } from 'src/app/models/prestation';
 import { EntreprisesService } from 'src/app/services/entreprises.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { EntreprisesService } from 'src/app/services/entreprises.service';
 })
 export class PrestasComponent implements OnInit {
 
-  prestations : Prestations;
+  prestations : Prestation;
 
   constructor(private entrepriseService : EntreprisesService) { }
 

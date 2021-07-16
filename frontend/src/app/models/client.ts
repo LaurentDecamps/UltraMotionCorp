@@ -1,7 +1,7 @@
 import { Projet } from "./projets";
 
 export class Client {
-  private _id: String;
+  private _id: string;
   private _nom: String;
   private _prenom: String;
   private _email: String;
@@ -11,7 +11,7 @@ export class Client {
   private _projets: Projet[];
   private _notifications: Notification[]
 
-  constructor(id: String,
+  constructor(id: string,
               nom: String,
               prenom: String,
               email: String,
@@ -31,7 +31,7 @@ export class Client {
     this._notifications = notifications;
   }
 
-  public get id(): String {
+  public get id(): string {
     return this._id;
   }
 
