@@ -2,9 +2,11 @@
   <div>
     <h2>Mes dernières évaluations</h2>
     <div class="mesAvis" *ngFor="let evaluation of evaluations">
+      <p><span>La prestation </span>:{{evaluation.prestation}}</p>
       <p><span>Note globale </span>: {{evaluation.noteGlobale}}/5</p>
       <p><span>Commentaire global</span> : {{evaluation.commentaireGlobal}}</p>
-      <p><span>La prestation </span>:{{evaluation.prestation}}</p>
+
+      <a href="#"><i class="fas fa-chevron-right"></i></a>
     </div>
 
 
