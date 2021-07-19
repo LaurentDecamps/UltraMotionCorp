@@ -1,59 +1,71 @@
-.imgBricool01 {
-    height: 650px;
-    width: 1495px;
-    /* min-width: 100%;
-    min-height: 100%;
-    height: 700px; */
+.text {
+  width: 100vw;
+  height: 46vw;
+  padding-top: 10vw;
+  background-image: url("../../../assets/images/bricolage01.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.imgA h2, .imgB h2 {
+.imgA, .imgB {
+  margin: 0;
   font-weight: bold;
+  font-size: 3vw;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
 }
 
 .imgA {
-    margin-right: 20%;
-    margin-left: 5%;
-    padding: 1% 10% 1% 5%;
-    background-color: #7BC248;
-    border-top-right-radius: 200px;
-    border-bottom-left-radius: 200px;
+  position: relative;
+  top: 2.5vw;
+  width: 79vw;
+  height: 9vw;
+  margin-right: 12vw;
+  padding-left: 8vw;
+  background-color: #7BC248;
+  clip-path: polygon(0 15%, 98% 0, 100% 85%, 3% 100%);
 }
 
 .imgB {
-    margin-right: 22%;
-    margin-left: 20%;
-    padding: 1% 5% 1% 10%;
-    background-color: #DBBD45;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 100px;
+  width: 58vw;
+  height: 6vw;
+  margin-left: 2vw;
+  padding-left: 10vw;
+  background-color: #DBBD45;
+  clip-path: polygon(2% 0, 100% 8%, 97% 100%, 0 100%)
 }
 
 .inputPro {
-  width: 50%;
-  height: 50px;
-  margin-top: 10px;
+  width: 58vw;
+  height: 4.5vw;
+  margin: 1.5vw 0 0 23vw;
   display: flex;
   justify-content: center;
 }
 
 .inputPro input {
   outline: none;
-  width: 50%;
+  width: 68%;
   border: 4px solid #7BC248;
-  border-radius: 15px;
+  border-radius: 1vw;
   padding-left: 10px;
+  font-size: 1.5vw;
   z-index: 10;
 }
 
 .inputPro button {
   position: relative;
   left: -15px;
+  width: 32%;
   border: 4px solid #7BC248;
-  border-radius: 0 15px 15px 0;
-  padding: 0 30px 0 41px;
+  border-radius: 0 1vw 1vw 0;
   background-color: #7BC248;
+  padding-left: 15px;
   font-weight: bold;
-  font-size: 16pt;
+  font-size: 2.2vw;
   color: #FFFFFF;
 }
 
@@ -77,21 +89,6 @@
 .result:hover {
   background-color: #DBBD45;
   cursor: pointer;
-}
-
-.text {
-  width: 100vw;
-  height: 52vw;
-  padding-top: calc(26vw - 105px);
-  background-image: url("../../../assets/images/bricolage01.jpg");
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.text h2 {
-  color: #FFFFFF;
 }
 
 .boxBricool {

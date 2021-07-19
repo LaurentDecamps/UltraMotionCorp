@@ -1,10 +1,6 @@
 <div class="text">
-  <div class="imgA">
-    <h2>TROUVEZ LE PRO QU'IL VOUS FAUT</h2>
-  </div>
-  <div class="imgB">
-    <h2>ET RÉALISEZ VOS PROJETS !</h2>
-  </div>
+  <h2 class="imgA">TROUVEZ LE PRO QU'IL VOUS FAUT</h2>
+  <h2 class="imgB">ET RÉALISEZ VOS PROJETS !</h2>
   <form class="inputPro" (ngSubmit)="onTrouverPro($event.target.search.value)">
     <input type="text" placeholder="un carreleur, un plombier, ..." id="search" (input)="getInput($event.target['value'])" autocomplete="off">
     <button type="submit">TROUVEZ !</button>
