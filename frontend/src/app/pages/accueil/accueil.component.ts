@@ -10,7 +10,8 @@ import { Entreprise } from '../../models/entreprise';
 export class AccueilComponent implements OnInit {
 
   listePro: Entreprise[];
-  proFiltered: Entreprise[] = undefined;
+  proFiltered: Entreprise[];
+  displaySearchResults: String[] = undefined
   typesPrestation: Set<string> = new Set([])
   search: RegExp
 
@@ -22,15 +23,32 @@ export class AccueilComponent implements OnInit {
     })
   }
 
-  getInput = (search) => {
+  getInput = search => {
     if (search.length > 2) {
       this.search = new RegExp(search, "i")
       this.proFiltered = this.listePro.filter(pro => pro.nom.match(this.search) || pro.prestations.some(pres => this.search.test(pres.type)))
-      this.proFiltered.forEach(pro => pro.prestations.forEach(pres => this.typesPrestation.add(pres.type)))
+      this.displaySearchResults = []
+      if (!this.proFiltered.length) {
+        this.displaySearchResults.push("Aucun Résultats")
+      }
+      else {
+        this.proFiltered.forEach(pro => {
+          this.typesPrestation.clear()
+          if (this.displaySearchResults.length < 10) {
+            this.displaySearchResults.push(`${pro.nom} - ${pro.adresse.split(" ").pop()}`)
+          }
+          pro.prestations.forEach(pres => {
+            if (pres.type.match(this.search)) {
+              this.typesPrestation.add(pres.type)
+              this.displaySearchResults = this.displaySearchResults.concat([...this.typesPrestation])
+            }
+          })
+        })
+      }
     }
     else {
-      if (this.proFiltered) {
-        this.proFiltered = undefined
+      if (this.displaySearchResults) {
+        this.displaySearchResults = undefined
       }
     }
   }

@@ -5,13 +5,10 @@
     <input type="text" placeholder="un carreleur, un plombier, ..." id="search" (input)="getInput($event.target['value'])" autocomplete="off">
     <button type="submit">TROUVEZ !</button>
   </form>
-  <div class="searchResults" *ngIf="proFiltered">
-    <p *ngIf="proFiltered.length === 0">Aucun Résultats</p>
-    <div *ngFor="let pro of proFiltered">
-      <p class="result" (click)="getCompanies(pro.nom)"*ngIf="pro.nom.match(search)">{{pro.nom}} - {{pro.adresse.split(" ").pop()}}</p>
-    </div>
-    <div *ngFor="let type of typesPrestation">
-      <p class="result" (click)="getCompanies(type)" *ngIf=type.match(search)>{{type}}</p>
+  <div class="searchResults" *ngIf="displaySearchResults">
+    <div *ngFor="let result of displaySearchResults">
+      <p *ngIf="!proFiltered.length">{{result}}</p>
+      <p class="result" (click)="getCompanies(result.split(' ')[0])" *ngIf="proFiltered.length">{{result}}</p>
     </div>
   </div>
 </div>
