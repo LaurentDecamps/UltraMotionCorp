@@ -1,17 +1,4 @@
 import mongoose from 'mongoose';
-import { INotificationDocument } from './notification';
-import { IPrestationDocument } from './prestation';
-
-export interface IEntrepriseDocument extends mongoose.Document {
-  nom: String,
-  description: String,    
-  email:  String,
-  motDePasse: String,
-  numeroTelephone: String,    
-  adresse: String,
-  prestations: [IPrestationDocument],
-  notifications: [INotificationDocument]
-}
 
 const EntrepriseSchema = new mongoose.Schema({
   nom: {
@@ -48,4 +35,4 @@ const EntrepriseSchema = new mongoose.Schema({
   }]
 });
 
-export const Entreprise = mongoose.model<IEntrepriseDocument>('Entreprise', EntrepriseSchema);
+export const Entreprise = mongoose.model('Entreprise', EntrepriseSchema);

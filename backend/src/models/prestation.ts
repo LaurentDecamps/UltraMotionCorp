@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 export interface IPrestationDocument extends mongoose.Document {
-  type: String,
-  description: String,
-  tauxHoraire: Number
+  type: string,
+  description: string,
+  tauxHoraire: number
 }
 
 const PrestationSchema = new mongoose.Schema({
@@ -21,4 +21,4 @@ const PrestationSchema = new mongoose.Schema({
   }
 });
 
-export const Prestation = mongoose.model<IPrestationDocument>('Prestation', PrestationSchema);
+export const Prestation = mongoose.model('Prestation', PrestationSchema);

@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-import { IPrestationDocument } from './prestation';
+import { IPrestationDocument } from './prestation'
 
 export interface IDevisDocument extends mongoose.Document {
-  etat: String,
-  titre: String,
+  etat: string,
+  titre: string,
   prestations: IPrestationDocument[]
 }
 const DevisSchema = new mongoose.Schema({
@@ -23,18 +23,18 @@ const DevisSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  prestation: {
+  prestation: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Prestation"
-  },
-  projet: {
+  }],
+  projet: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Projet"
-  },
-  entreprise: {
+  }],
+  entreprise: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Entreprise"
-  }    
+  }]
 });
 
 export const Devis = mongoose.model('Devis', DevisSchema);
