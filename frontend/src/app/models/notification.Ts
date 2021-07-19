@@ -9,7 +9,7 @@ export class Notification {
   type: string;
   description: string;
   lue: boolean;
-  devis: Devis;
+  idDevis: string;
 
   // constructor(type: string, description: string, lu: boolean) {
   //   this._type = type;

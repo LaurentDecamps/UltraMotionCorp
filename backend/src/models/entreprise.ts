@@ -38,7 +38,7 @@ const EntrepriseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  Prestations: [{
+  prestations: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Prestation"
   }],

@@ -10,8 +10,8 @@ export class Entreprise {
   private _motDePasse: String;
   private _numeroTelephone: Number;
   private _adresse: String;
-  private _prestation: Prestation[];
-  private _notification: Notification[];
+  private _prestations: Prestation[];
+  private _notifications: Notification[];
 
   constructor(nom : String,
               description : String,
@@ -20,8 +20,8 @@ export class Entreprise {
               motDePasse : String,
               numeroTelephone : number,
               adresse : String,
-              prestation: Prestation[],
-              notification: Notification[]) {
+              prestations: Prestation[],
+              notifications: Notification[]) {
     this._nom = nom;
     this._description = description;
     this._logoUri = logoUri;
@@ -29,8 +29,8 @@ export class Entreprise {
     this._motDePasse = motDePasse;
     this._numeroTelephone = numeroTelephone;
     this._adresse = adresse;
-    this._prestation = prestation;
-    this._notification = notification;
+    this._prestations = prestations;
+    this._notifications = notifications;
   }
 
   public get nom(): String {
@@ -89,19 +89,19 @@ export class Entreprise {
     this._numeroTelephone = value;
   }
 
-  public get prestation(): Prestation[] {
-    return this._prestation;
+  public get prestations(): Prestation[] {
+    return this._prestations;
   }
 
-  public set prestation(value: Prestation[]) {
-    this._prestation = value;
+  public set prestations(value: Prestation[]) {
+    this._prestations = value;
   }
 
-  public get notification(): Notification[] {
-    return this._notification;
+  public get notifications(): Notification[] {
+    return this._notifications;
   }
 
-  public set notification(value: Notification[]) {
-    this._notification = value;
+  public set notifications(value: Notification[]) {
+    this._notifications = value;
   }
 }

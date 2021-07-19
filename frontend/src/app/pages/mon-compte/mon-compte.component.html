@@ -3,7 +3,7 @@
       <button type="button" routerLink="infos" class="boutonCompte">MES INFORMATIONS</button>
       <button type="button" routerLink="prestas" *ngIf="compteEntreprise" class="boutonCompte">MES PRESTATIONS</button>
       <button type="button" routerLink="projets" *ngIf="compteClient" class="boutonCompte">MES PROJETS</button>
-      <!-- <button type="button" routerLink="devis" class="boutonCompte">MES DEVIS</button> -->
+      <button type="button" routerLink="devis" *ngIf="compteEntreprise" class="boutonCompte">MES DEVIS</button>
       <button type="button" routerLink="evaluation" *ngIf="compteClient" class="boutonCompte">MES EVALUATIONS</button>
       <button type="button" routerLink="notifs" class="boutonCompte">MES NOTIFICATIONS</button>
     </div>

@@ -28,7 +28,7 @@ export class DevisService {
   /**
    * Ajout un devis via un post sur le back end
    * @param devis Devis à ajouter en base de donnée
-   * @returns Le devis ajouté en base de donnée
+   * @returns L'observable du devis ajouté en base de donnée
    */
   addDevis = (devis : Devis) => {
     return this.http.post<Devis>(`${environment.apiUrl}/devis`, devis);

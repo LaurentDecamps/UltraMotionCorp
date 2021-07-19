@@ -13,19 +13,19 @@ import { NotificationsService } from 'src/app/services/notifications.service';
 })
 export class DevisComponent implements OnInit {
 
-  devisCourant : Devis;
+  devisCourant: Devis;
   entreprisePreSelectionnee: Entreprise;
   notificationALEntreprise: Notification;
 
-  @Input() idProjet : string;
-  @Input() idPrestation : string;
+  @Input() idProjet: string;
+  @Input() idPrestation: string;
   @Input() idEntreprise: string;
 
   listedevis: Devis[] = Devis[0];
 
   constructor(private devisService: DevisService,
     private notificationService: NotificationsService,
-    private entrepriseService: EntreprisesService ) { }
+    private entrepriseService: EntreprisesService) { }
 
   ngOnInit(): void {
     console.log(`ID projet du ${this.idProjet}`);
@@ -38,13 +38,13 @@ export class DevisComponent implements OnInit {
     });
 
     this.entrepriseService.findById(this.idEntreprise).subscribe((data) => {
-      console.log(data);
+      console.log(`Entreprise récupérée ${this.entreprisePreSelectionnee}`);
       this.entreprisePreSelectionnee = data;
     });
   }
 
   demanderDevis() {
-    let devis: Devis = {
+    let nouveauDevis: Devis = {
       titre: "test",
       etat: "demandé",
       tempsPrestationJours: 0,
@@ -53,26 +53,31 @@ export class DevisComponent implements OnInit {
       prestation: this.idPrestation,
       entreprise: this.idEntreprise
     }
-    console.log(devis);
 
-    this.devisService.addDevis(devis).subscribe((data) => {
-      this.devisCourant = data;
+    let idNouveauDevis;
+
+    this.devisService.addDevis(nouveauDevis).subscribe((data) => {
+      console.log(data);
+      this.listedevis.push(data);
+      idNouveauDevis = data['_id'];
+
+      // On crée une notification pour l'entreprise
+      let notification: Notification = {
+        type: "Devisdemandé",
+        idDevis: idNouveauDevis,
+        description: "Nouvelle demande de devis",
+        lue: false
+      };
+
+      this.notificationService.addNotification(notification).subscribe((nouvelleNotification) => {
+        this.entreprisePreSelectionnee.notifications.push(nouvelleNotification);
+        console.log(`Entreprise Pré sélectionnée : `, this.entreprisePreSelectionnee);
+        this.entrepriseService.updateEntreprise(this.entreprisePreSelectionnee).subscribe((entrepriseMiseAJour) => {
+          console.log(entrepriseMiseAJour);
+        })
+      });
     });
 
-    // On crée une notification pour l'entreprise
-    let notification: Notification = {
-      type: "devisAValider",
-      description: "Vous avez un devis à valider",
-      devis : this.devisCourant,
-      lue:  false
-    }
 
-    this.notificationService.addNotification(notification).subscribe((data) => {
-
-      this.entreprisePreSelectionnee.notification.push(data);
-      this.entrepriseService.updateEntreprise(this.entreprisePreSelectionnee).subscribe((data) => {
-        console.log(data);
-      })
-    });
   }
 }
