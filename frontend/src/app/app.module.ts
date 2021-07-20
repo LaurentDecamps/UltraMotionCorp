@@ -24,6 +24,7 @@ import { EvaluationsComponent } from './components/evaluations/evaluations.compo
 import { EvaluationComponent } from './components/evaluation/evaluation.component';
 import { EvaluationFormComponent } from './components/evaluation-form/evaluation-form.component';
 import { MesdevisComponent } from './mesdevis/mesdevis.component';
+import { DisplayCompaniesComponent } from './components/display-companies/display-companies.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MesdevisComponent } from './mesdevis/mesdevis.component';
     EvaluationComponent,
     EvaluationFormComponent,
     MesdevisComponent,
+    DisplayCompaniesComponent,
   ],
   imports: [
     BrowserModule,

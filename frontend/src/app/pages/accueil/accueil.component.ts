@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessionelService } from '../../services/professionel.service';
+import { DisplayCompaniesService } from '../../services/display-companies.service';
 import { Entreprise } from '../../models/entreprise';
 
 @Component({
@@ -15,7 +16,10 @@ export class AccueilComponent implements OnInit {
   typesPrestation: Set<string> = new Set([])
   search: RegExp
 
-  constructor(private professionelService: ProfessionelService) { }
+  constructor(
+    private professionelService: ProfessionelService,
+    private sendService: DisplayCompaniesService
+  ) { }
 
   ngOnInit(): void {
     this.professionelService.getProfessionel().subscribe((professionels) => {
@@ -56,11 +60,11 @@ export class AccueilComponent implements OnInit {
   getCompanies = (search) => {
     document.querySelector("#search")["value"] = search
     this.getInput(search)
-    this.onTrouverPro(search)
+    this.onTrouverPro()
   }
 
-  onTrouverPro(search): void {
-    console.log(search)
+  onTrouverPro(): void {
+    this.sendService.getFilteredCompanies(this.proFiltered)
   }
 
 }
