@@ -19,7 +19,7 @@
             <div *ngIf="!isDisplay">
                 <h5>Mes informations personnelles</h5>
 
-                <form [formGroup]="clientForm" (ngSubmit)="envoyer()" class="formulaire">
+                <form [formGroup]="clientForm" (ngSubmit)="envoyerClient()" class="formulaire">
                     <label>Nom* :
                     </label>
                     <input type="text" formControlName="nom">
@@ -48,7 +48,7 @@
             <div *ngIf="!entrepriseIsDisplay">
                 <h5>Mes informations personnelles</h5>
 
-                <form class="formulaire">
+                <form [formGroup]="entrepriseForm" (ngSubmit)="envoyerEntreprise()" class="formulaire">
                     <label>Nom* :
                     </label>
                     <input type="text" formControlName="nom">
@@ -70,7 +70,7 @@
                     <label>Adresse* :
                     </label>
                     <input type="text" formControlName="adresse">
-                    <button>CRÉER MON COMPTE</button>
+                    <button class="btn btn-success">CRÉER MON COMPTE</button>
 
                 </form>
 
