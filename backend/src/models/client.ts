@@ -3,12 +3,12 @@ import { INotificationDocument } from './notification';
 import { IProjetDocument } from './projet';
 
 export interface IClientDocument extends mongoose.Document {
-  nom: String,
-  prenom: String,
-  email: String,
-  motDePasse: String,
-  numeroTelephone: String,
-  adresse: String,
+  nom: string,
+  prenom: string,
+  email: string,
+  motDePasse: string,
+  numeroTelephone: string,
+  adresse: string,
   projets: IProjetDocument[],
   notifications: INotificationDocument[]
 }
@@ -48,4 +48,4 @@ const ClientSchema = new mongoose.Schema({
   }]
 });
 
-export const Client = mongoose.model<IClientDocument>('Client', ClientSchema);
+export const Client = mongoose.model('Client', ClientSchema);

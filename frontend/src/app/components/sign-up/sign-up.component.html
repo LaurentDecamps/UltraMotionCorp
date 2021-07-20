@@ -19,7 +19,7 @@
             <div *ngIf="!isDisplay">
                 <h5>Mes informations personnelles</h5>
 
-                <form [formGroup]="clientForm" (ngSubmit)="envoyer()" class="formulaire">
+                <form [formGroup]="clientForm" (ngSubmit)="envoyerClient()" class="formulaire">
                     <label>Nom* :
                     </label>
                     <input type="text" formControlName="nom">
@@ -48,46 +48,29 @@
             <div *ngIf="!entrepriseIsDisplay">
                 <h5>Mes informations personnelles</h5>
 
-                <form class="formulaire">
+                <form [formGroup]="entrepriseForm" (ngSubmit)="envoyerEntreprise()" class="formulaire">
                     <label>Nom* :
                     </label>
-                    <input type="text">
+                    <input type="text" formControlName="nom">
                     <label>Description* :
                     </label>
-                    <input type="text">
-                    <label>Logo URL* :
+                    <input type="text" formControlName="description">
+                    <label>LogoUrl* :
                     </label>
-                    <input type="url">
+                    <input type="text" formControlName="logoUri">
                     <label>Email* :
                     </label>
-                    <input type="email" pattern=".+@globex\.com" size="30" required>
+                    <input type="email" formControlName="email" pattern=".+@globex\.com" size="30" required>
                     <label>Numéro de téléphone* :
                     </label>
-                    <input type="tel">
+                    <input type="tel" formControlName="numeroTelephone">
                     <label> Mot de passe*:
                     </label>
-                    <input type="text">
-
-                    <h6>Adresse :</h6>
-                    <div class="formulaire">
-                        <label>Numéro :
-                        </label>
-                        <input type="text">
-
-                        <label>Rue :
-                        </label>
-                        <input type="text">
-
-                        <label>Ville :
-                        </label>
-                        <input type="text">
-
-                        <label>Code Postal :
-                        </label>
-                        <input type="text">
-
-                    </div>
-                    <button>CRÉER MON COMPTE</button>
+                    <input type="password" formControlName="motDePasse">
+                    <label>Adresse* :
+                    </label>
+                    <input type="text" formControlName="adresse">
+                    <button class="btn btn-success">CRÉER MON COMPTE</button>
 
                 </form>
 

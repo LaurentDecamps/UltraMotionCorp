@@ -18,4 +18,9 @@ export class EntreprisesService {
   updateEntreprise = (entreprise : Entreprise) => {
     return this.httpClient.put(`${environment.apiUrl}/entreprises/${entreprise._id}`, entreprise);
   }
+
+  create(entreprise: Entreprise) : Observable<Entreprise> {
+
+    return this.httpClient.post<Entreprise>(`${environment.apiUrl}/entreprises`, entreprise);
+  }
 }

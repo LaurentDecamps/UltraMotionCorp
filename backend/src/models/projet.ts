@@ -3,10 +3,10 @@ import { IDevisDocument } from './devis';
 import { IPrestationDocument } from './prestation';
 
 export interface IProjetDocument extends mongoose.Document {
-  typeBien: String,
-  niveauBien: String,
-  description: String,
-  surfaceM2: String,
+  typeBien: string,
+  niveauBien: string,
+  description: string,
+  surfaceM2: string,
   dateDebut: Date,
   prestations: IPrestationDocument,
   devis: IDevisDocument
@@ -32,7 +32,7 @@ const ProjetSchema = new mongoose.Schema({
   dateDebut: {
     type: Date,
     required: true
-  },  
+  },
   prestations: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Prestation"
@@ -43,4 +43,4 @@ const ProjetSchema = new mongoose.Schema({
   }]
 });
 
-export const Projet = mongoose.model<IProjetDocument>('Projet', ProjetSchema);
+export const Projet = mongoose.model('Projet', ProjetSchema);

@@ -12,8 +12,6 @@ class ClientController {
   findById = async (req, res, next) => {
     res.status(200)
       .send(await Client.findById(req.params.id)
-      // .populate(`projets`)
-
         .populate({
           path: 'projets',
           populate: {

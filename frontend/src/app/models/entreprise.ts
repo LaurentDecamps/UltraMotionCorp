@@ -2,26 +2,26 @@ import { Prestation } from "./prestation";
 import { Notification } from 'src/app/models/notification';
 
 export class Entreprise {
-  _id : String;
-  private _nom: String;
-  private _description: String;
-  private _logoUri: String;
-  private _email: String;
-  private _motDePasse: String;
-  private _numeroTelephone: Number;
-  private _adresse: String;
-  private _prestation: Prestation[];
-  private _notification: Notification[];
+  _id : string;
+  private _nom: string;
+  private _description: string;
+  private _logoUri: string;
+  private _email: string;
+  private _motDePasse: string;
+  private _numeroTelephone: number;
+  private _adresse: string;
+  private _prestations: Prestation[];
+  private _notifications: Notification[];
 
-  constructor(nom : String,
-              description : String,
-              logoUri : String,
-              email : String,
-              motDePasse : String,
+  constructor(nom : string,
+              description : string,
+              logoUri : string,
+              email : string,
+              motDePasse : string,
               numeroTelephone : number,
-              adresse : String,
-              prestation: Prestation[],
-              notification: Notification[]) {
+              adresse : string,
+              prestations: Prestation[],
+              notifications: Notification[]) {
     this._nom = nom;
     this._description = description;
     this._logoUri = logoUri;
@@ -29,79 +29,79 @@ export class Entreprise {
     this._motDePasse = motDePasse;
     this._numeroTelephone = numeroTelephone;
     this._adresse = adresse;
-    this._prestation = prestation;
-    this._notification = notification;
+    this._prestations = prestations;
+    this._notifications = notifications;
   }
 
-  public get nom(): String {
+  public get nom(): string {
     return this._nom;
   }
 
-  public set nom(value: String) {
+  public set nom(value: string) {
     this._nom = value;
   }
 
-  public get adresse(): String {
+  public get adresse(): string {
     return this._adresse;
   }
 
-  public set adresse(value: String) {
+  public set adresse(value: string) {
     this._adresse = value;
   }
 
-  public get description(): String {
+  public get description(): string {
     return this._description;
   }
 
-  public set description(value: String) {
+  public set description(value: string) {
     this._description = value;
   }
 
-  public get logoUri(): String {
+  public get logoUri(): string {
     return this._logoUri;
   }
 
-  public set logoUri(value: String) {
+  public set logoUri(value: string) {
     this._logoUri = value;
   }
 
-  public get email(): String {
+  public get email(): string {
     return this._email;
   }
 
-  public set email(value: String) {
+  public set email(value: string) {
     this._email = value;
   }
 
-  public get motDePasse(): String {
+  public get motDePasse(): string {
     return this._motDePasse;
   }
 
-  public set motDePasse(value: String) {
+  public set motDePasse(value: string) {
     this._motDePasse = value;
   }
 
-  public get numeroTelephone(): Number {
+  public get numeroTelephone(): number {
     return this._numeroTelephone;
   }
 
-  public set numeroTelephone(value: Number) {
+  public set numeroTelephone(value: number) {
     this._numeroTelephone = value;
   }
 
-  public get prestation(): Prestation[] {
-    return this._prestation;
+  public get prestations(): Prestation[] {
+    return this._prestations;
   }
 
-  public set prestation(value: Prestation[]) {
-    this._prestation = value;
+  public set prestations(value: Prestation[]) {
+    this._prestations = value;
   }
 
-  public get notification(): Notification[] {
-    return this._notification;
+  public get notifications(): Notification[] {
+    return this._notifications;
   }
 
-  public set notification(value: Notification[]) {
-    this._notification = value;
+  public set notifications(value: Notification[]) {
+    this._notifications = value;
   }
 }
