@@ -1,0 +1,11 @@
+<div class="containerInfos">
+  <div *ngIf="entrepriseConnectee">
+    <div *ngIf="entrepriseConnectee.notifications">
+      <div *ngFor="let notification of entrepriseConnectee.notifications">
+        <app-notif [notification]="notification" ></app-notif>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="clientconnecte">
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.devisFormulaire {
+  border: 3px solid #dbbd45;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+  margin: auto;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input[type="number"] {
+  width: 4em;
+  float: right;
+}
+
+.devisInputFormulaire {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+input {
+  text-align: right;
+  margin: auto;
+}
+
+form {
+  display: inline-block;
+}
