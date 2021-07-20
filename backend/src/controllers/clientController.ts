@@ -11,14 +11,15 @@ class ClientController {
 
   findById = async (req, res, next) => {
     res.status(200)
-      .send(await Client.findById(req.params.id).populate(`projet`)
+      .send(await Client.findById(req.params.id)
+      // .populate(`projets`)
 
-        // .populate({
-        //   path: 'projets',
-        //   populate: {
-        //     path: 'prestations'
-        //     }            
-        // })
+        .populate({
+          path: 'projets',
+          populate: {
+            path: 'prestations'
+            }            
+        })
         // .populate("notifications")
         //   path: 'notifications'
         // })
