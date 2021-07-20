@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessionelService } from '../../services/professionel.service';
-import { DisplayCompaniesService } from '../../services/display-companies.service';
 import { Entreprise } from '../../models/entreprise';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-accueil',
@@ -18,7 +18,7 @@ export class AccueilComponent implements OnInit {
 
   constructor(
     private professionelService: ProfessionelService,
-    private sendService: DisplayCompaniesService
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -60,11 +60,7 @@ export class AccueilComponent implements OnInit {
   getCompanies = (search) => {
     document.querySelector("#search")["value"] = search
     this.getInput(search)
-    this.onTrouverPro()
-  }
-
-  onTrouverPro(): void {
-    this.sendService.getFilteredCompanies(this.proFiltered)
+    this.router.navigate(["/search"], {state: {data: this.proFiltered}})
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Entreprise } from '../../models/entreprise'
-import { DisplayCompaniesService } from '../../services/display-companies.service'
 
 @Component({
   selector: 'app-display-companies',
@@ -8,11 +7,12 @@ import { DisplayCompaniesService } from '../../services/display-companies.servic
   styleUrls: ['./display-companies.component.css']
 })
 export class DisplayCompaniesComponent implements OnInit {
-  filteredCompanies: Entreprise[]
+  filteredCompanies: Entreprise[] = null
 
-  constructor(private receiveService: DisplayCompaniesService) { }
+  constructor() { }
 
   ngOnInit(): void {
+    this.filteredCompanies = history.state.data
   }
 
 }

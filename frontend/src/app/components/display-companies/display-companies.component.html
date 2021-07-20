@@ -1,1 +1,5 @@
-<p>display-companies works!</p>
+<div class="choose">
+  <div *ngFor="let company of filteredCompanies">
+    <h3>{{company.nom}}</h3>
+  </div>
+</div>
