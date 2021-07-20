@@ -1,31 +1,21 @@
-
 h2 {
   width : 100%;
   background-color : #7BC248;
   color:white;
   text-transform: uppercase;
   padding : 5px;
-  padding-left : 25px;
+  padding-left : 5px;
 }
 
-.mesAvis p{
-  display: inline-block;
-  margin : 0 5px;
+h3 {
+  padding : 10px 0;
 }
 
-.mesAvis span {
+h5 {
   font-weight: 700;
+  font-size:1rem;
 }
 
-.mesAvis {
-  border: 3px solid #7BC248;
-  border-radius: 50px;;
-  margin:10px;
-  padding: 15px;
-  box-shadow: 2px 2px 5px grey;
-}
-
-.mesAvis a {
-  text-align: right;
-  margin-left : 150px;
+li {
+  list-style-type:none;;
 }

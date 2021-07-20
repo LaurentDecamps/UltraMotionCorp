@@ -16,7 +16,7 @@ input {
 i {
   margin-right : 5px;
 }
-i:hover{
+i:checked{
   color:#DBBD45;
   transition :0.5s;
 }

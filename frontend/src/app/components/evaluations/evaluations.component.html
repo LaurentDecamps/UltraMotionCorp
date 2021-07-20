@@ -1,27 +1,50 @@
 <div class="evaluationContainer">
   <div>
     <h2>Mes dernières évaluations</h2>
-    <div class="mesAvis" *ngFor="let evaluation of evaluations">
-      <p><span>La prestation </span>:{{evaluation.prestation}}</p>
-      <p><span>Note globale </span>: {{evaluation.noteGlobale}}/5</p>
-      <p><span>Commentaire global</span> : {{evaluation.commentaireGlobal}}</p>
+    <h3>Mes évaluations à faire</h3>
+    <ngb-accordion
+      activeIds="ngb-panel-0"
+      *ngFor="let evaluation of evaluations"
+    >
+      <ngb-panel title="{{ evaluation.prestation.description }} , Note globale: {{ evaluation.noteGlobale }}/5">
+        <ng-template ngbPanelContent>
+          <ul>
+            <li>
+              <h5>Commentaire global :</h5>
+              <p>{{evaluation.commentaireGlobal}}</p>
+            </li>
+            <li><h5>Expertise</h5>
+              <ul>
+                <li>{{evaluation.commentaireExpertise}}</li>
+                <li>Note : {{evaluation.noteExpertise}}</li>
+              </ul>
+            </li>
+            <li><h5>Communication</h5>
+              <ul>
+                <li>{{evaluation.commentaireFacilite}}</li>
+                <li>Note : {{evaluation.noteFacilite}}</li>
+              </ul>
+            </li>
+            <li><h5>Communication</h5>
+              <ul>
+                <li>{{evaluation.commentaireQualite}}</li>
+                <li>Note : {{evaluation.noteQualite}}</li>
+              </ul>
+            </li>
+          </ul>
 
-      <a href="#"><i class="fas fa-chevron-right"></i></a>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+
+    <h3>Mes évaluations faites</h3>
+    <div class="mesAvis" *ngFor="let evaluationFaite of evaluationsFaites">
+      <p><span>Note globale</span> : {{ evaluationFaite.noteGlobale }}/5</p>
+      <p>
+        <span>Commentaire global</span> :
+        {{ evaluationFaite.commentaireGlobal }}
+      </p>
+      <p><span>La prestation</span> :{{ evaluationFaite.prestation }}</p>
     </div>
-
-
-      <div class="mesAvis" *ngFor="let evaluationFaite of evaluationsFaites">
-        <p><span>Note globale</span> : {{evaluationFaite.noteGlobale}}/5</p>
-        <p><span>Commentaire global</span> : {{evaluationFaite.commentaireGlobal}}</p>
-        <p><span>La prestation</span> :{{evaluationFaite.prestation}}</p>
-      </div>
-    </div>
-
-
   </div>
-
-
-
-
-
-
+</div>

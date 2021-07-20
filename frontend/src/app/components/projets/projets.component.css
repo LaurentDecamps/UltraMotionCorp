@@ -25,3 +25,10 @@ h2 {
   color:white;
   padding : 5px 15px;
 }
+
+
+/****** CSS  ACCORDERON ****/
+
+ng-template p {
+  font-weight: 500;
+}
