@@ -11,7 +11,7 @@ export class Devis {
   private _prixMateriel: Number;
   private _projet: Projet;
   private _prestation: Prestation;
-  private _entreprise: string;//Entreprise;
+  private _entreprise: Entreprise;
 
   _id: string;
   // titre: string;
@@ -19,7 +19,7 @@ export class Devis {
   // tempsPrestationJours: number;
   // prixMateriel: number;
   // projet: Projet;
-  prestation: Prestation;
+  // prestation: Prestation;
   // entreprise: string;
 
   constructor(titre: string,
@@ -29,7 +29,7 @@ export class Devis {
     prixMateriel: Number,
     projet: Projet,
     prestation: Prestation,
-    entreprise: string
+    entreprise: Entreprise
   ) {
     this._titre = titre;
     this._etat = etat;
@@ -41,11 +41,11 @@ export class Devis {
     // this._ligne = ligne;
   }
 
-  public get entreprise(): string {
+  public get entreprise(): Entreprise {
     return this._entreprise;
   }
 
-  public set entreprise(value: string) {
+  public set entreprise(value: Entreprise) {
     this._entreprise = value;
   }
 
@@ -79,6 +79,13 @@ export class Devis {
 
   public set prixMateriel(value: Number) {
     this._prixMateriel = value;
+  }
+
+  public get prestation(): Prestation {
+    return this._prestation;
+  }
+  public set prestation(value: Prestation) {
+    this._prestation = value;
   }
 
   public get projet(): Projet {

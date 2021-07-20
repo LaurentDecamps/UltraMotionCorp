@@ -14,4 +14,8 @@ export class EvaluationsService {
   getEvaluationByClient(idClient : string) : Observable<Evaluation[]>{
     return this.httpClient.get<Evaluation[]>(`${environment.apiUrl}/evaluations/clients/${idClient}`);
   }
+
+  createEvaluation = (evaluation : Evaluation) => {
+    return this.httpClient.post<Evaluation>(`${environment.apiUrl}/evaluations`, evaluation);
+  }
 }

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <div class="container" *ngIf="clientConnecte?.projets;else pasdeProjet">
   <h2>Mes projets :</h2>
   <div *ngFor="let projet of clientConnecte?.projets; let indexprojet = index">
@@ -20,18 +14,16 @@
       Date de début {{projet.DateDebut | date:'dd MMM YYYY' }}
     </div>
     <h2>Les prestations du projet :</h2>
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let prestation of projet.prestations; let indexPrestation = index">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"
+      *ngFor="let prestation of projet.prestations; let indexPrestation = index">
       <ngb-panel title="Prestation {{prestation.description}}">
         <ng-template ngbPanelContent>
           <p>Type de prestation : {{prestation.type}}</p>
           <p>Entreprise préselectionné pour cette prestation : {{entreprisePreSelectionnee?.nom}}</p>
-          <app-devis [idProjet]="projet._id" [idPrestation]="prestation._id" [idEntreprise]="idEntrepriseSelectionnee"></app-devis>
+          <app-devis [idProjet]="projet._id" [idPrestation]="prestation._id" [idEntreprise]="idEntrepriseSelectionnee" (creerEvaluationAFaire)="creerEvaluationAFaire($event)"></app-devis>
         </ng-template>
       </ngb-panel>
     </ngb-accordion>
-
-
-
     <!-- <div class ="mesPrestations" *ngFor="let prestation of projet.prestations; let indexPrestation = index">
         <button class="accordion" >Prestation {{prestation.description}}</button>
         <div class ="panel">
@@ -40,8 +32,6 @@
           <app-devis [idProjet]="projet._id" [idPrestation]="prestation._id" [idEntreprise]="idEntrepriseSelectionnee"></app-devis>
         </div>
     </div> -->
-
-
   </div>
   <div>
     Envie d'un nouveau projet ? Créer votre projet pour trouver LE professionnel de vos rêves !
@@ -51,7 +41,7 @@
   </div>
 </div>
 <ng-template #pasdeProjet>
-  <div class="container" >
+  <div class="container">
     Pas encore de projet. Créer votre projet pour trouver LE professionnel de vos rêves !
   </div>
   <div class="container">

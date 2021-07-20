@@ -39,7 +39,6 @@ export class MesdevisComponent implements OnInit {
 
   miseAjourDevis = (devis) => {
     console.log("Devis reçu : ",devis);
-
     this.devisEnCours.etat = devis.etat;
   }
 

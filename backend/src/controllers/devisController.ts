@@ -25,7 +25,9 @@ class DevisController {
 
     findByIdProjetAndIdPrestation = async (req, res, next) => {
         res.status(200)
-            .send(await Devis.find( {"projet" : req.params.idProjet, "prestation" : req.params.idPrestation}))
+            .send(await Devis.find( {"projet" : req.params.idProjet, "prestation" : req.params.idPrestation})
+                .populate('entreprise')
+                .populate("prestation"))
             .end();
         next();
     }

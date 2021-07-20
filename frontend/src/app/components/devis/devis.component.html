@@ -3,17 +3,45 @@
   Pas de devis demandée pour cette prestation
   <button type="submit" (click)="demanderDevis()">Demander un devis</button>
 </div>
-<!-- ;else devisEncours<ng-template #devisEncours> </ng-template> -->
 <div *ngIf="listedevis?.length > 0">
-  <div *ngFor="let devis of listedevis">
-    <div>
-      Devis {{devis.etat}}
-    </div>
-    <div *ngIf="devis.etat === 'validé'">
-      Prestation terminé ? Merci de l'<a routerLink="/mncpt/evaluation">évaluer</a>
-    </div>
-  </div>
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let devis of listedevis" class="accordeonDevis">
+    <ngb-panel title="Devis : {{devis.entreprise.nom}}" class="accordeonDevis">
+      <ng-template ngbPanelContent class="accordeonDevis">
+        <!-- ;else devisEncours<ng-template #devisEncours> </ng-template> -->
+        <div>
+          <div>
+            Devis {{devis.etat}}
+          </div>
+          <div *ngIf="testerDevisAValider(devis)">
+            <!-- <div>
+              Prestation : {{devis.prestation.description}}
+            </div> -->
+            <div>
+              Prix du matériel : {{devis.prixMateriel}} €
+            </div>
+            <div>
+              Prix du matériel : {{devis.prixMateriel}} €
+            </div>
+            <div>
+              Durée de la prestation : {{devis.tempsPrestationJours}} jours ouvrés
+            </div>
+            <div class="lesBoutonsValidationRefusDevis">
+              <button class="bouton" (click)="validerDevis(devis)">
+                Valider
+              </button>
+              <button class="bouton" (click)="refuserDevis(devis)">
+                Refuser
+              </button>
+            </div>
+          </div>
+          <div *ngIf="devis.etat === 'validé'">
+            Prestation terminé ? Merci de l'<a routerLink="/mncpt/evaluation">évaluer</a>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>
-<div>
+<div class="boutonRechercherEntreprise">
   <a routerLink="/fnprst" class="bouton">Rechercher une entreprise pour cette prestation</a>
 </div>

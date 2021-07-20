@@ -30,9 +30,7 @@ export class DevisFormComponent implements OnInit {
   }
 
   envoyerEtMettreAJourDevis(): void {
-    // let nouveauDevis : Devis
     this.devisEncours.prixMateriel = this.devisForm.controls['prixMateriel'].value;
-    // this.devisEncours. = this.devisForm.controls['prixPrestation'].value;
     this.devisEncours.tempsPrestationJours = this.devisForm.controls['tempsPrestationJours'].value;
     this.devisEncours.etat = "En cours";
     console.log("Devis en cours après modification",this.devisEncours);
