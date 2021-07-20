@@ -3,9 +3,6 @@
   Pas de devis demandée pour cette prestation
   <button type="submit" (click)="demanderDevis()">Demander un devis</button>
 </div>
-<div>
-  <a routerLink="/fnprst" class="bouton">Rechercher une entreprise pour cette prestation</a>
-</div>
 <!-- ;else devisEncours<ng-template #devisEncours> </ng-template> -->
 <div *ngIf="listedevis?.length > 0">
   <div *ngFor="let devis of listedevis">
@@ -16,4 +13,7 @@
       Prestation terminé ? Merci de l'<a routerLink="/mncpt/evaluation">évaluer</a>
     </div>
   </div>
+</div>
+<div>
+  <a routerLink="/fnprst" class="bouton">Rechercher une entreprise pour cette prestation</a>
 </div>

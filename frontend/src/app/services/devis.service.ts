@@ -11,8 +11,17 @@ export class DevisService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Interroge le back end pour récupérer l'ensemble des devis
+   * @param idClient L'identifiant du client dont on va récupérer les devis
+   * @returns Le tableau des devis lié au client
+   */
   getDevisByClient(idClient: string): Observable<Devis[]> {
     return this.http.get<Devis[]>(`${environment.apiUrl}/devis/clients/${idClient}`);
+  }
+
+  getDevisByEntreprise(idEntreprise: string): Observable<Devis[]> {
+    return this.http.get<Devis[]>(`${environment.apiUrl}/devis/entreprises/${idEntreprise}`);
   }
 
   /**
@@ -32,5 +41,9 @@ export class DevisService {
    */
   addDevis = (devis : Devis) => {
     return this.http.post<Devis>(`${environment.apiUrl}/devis`, devis);
+  }
+
+  updateDevis = (devis : Devis) => {
+    return this.http.put<Devis>(`${environment.apiUrl}/devis/${devis._id}`, devis);
   }
 }

@@ -17,47 +17,39 @@
       adresse : {{entrepriseConnectee.adresse}}
     </div>
   </div>
-  <div class="containerInfos">
-    <div *ngIf="clientconnecte">
-      <h1>Bonjour {{clientconnecte?.prenom}},</h1>
-      <div>
-        <h2>Information du compte :</h2>
-      </div>
-      <div>
-        <span>Nom Prénom :</span> {{clientconnecte?.nom}} {{clientconnecte?.prenom}}
-      </div>
-      <div>
-        <span>Numero de Telephone :</span> {{clientconnecte.numeroTelephone}}
-      </div>
-      <div>
-        <span>Email :</span> {{clientconnecte.email}}
-      </div>
-      <div>
-        <span>Adresse :</span> {{clientconnecte.adresse}}
-      </div>
+  <div *ngIf="clientconnecte">
+    <h1>Bonjour {{clientconnecte?.prenom}},</h1>
+    <div>
+      <h2>Information du compte :</h2>
     </div>
-    <div class="everywhereInfo">
-  <label>
-    <input type="checkbox" id="scales" name="scales"
-         checked>
+    <div>
+      <span>Nom Prénom :</span> {{clientconnecte?.nom}} {{clientconnecte?.prenom}}
+    </div>
+    <div>
+      <span>Numero de Telephone :</span> {{clientconnecte.numeroTelephone}}
+    </div>
+    <div>
+      <span>Email :</span> {{clientconnecte.email}}
+    </div>
+    <div>
+      <span>Adresse :</span> {{clientconnecte.adresse}}
+    </div>
+  </div>
+  <div class="everywhereInfo">
+    <label>
+      <input type="checkbox" id="scales" name="scales" checked>
       COOKIES
-  </label>
-  <label>
-    <input type="checkbox" id="scales" name="scales"
-        >
+    </label>
+    <label>
+      <input type="checkbox" id="scales" name="scales">
       NEWSLETTER
-  </label>
-  <label>
-  <input type="checkbox" id="scales" name="scales"
-        >
+    </label>
+    <label>
+      <input type="checkbox" id="scales" name="scales">
       SOMETHING
-  </label>
+    </label>
   </div>
   <a href="#" class="modify"><i class="fas fa-user-cog fa-2x"></i></a>
   <a href="#" class="supress"><i class="fas fa-dumpster fa-2x"></i></a>
 
 </div>
-
-
-
-

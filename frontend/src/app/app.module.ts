@@ -23,7 +23,9 @@ import { NotifsComponent } from './components/notifs/notifs.component';
 import { EvaluationsComponent } from './components/evaluations/evaluations.component';
 import { EvaluationComponent } from './components/evaluation/evaluation.component';
 import { EvaluationFormComponent } from './components/evaluation-form/evaluation-form.component';
-import { MesdevisComponent } from './mesdevis/mesdevis.component';
+import { MesdevisComponent } from './components/mesdevis/mesdevis.component';
+import { NotifComponent } from './components/notif/notif.component';
+import { DevisFormComponent } from './components/devis-form/devis-form.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { MesdevisComponent } from './mesdevis/mesdevis.component';
     EvaluationComponent,
     EvaluationFormComponent,
     MesdevisComponent,
+    NotifComponent,
+    DevisFormComponent,
   ],
   imports: [
     BrowserModule,

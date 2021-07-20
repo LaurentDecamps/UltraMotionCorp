@@ -14,4 +14,8 @@ export class ProjetsService {
   getProjetsByClient(idClient : string) : Observable<Projet[]>{
     return this.httpClient.get<Projet[]>(`${environment.apiUrl}/projets/clients/${idClient}`);
   }
+
+  getProjetById(idProjet : string) : Observable<Projet>{
+    return this.httpClient.get<Projet>(`${environment.apiUrl}/projets/${idProjet}`);
+  }
 }

@@ -8,20 +8,20 @@ h3{
 }
 
 h4 {
-
   margin : 15px 0 30px 15px;
   border-bottom: #7BC248 1px solid;
   width :18%;
 }
 
 .myDevis {
+  display: flex;
   border: 3px solid #DBBD45;
   border-radius: 15px;
   padding : 15px;
 }
 
 .myDevis p {
-  display: inline;
+  display: block;
   vertical-align: center;
   font-size: 1rem;
   margin: auto 50px;

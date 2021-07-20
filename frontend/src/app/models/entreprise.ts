@@ -2,7 +2,7 @@ import { Prestation } from "./prestation";
 import { Notification } from 'src/app/models/notification';
 
 export class Entreprise {
-  _id : String;
+  _id : string;
   private _nom: String;
   private _description: String;
   private _logoUri: String;

@@ -14,7 +14,10 @@ class EntrepriseController {
     // console.log("Appel à findById sur entreprises");
     // console.log(req.params.id);    
     res.status(200)
-      .send(await Entreprise.findById(req.params.id).populate("Prestations"))
+      .send(await Entreprise.findById(req.params.id)
+        // .populate("prestations")
+        .populate("notifications")
+        )
       .end();
     next();
   }
@@ -34,7 +37,6 @@ class EntrepriseController {
   }
 
   update = async (req, res, next) => {
-    console.log(`Entreprise à mettre à jour ${req.body}`);
     res.status(200)
       .send(await Entreprise.findByIdAndUpdate(req.params.id, req.body))
       .end();

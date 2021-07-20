@@ -2,9 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Devis } from 'src/app/models/devis';
 import { Entreprise } from 'src/app/models/entreprise';
 import { Notification } from 'src/app/models/notification';
+import { Prestation } from 'src/app/models/prestation';
+import { Projet } from 'src/app/models/projets';
 import { DevisService } from 'src/app/services/devis.service';
 import { EntreprisesService } from 'src/app/services/entreprises.service';
 import { NotificationsService } from 'src/app/services/notifications.service';
+import { PrestationsService } from 'src/app/services/prestations.service';
+import { ProjetsService } from 'src/app/services/projets.service';
 
 @Component({
   selector: 'app-devis',
@@ -25,7 +29,9 @@ export class DevisComponent implements OnInit {
 
   constructor(private devisService: DevisService,
     private notificationService: NotificationsService,
-    private entrepriseService: EntreprisesService) { }
+    private entrepriseService: EntreprisesService,
+    private projetService: ProjetsService,
+    private prestationService: PrestationsService) { }
 
   ngOnInit(): void {
     console.log(`ID projet du ${this.idProjet}`);
@@ -44,40 +50,40 @@ export class DevisComponent implements OnInit {
   }
 
   demanderDevis() {
-    let nouveauDevis: Devis = {
-      titre: "test",
-      etat: "demandé",
-      tempsPrestationJours: 0,
-      prixMateriel: 0,
-      projet: this.idProjet,
-      prestation: this.idPrestation,
-      entreprise: this.idEntreprise
-    }
+    let projetCourant: Projet;
+    let prestationCourante: Prestation;
 
-    let idNouveauDevis;
+    this.projetService.getProjetById(this.idProjet).subscribe((data) => {
+      projetCourant = data;
 
-    this.devisService.addDevis(nouveauDevis).subscribe((data) => {
-      console.log(data);
-      this.listedevis.push(data);
-      idNouveauDevis = data['_id'];
+      this.prestationService.getPrestationById(this.idPrestation).subscribe((data) => {
+        prestationCourante = data;
 
-      // On crée une notification pour l'entreprise
-      let notification: Notification = {
-        type: "Devisdemandé",
-        idDevis: idNouveauDevis,
-        description: "Nouvelle demande de devis",
-        lue: false
-      };
+        let nouveauDevis: Devis = new Devis(
+           "test","demandé", 0, 0, projetCourant, prestationCourante,this.idEntreprise
+        )
 
-      this.notificationService.addNotification(notification).subscribe((nouvelleNotification) => {
-        this.entreprisePreSelectionnee.notifications.push(nouvelleNotification);
-        console.log(`Entreprise Pré sélectionnée : `, this.entreprisePreSelectionnee);
-        this.entrepriseService.updateEntreprise(this.entreprisePreSelectionnee).subscribe((entrepriseMiseAJour) => {
-          console.log(entrepriseMiseAJour);
-        })
-      });
-    });
+        // L'identifiant du nouveau devis demandé
+        let idNouveauDevis;
 
+        this.devisService.addDevis(nouveauDevis).subscribe((data) => {
+          this.listedevis.push(data);
+          idNouveauDevis = data['_id'];
 
+          // On crée une notification pour l'entreprise
+          let notification: Notification = {
+            type: "Devisdemandé",
+            idDevis: idNouveauDevis,
+            description: "Nouvelle demande de devis en attente",
+            lue: false
+          };
+
+          this.notificationService.addNotification(notification).subscribe((nouvelleNotification) => {
+            this.entreprisePreSelectionnee.notifications.push(nouvelleNotification);
+            this.entrepriseService.updateEntreprise(this.entreprisePreSelectionnee).subscribe(() => { })
+          });
+        });
+      })
+    })
   }
 }
