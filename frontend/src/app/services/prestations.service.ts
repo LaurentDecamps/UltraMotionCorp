@@ -14,4 +14,8 @@ export class PrestationsService {
   findPrestationByEntrepriseID(idEntreprise : string) : Observable<Prestation> {
     return this.httpClient.get<Prestation>(`${environment.apiUrl}/prestations/entreprise/${idEntreprise}`)
   }
+
+  getPrestationById(idPrestations : string) : Observable<Prestation>{
+    return this.httpClient.get<Prestation>(`${environment.apiUrl}/prestations/${idPrestations}`);
+  }
 }

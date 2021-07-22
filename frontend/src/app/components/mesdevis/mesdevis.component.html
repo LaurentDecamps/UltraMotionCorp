@@ -1,0 +1,28 @@
+<div class="mesDevis">
+  <h3>Mes devis </h3>
+  <section *ngIf="devisDemandes" class="mesDevisEnCours">
+    <h4>Mes demande de devis</h4>
+    <div class="myDevis" *ngFor="let devisDemande of devisDemandes">
+      <div>
+        <!-- <p>{{devisDemande.prestation.description}}</p> -->
+        <p>Description : {{devisDemande.projet.description}} </p>
+        <p>Type de Bien : {{devisDemande.projet.typeBien}} </p>
+        <p>Surface M2 : {{devisDemande.projet.surfacem2}} </p>
+        <p>Date prévu de début des travaux : {{devisDemande.projet.dateDebut | date:'dd MMM YYYY' }} </p>
+        <p class="status">Statut : {{devisDemande.etat}}</p>
+      </div>
+      <div>
+        <button class="btn btn-primary boutonModificationDevis" (click)="selectionDevis(devisDemande)">Modification du
+          devis <i class="fas fa-chevron-down"></i></button>
+      </div>
+    </div>
+  </section>
+  <app-devis-form [devisEncours]="devisEnCours" (miseAjourDevis)="miseAjourDevis($event)"></app-devis-form>
+  <!-- <section class="mesAnciensDevis">
+    <h4>Mes devis archivés</h4>
+    <div class="myDevis">
+      <p>Titre de ma prestation</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+      <a href="#"><i class="fas fa-chevron-right"></i></a>
+    </div></section> -->
+</div>

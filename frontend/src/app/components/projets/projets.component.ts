@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client';
 import { Devis } from 'src/app/models/devis';
 import { Entreprise } from 'src/app/models/entreprise';
+import { Evaluation } from 'src/app/models/evaluations';
+import { Prestation } from 'src/app/models/prestation';
 import { ClientService } from 'src/app/services/client.service';
 import { DevisService } from 'src/app/services/devis.service';
 import { EntreprisesService } from 'src/app/services/entreprises.service';
+import { EvaluationsService } from 'src/app/services/evaluations.service';
 
 @Component({
   selector: 'app-projets',
@@ -19,14 +22,16 @@ export class ProjetsComponent implements OnInit {
   entreprisePreSelectionnee: Entreprise;
 
   constructor(private clientService: ClientService,
-    private devisService: DevisService,
-    private entrepriseService: EntreprisesService) { }
+    private evaluationService: EvaluationsService) { }
 
   ngOnInit(): void {
     this.clientService.findById(localStorage.getItem('clientCourant')).subscribe((data) => {
       this.clientConnecte = data;
-      console.log(this.clientConnecte);
     });
   }
 
+  creerEvaluationAFaire = (prestation) => {
+    let evaluationAFaire: Evaluation = new Evaluation(-1, "", -1, "", -1, "", -1, "",this.clientConnecte,prestation);
+    this.evaluationService.createEvaluation(evaluationAFaire).subscribe(() => {});
+  }
 }

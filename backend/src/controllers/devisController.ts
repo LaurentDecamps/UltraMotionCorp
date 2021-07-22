@@ -16,15 +16,24 @@ class DevisController {
         next();
     }
 
+    findByIdEntreprise = async (req, res, next) => {
+        res.status(200)
+            .send(await Devis.find({ "entreprise" : req.params.id}).populate("prestation").populate("projet"))
+            .end();
+        next();
+    }
+
     findByIdProjetAndIdPrestation = async (req, res, next) => {
         res.status(200)
-            .send(await Devis.find( {"projet" : req.params.idProjet, "prestation" : req.params.idPrestation}))
+            .send(await Devis.find( {"projet" : req.params.idProjet, "prestation" : req.params.idPrestation})
+                .populate('entreprise')
+                .populate("prestation"))
             .end();
         next();
     }
 
     create = async (req, res, next) => {
-        console.log(`Create devis : ${req.body}`);
+        console.log(`Create devis :`,req.body);
         res.status(201)
             .send(await Devis.create(req.body))
             .end();

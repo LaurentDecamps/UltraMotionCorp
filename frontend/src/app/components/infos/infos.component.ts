@@ -44,9 +44,6 @@ export class InfosComponent implements OnInit {
         this.clientconnecte = data;
       });
     }
-    if (!this.entrepriseConnectee) {
-
-    }
   }
 
 }

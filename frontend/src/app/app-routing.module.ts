@@ -15,25 +15,32 @@ import { InfosComponent } from './components/infos/infos.component';
 import { PrestasComponent } from './components/prestas/prestas.component';
 import { NotifsComponent } from './components/notifs/notifs.component';
 import { EvaluationsComponent } from './components/evaluations/evaluations.component';
+import { MesdevisComponent } from './components/mesdevis/mesdevis.component';
 
 
 const routes: Routes = [
-  {path:"", component: AccueilComponent},
-  {path: "auth", component: AuthenticationComponent, children: [
-    {path: "signin", component: SignInComponent},
-    {path: "signup", component: SignUpComponent},
-  ]},
-  {path: "fnprst", component: RecherchePrestationComponent},
-  {path: "newprjct", component: NouveauProjetComponent},
-  {path: "mncpt", component: MonCompteComponent, children: [
-    {path: "infos", component: InfosComponent},
-    {path: "prestas", component: PrestasComponent},
-    {path: "projets", component: ProjetsComponent},
-    {path: "devis", component: DevisComponent},
-    {path: "evaluation", component: EvaluationComponent},
-    {path: "notifs", component: NotifsComponent}
-  ]},
-  {path: "**", component: NotFoundComponent}
+  { path: "", component: AccueilComponent },
+  {
+    path: "auth", component: AuthenticationComponent, children: [
+      { path: "signin", component: SignInComponent },
+      { path: "signup", component: SignUpComponent },
+    ]
+  },
+  { path: "fnprst", component: RecherchePrestationComponent },
+  { path: "newprjct", component: NouveauProjetComponent },
+  {
+    path: "mncpt", component: MonCompteComponent,
+    children: [
+      { path: "infos", component: InfosComponent },
+      { path: "prestas", component: PrestasComponent },
+      { path: "projets", component: ProjetsComponent },
+      { path: "devis", component: MesdevisComponent },
+      { path: "devis/:id", component: MesdevisComponent },
+      { path: "evaluation", component: EvaluationComponent },
+      { path: "notifs", component: NotifsComponent }
+    ]
+  },
+  { path: "**", component: NotFoundComponent }
 ];
 
 @NgModule({

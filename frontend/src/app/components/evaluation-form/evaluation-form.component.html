@@ -1,40 +1,30 @@
 <h2>Mes évaluations à faire</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in quia sed fugiat sequi ea ex harum reprehenderit excepturi? Deleniti, cupiditate id. Quibusdam odio nisi earum minima neque veniam libero!</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in quia sed fugiat sequi ea ex harum reprehenderit
+  excepturi? Deleniti, cupiditate id. Quibusdam odio nisi earum minima neque veniam libero!</p>
 <form>
-  <select>
+  <!-- <select>
     <option *ngFor="let evaluationAFaire of evaluationsAFaire">{{evaluationAFaire.prestation}</option>
-  </select>
+  </select> -->
   <label>
     <h3>Facilité de communication</h3>
-    <div class="myRating">
-      <i class="fas fa-star" value="1"></i>
-      <i class="fas fa-star" value="2"></i>
-      <i class="fas fa-star" value="3"></i>
-      <i class="fas fa-star" value="4"></i>
-      <i class="fas fa-star" value="5"></i>
-    </div>
+    <ngb-rating [(rate)]="selectedCommunication" [max]="5">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="etoile" [class.rempli]="fill === 100" [class.mauvais]="index < 2" >&#9733;</span>
+      </ng-template>
+    </ngb-rating>
     <input type="text" placeholder="Rajouter un Commentaire">
   </label>
   <label>
     <h3>Qualité du dossier technique fournis</h3>
-    <div class="myRating">
-      <i class="fas fa-star" value="1"></i>
-      <i class="fas fa-star" value="2"></i>
-      <i class="fas fa-star" value="3"></i>
-      <i class="fas fa-star" value="4"></i>
-      <i class="fas fa-star" value="5"></i>
-    </div>
+    <ngb-rating [(rate)]="selectedQualite" [max]="5">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="etoile" [class.rempli]="fill === 100" [class.mauvais]="index < 2" >&#9733;</span>
+      </ng-template>
+    </ngb-rating>
     <input type="text" placeholder="Rajouter un Commentaire">
   </label>
   <label>
     <h3>Niveau d expertise</h3>
-    <div class="myRating">
-      <i class="fas fa-star" value="1"></i>
-      <i class="fas fa-star" value="2"></i>
-      <i class="fas fa-star" value="3"></i>
-      <i class="fas fa-star" value="4"></i>
-      <i class="fas fa-star" value="5"></i>
-    </div>
     <input type="text" placeholder="Rajouter un Commentaire">
   </label>
 </form>
@@ -43,5 +33,3 @@
   <h3>Votre note moyenne est : </h3>
   <button>Donner son avis</button>
 </div>
-
-
