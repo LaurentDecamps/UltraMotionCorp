@@ -1,13 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Devis } from 'src/app/models/devis';
 import { Entreprise } from 'src/app/models/entreprise';
-import { Evaluation } from 'src/app/models/evaluations';
 import { Notification } from 'src/app/models/notification';
 import { Prestation } from 'src/app/models/prestation';
 import { Projet } from 'src/app/models/projets';
 import { DevisService } from 'src/app/services/devis.service';
 import { EntreprisesService } from 'src/app/services/entreprises.service';
-import { EvaluationsService } from 'src/app/services/evaluations.service';
 import { NotificationsService } from 'src/app/services/notifications.service';
 import { PrestationsService } from 'src/app/services/prestations.service';
 import { ProjetsService } from 'src/app/services/projets.service';
