@@ -16,7 +16,7 @@ input {
 i {
   margin-right : 5px;
 }
-i:checked{
+i:hover, i:active, i:link{
   color:#DBBD45;
   transition :0.5s;
 }
