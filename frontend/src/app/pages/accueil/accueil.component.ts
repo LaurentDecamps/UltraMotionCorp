@@ -11,8 +11,8 @@ import { Router } from '@angular/router'
 export class AccueilComponent implements OnInit {
 
   listePro: Entreprise[];
-  proFiltered: Entreprise[];
-  displaySearchResults: String[] = undefined
+  proFiltered: Entreprise[] | undefined = undefined
+  displaySearchResults: String[] | undefined = undefined
   typesPrestation: Set<string> = new Set([])
   search: RegExp
 
@@ -34,6 +34,7 @@ export class AccueilComponent implements OnInit {
       this.displaySearchResults = []
       if (!this.proFiltered.length) {
         this.displaySearchResults.push("Aucun Résultats")
+        console.log(this.displaySearchResults)
       }
       else {
         this.proFiltered.forEach(pro => {
@@ -49,6 +50,10 @@ export class AccueilComponent implements OnInit {
           })
         })
       }
+    }
+    else if (search.length > 0) {
+      this.displaySearchResults = ["Entrez 3 caractères au minimum"]
+      console.log(this.displaySearchResults)
     }
     else {
       if (this.displaySearchResults) {
