@@ -2,10 +2,12 @@ label {
   display: block;
   margin : 25px auto;
 }
+
 form, .noteResult {
   width:50%;
   margin: auto;
 }
+
 input {
   border: none;
   border-bottom : 1px solid #7BC248;
@@ -16,11 +18,28 @@ input {
 i {
   margin-right : 5px;
 }
+
 i:checked{
   color:#DBBD45;
   transition :0.5s;
 }
 
+.etoile {
+  font-size: 3rem;
+  color: #b0c4de;
+}
+
+.rempli {
+  color: #7BC248;
+}
+
+.mauvais {
+  color: #ddd09a;
+}
+
+.rempli.mauvais {
+  color: #DBBD45;
+}
 
 button {
   border: none;

@@ -18,4 +18,8 @@ export class EvaluationsService {
   createEvaluation = (evaluation : Evaluation) => {
     return this.httpClient.post<Evaluation>(`${environment.apiUrl}/evaluations`, evaluation);
   }
+
+  miseAJourEvaluation = (evaluation : Evaluation) => {
+return this.httpClient.put<Evaluation>(`${environment.apiUrl}/evaluations`, evaluation)
+  }
 }

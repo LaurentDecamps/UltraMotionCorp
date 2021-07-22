@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Evaluation } from 'src/app/models/evaluations';
+import { EvaluationsService } from 'src/app/services/evaluations.service';
 
 @Component({
   selector: 'app-evaluation-form',
@@ -7,11 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EvaluationFormComponent implements OnInit {
 
-  evaluationsAFaire
+  evaluationsAFaire: Evaluation; //= new Evaluation(-1, "", -1, "", -1, "", -1, "", , );
 
-  constructor() { }
+  // @Output
+
+  selectedCommunication = 0;
+  selectedQualite = 0;
+  selectedExpertise = 0;
+  // hovered = 0;
+  // readonly = false;
+
+  constructor(private evaluationService: EvaluationsService) { }
 
   ngOnInit(): void {
+  }
+
+  miseAJourEvaluation() {
+    this.evaluationService.miseAJourEvaluation(this.evaluationsAFaire).subscribe((params) => {
+
+    })
   }
 
 }
