@@ -25,8 +25,8 @@ export class EvaluationFormComponent implements OnInit {
   }
 
   miseAJourEvaluation() {
-    this.evaluationService.miseAJourEvaluation(this.evaluationsAFaire).subscribe((params) => {
 
+    this.evaluationService.miseAJourEvaluation(this.evaluationsAFaire).subscribe((params) => {
     })
   }
 

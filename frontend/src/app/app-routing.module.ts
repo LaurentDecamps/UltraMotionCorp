@@ -14,9 +14,7 @@ import { ProjetsComponent } from './components/projets/projets.component';
 import { InfosComponent } from './components/infos/infos.component';
 import { PrestasComponent } from './components/prestas/prestas.component';
 import { NotifsComponent } from './components/notifs/notifs.component';
-import { EvaluationsComponent } from './components/evaluations/evaluations.component';
 import { MesdevisComponent } from './components/mesdevis/mesdevis.component';
-
 
 const routes: Routes = [
   { path: "", component: AccueilComponent },
