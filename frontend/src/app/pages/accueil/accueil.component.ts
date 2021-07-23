@@ -44,10 +44,10 @@ export class AccueilComponent implements OnInit {
           pro.prestations.forEach(pres => {
             if (pres.type.match(this.search)) {
               this.typesPrestation.add(pres.type)
-              this.displaySearchResults = this.displaySearchResults.concat([...this.typesPrestation])
             }
           })
         })
+        this.displaySearchResults = [...this.typesPrestation].concat(this.displaySearchResults)
       }
     }
     else if (search.length > 0) {
