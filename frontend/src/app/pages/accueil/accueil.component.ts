@@ -11,8 +11,8 @@ import { Router } from '@angular/router'
 export class AccueilComponent implements OnInit {
 
   listePro: Entreprise[];
-  proFiltered: Entreprise[] | undefined = undefined
-  displaySearchResults: String[] | undefined = undefined
+  proFiltered: Entreprise[]
+  displaySearchResults: string[] = undefined
   typesPrestation: Set<string> = new Set([])
   search: RegExp
 
@@ -27,18 +27,17 @@ export class AccueilComponent implements OnInit {
     })
   }
 
-  getInput = search => {
+  getInput = (search: string) => {
     if (search.length > 2) {
       this.search = new RegExp(search, "i")
       this.proFiltered = this.listePro.filter(pro => pro.nom.match(this.search) || pro.prestations.some(pres => this.search.test(pres.type)))
       this.displaySearchResults = []
+      this.typesPrestation.clear()
       if (!this.proFiltered.length) {
         this.displaySearchResults.push("Aucun Résultats")
-        console.log(this.displaySearchResults)
       }
       else {
         this.proFiltered.forEach(pro => {
-          this.typesPrestation.clear()
           if (this.displaySearchResults.length < 10) {
             this.displaySearchResults.push(`${pro.nom} - ${pro.adresse.split(" ").pop()}`)
           }
@@ -53,7 +52,6 @@ export class AccueilComponent implements OnInit {
     }
     else if (search.length > 0) {
       this.displaySearchResults = ["Entrez 3 caractères au minimum"]
-      console.log(this.displaySearchResults)
     }
     else {
       if (this.displaySearchResults) {

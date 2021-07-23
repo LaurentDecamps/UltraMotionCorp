@@ -3,7 +3,7 @@
   <h2 class="imgB">ET RÉALISEZ VOS PROJETS !</h2>
   <div class="inputPro">
     <input type="text" placeholder="un carreleur, un plombier, ..." id="search" (input)="getInput($event.target['value'])" autocomplete="off">
-    <button type="submit" [routerLink]="proFiltered && proFiltered.length ? '/search' : ''" [state]="{data: proFiltered}">TROUVEZ !</button>
+    <button type="button" [routerLink]="proFiltered && proFiltered.length ? '/search' : ''" [state]="{data: proFiltered}">TROUVEZ !</button>
   </div>
   <div class="searchResults" *ngIf="displaySearchResults">
     <div *ngFor="let result of displaySearchResults">
