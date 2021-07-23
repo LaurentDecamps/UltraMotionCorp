@@ -2,7 +2,7 @@
   <h2>Mes projets :</h2>
   <div *ngFor="let projet of clientConnecte?.projets; let indexprojet = index">
     <div>
-      Type de bien : {{projet.typeBien}}
+      Type de bien : {{projet.typeBien + " domicile : " + projet.niveauBien}}
     </div>
     <div>
       Description du projet : {{projet.description}}
