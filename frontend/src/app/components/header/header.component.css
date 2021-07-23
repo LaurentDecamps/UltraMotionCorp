@@ -7,32 +7,17 @@
     font-family: "caviar_dreams", 'arial', sans-serif;
 }
 
-.logoBricool {
-    padding-right: 30em;
-}
-
-nav {
-    margin: 30px;
-}
-
-li {
-    list-style-type: none;
-    display: inline;
-    margin: 20px;
-}
-
-ul {
-    padding-left: 10% ;
-    display: inline;
-}
-
-li:hover {
-    font-weight: bold;
-}
-
 a {
     text-decoration: none;
     color: #7BC248;
+}
+
+.boutonsClient {
+    width: 300px;
+}
+
+.boutonsClient a:first-child {
+    margin-right: 5%;
 }
 
 .imgNav {
@@ -44,12 +29,21 @@ a {
   background-color: #7BC248;
   color: white;
   padding: 10px;
+  width: 80vw;
 }
 
-@media all and (max-width: 1000px) {
-    ul {
-        padding-left: 15% ;
-        display: inline;
+.newProjet:hover {
+  background-color : #DBBD45;
+  transition : 0.5s;
+}
 
-    }
+.flex {
+    display: flex;
+    align-items: center;   
+}
+
+.contain {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
 }

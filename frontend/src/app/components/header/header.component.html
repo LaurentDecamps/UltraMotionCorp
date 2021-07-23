@@ -1,19 +1,19 @@
 <header>
-  <div>
-    <nav>
-      <a routerLink="">
-        <img class="logoBricool" src="../../assets/images/Bricool.png" alt="Logo Bricool">
-      </a>
-      <ul *ngIf="compteClient">
-        <li><a routerLink="mncpt/projets">MES PROJETS</a></li>
-        <li><a routerLink="newprjct" class="newProjet">NOUVEAU PROJET</a></li>
-      </ul>
+  <nav class="contain">
+    <a routerLink="">
+      <img class="logoBricool" src="../../assets/images/Bricool.png" alt="Logo Bricool">
+    </a>
+    <div class="flex">
+      <div class="boutonsClient" *ngIf="compteClient">
+        <a routerLink="mncpt/projets">MES PROJETS</a>
+        <a routerLink="newprjct" class="newProjet">NOUVEAU PROJET</a>
+      </div>
       <a routerLink="mncpt/infos">
         <img class="imgNav" src="../../assets/images/profil.png" alt="Profil">
       </a>
       <a routerLink="mncpt/notifs">
         <img src="../../assets/images/mail.png" alt="Notifications">
       </a>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>

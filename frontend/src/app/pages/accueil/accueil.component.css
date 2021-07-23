@@ -168,11 +168,23 @@ h6 {
 }
 
 .artisanBouton {
-    background-color: #DBBD45;
-    border-radius: 15px;
-    color: white;
+    border: none;
+    font-weight: 500;
+    width:90%;
+    margin:25px auto;
+    background-color: #7BC248;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius:5px;;
+    color : white;
     font-weight: bold;
-    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.artisanBouton:hover {
+    background-color : #DBBD45;
+    transition : 0.5s;
 }
 
 .containerStat {
