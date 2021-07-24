@@ -28,10 +28,11 @@ export class DevisService {
    * Récupère l'ensemble des devis rattaché à un projet et une prestation de ce projet
    * @param idProjet L'identifiant du projet dont on doit récupérer les devis
    * @param idPrestation L'identifiant de la prestation dont on doit récupérer les devis
+   * @param idEntreprise L'identifiant de l'entreprise dont on doit récupérer les devis
    * @returns
    */
-  getDevisByProjetByPrestation = (idProjet : string, idPrestation : string) => {
-    return this.http.get<Devis[]>(`${environment.apiUrl}/devis/projets/${idProjet}/prestations/${idPrestation}`);
+   getDevisByProjetByPrestationByEntreprise = (idProjet : string, idPrestation : string, idEntreprise : string) => {
+    return this.http.get<Devis[]>(`${environment.apiUrl}/devis/projets/${idProjet}/prestations/${idPrestation}/entreprises/${idEntreprise}/ `);
   }
 
   /**
@@ -39,7 +40,7 @@ export class DevisService {
    * @param devis Devis à ajouter en base de donnée
    * @returns L'observable du devis ajouté en base de donnée
    */
-  addDevis = (devis : Devis) => {
+  addDevis = (devis) => {
     return this.http.post<Devis>(`${environment.apiUrl}/devis`, devis);
   }
 

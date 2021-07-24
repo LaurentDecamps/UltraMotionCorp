@@ -40,6 +40,10 @@ const ProjetSchema = new mongoose.Schema({
   devis: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Devis"
+  }],
+  entreprises: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Entreprise"
   }]
 });
 

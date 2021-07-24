@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Devis } from 'src/app/models/devis';
 import { Entreprise } from 'src/app/models/entreprise';
+import { Evaluation } from 'src/app/models/evaluations';
 import { Notification } from 'src/app/models/notification';
 import { Prestation } from 'src/app/models/prestation';
 import { Projet } from 'src/app/models/projets';
@@ -41,14 +42,14 @@ export class DevisComponent implements OnInit {
     console.log(`ID prestation du ${this.idPrestation}`);
     console.log(`ID entreprise du ${this.idEntreprise}`);
 
-    this.devisService.getDevisByProjetByPrestation(this.idProjet, this.idPrestation).subscribe((data) => {
+    this.devisService.getDevisByProjetByPrestationByEntreprise(this.idProjet, this.idPrestation, this.idEntreprise).subscribe((data) => {
       console.log("Devis récupéré", data);
       this.listedevis = data;
     });
 
     this.entrepriseService.findById(this.idEntreprise).subscribe((data) => {
-      console.log(`Entreprise récupérée ${this.entreprisePreSelectionnee}`);
       this.entreprisePreSelectionnee = data;
+      console.log(`Entreprise récupérée ${this.idEntreprise}`, data);
     });
 
     this.projetService.getProjetById(this.idProjet).subscribe((data) => {
@@ -71,17 +72,35 @@ export class DevisComponent implements OnInit {
 
   validerDevis(devis: Devis) {
     devis.etat = "validé";
-    console.log("Devis validé", devis);
-    this.devisService.updateDevis(devis).subscribe(() => {
-      this.creerEvaluationAFaire.emit(this.prestationCourante);
-    });
 
+    let evaluation: Evaluation = new Evaluation(0,
+      0,
+      0,
+      0,
+      "A faire",
+      "A faire",
+      "A faire",
+      "A faire",
+      null,
+      this.prestationCourante
+    );
+
+    this.devisService.updateDevis(devis).subscribe(() => {
+      this.creerEvaluationAFaire.emit(evaluation);
+    });
   }
 
   demanderDevis() {
-    let nouveauDevis: Devis = new Devis(
-      "test", "demandé", 0, 0, this.projetCourant, this.prestationCourante, this.entreprisePreSelectionnee
-    )
+    let nouveauDevis = {
+      titre: this.projetCourant.description + " " + this.prestationCourante.description + " " + this.entreprisePreSelectionnee.nom,
+      etat: "demandé",
+      tempsPrestationJours: 0,
+      prixMateriel: 0,
+      projet: this.projetCourant,
+      prestation: this.prestationCourante,
+      entreprise: this.entreprisePreSelectionnee
+    };
+
 
     // L'identifiant du nouveau devis demandé
     let idNouveauDevis;

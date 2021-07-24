@@ -12,7 +12,7 @@ export class AppComponent {
   constructor() {
     localStorage.removeItem('clientCourant');
     localStorage.removeItem('entrepriseCourante');
-    localStorage.setItem('clientCourant',"60e2d75c35dc14429593abd1");
+    localStorage.setItem('clientCourant',"60e2d75c35dc14429593abd1"); 
     // localStorage.setItem('entrepriseCourante',"60e2d60135dc14429593abb8");
   }
 

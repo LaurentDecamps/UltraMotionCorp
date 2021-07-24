@@ -1,9 +1,9 @@
 <main>
   <section class="mesEvaluations">
-    <app-evaluations></app-evaluations>
+    <app-evaluations (transmettreDemandeEvaluation)="transmettreDemandeEvaluation($event)"></app-evaluations>
   </section>
   <section class="mesEvaluationsAFaire">
-    <app-evaluation-form></app-evaluation-form>
+    <app-evaluation-form [evaluationsAFaire]="evaluationsCourante"></app-evaluation-form>
   </section>
 </main>
 

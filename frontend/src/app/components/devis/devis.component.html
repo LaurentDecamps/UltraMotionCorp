@@ -1,21 +1,16 @@
 <div *ngIf="listedevis?.length === 0">
-  <!-- On appelle la demande de devis pour CarreleurCo -->
   Pas de devis demandée pour cette prestation
   <button type="submit" (click)="demanderDevis()">Demander un devis</button>
 </div>
 <div *ngIf="listedevis?.length > 0">
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let devis of listedevis" class="accordeonDevis">
-    <ngb-panel title="Devis : {{devis.entreprise.nom}}" class="accordeonDevis">
+    <ngb-panel title="Devis : {{devis.titre}} Etat : {{devis.etat}}" class="accordeonDevis">
       <ng-template ngbPanelContent class="accordeonDevis">
-        <!-- ;else devisEncours<ng-template #devisEncours> </ng-template> -->
         <div>
           <div>
             Devis {{devis.etat}}
           </div>
           <div *ngIf="testerDevisAValider(devis)">
-            <!-- <div>
-              Prestation : {{devis.prestation.description}}
-            </div> -->
             <div>
               Prix du matériel : {{devis.prixMateriel}} €
             </div>
@@ -42,6 +37,4 @@
     </ngb-panel>
   </ngb-accordion>
 </div>
-<div class="boutonRechercherEntreprise">
-  <a routerLink="/fnprst" class="bouton">Rechercher une entreprise pour cette prestation</a>
-</div>
+

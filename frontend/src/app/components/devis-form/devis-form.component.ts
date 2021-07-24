@@ -32,7 +32,7 @@ export class DevisFormComponent implements OnInit {
   envoyerEtMettreAJourDevis(): void {
     this.devisEncours.prixMateriel = this.devisForm.controls['prixMateriel'].value;
     this.devisEncours.tempsPrestationJours = this.devisForm.controls['tempsPrestationJours'].value;
-    this.devisEncours.etat = "En cours";
+    this.devisEncours.etat = "A valider";
     console.log("Devis en cours après modification",this.devisEncours);
     this.miseAjourDevis.emit(this.devisEncours);
     this.devisService.updateDevis(this.devisEncours).subscribe(() => {
