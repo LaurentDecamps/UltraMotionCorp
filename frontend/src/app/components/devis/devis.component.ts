@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Devis } from 'src/app/models/devis';
 import { Entreprise } from 'src/app/models/entreprise';
+import { Evaluation } from 'src/app/models/evaluations';
 import { Notification } from 'src/app/models/notification';
 import { Prestation } from 'src/app/models/prestation';
 import { Projet } from 'src/app/models/projets';
@@ -71,11 +72,24 @@ export class DevisComponent implements OnInit {
 
   validerDevis(devis: Devis) {
     devis.etat = "validé";
-    console.log("Devis validé", devis);
-    this.devisService.updateDevis(devis).subscribe(() => {
-      this.creerEvaluationAFaire.emit(this.prestationCourante);
-    });
 
+    console.log("Devis validé", devis);
+    
+    let evaluation: Evaluation = new Evaluation(0,
+      0,
+      0,
+      0,
+      "A faire",
+      "A faire",
+      "A faire",
+      "A faire",
+      null,
+      this.prestationCourante
+    );
+
+    this.devisService.updateDevis(devis).subscribe(() => {
+      this.creerEvaluationAFaire.emit(evaluation);
+    });
   }
 
   demanderDevis() {

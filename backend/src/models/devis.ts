@@ -27,14 +27,14 @@ const DevisSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Prestation"
   }],
-  projet: [{
+  projet: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Projet"
-  }],
-  entreprise: [{
+  },
+  entreprise: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Entreprise"
-  }]
+  } 
 });
 
 export const Devis = mongoose.model('Devis', DevisSchema);

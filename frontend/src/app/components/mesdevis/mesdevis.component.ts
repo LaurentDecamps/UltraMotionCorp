@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Client } from 'src/app/models/client';
 import { Devis } from 'src/app/models/devis';
 import { Entreprise } from 'src/app/models/entreprise';
 import { DevisService } from 'src/app/services/devis.service';
+import { EvaluationsService } from 'src/app/services/evaluations.service';
 
 @Component({
   selector: 'app-mesdevis',
@@ -22,7 +23,10 @@ export class MesdevisComponent implements OnInit {
   clientconnecte: Client;
   devisEnCours: Devis;
 
-  constructor(private devisService: DevisService) { }
+  @Output() creerEvaluationAFaire = new EventEmitter<any>();
+
+  constructor(private devisService: DevisService,
+    private evaluationService: EvaluationsService) { }
 
   ngOnInit(): void {
     this.idConnexion = localStorage.getItem('entrepriseCourante');
@@ -33,13 +37,12 @@ export class MesdevisComponent implements OnInit {
   }
 
   selectionDevis(devisSelectionne : Devis) {
-    console.log(devisSelectionne);
     this.devisEnCours = devisSelectionne;
   }
 
   miseAjourDevis = (devis) => {
-    console.log("Devis reçu : ",devis);
     this.devisEnCours.etat = devis.etat;
+    this.creerEvaluationAFaire.emit(this.devisEnCours.prestation);
   }
 
 }

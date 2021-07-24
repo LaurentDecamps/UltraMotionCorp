@@ -24,6 +24,7 @@ class EvaluationController {
   }
 
   create = async (req, res, next) => {
+    console.log("Creation evaluation",req.body);
     res.status(201)
       .send(await Evaluation.create(req.body))
       .end();
@@ -31,7 +32,6 @@ class EvaluationController {
   }
 
   update = async (req, res, next) => {
-    console.log(req.body);
     res.status(200)
       .send(await Evaluation.findByIdAndUpdate(req.params.id, req.body))
       .end();

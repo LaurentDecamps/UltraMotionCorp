@@ -11,35 +11,35 @@ const EvaluationSchema = new mongoose.Schema({
   },
   noteGlobale: {
     type: Number,
-    required: true
+    required: false
   },
   commentaireGlobal: {
     type: String,
-    required: true
+    required: false
   },
   noteFacilite: {
     type: Number,
-    required: true
+    required: false
   },
   commentaireFacilite: {
     type: String,
-    required: true
+    required: false
   },
   noteQualite: {
     type: Number,
-    required: true
+    required: false
   },
   commentaireQualite: {
     type: String,
-    required: true
+    required: false
   }, 
   noteExpertise: {
     type: Number,
-    required: true
+    required: false
   },
   commentaireExpertise: {
     type: String,
-    required: true
+    required: false
   }
 });
 

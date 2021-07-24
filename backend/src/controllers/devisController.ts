@@ -40,8 +40,7 @@ class DevisController {
         next();
     }
 
-    update = async (req, res, next) => {
-        console.log(req.body);
+    update = async (req, res, next) => {        
         res.status(200)
             .send(await Devis.findByIdAndUpdate(req.params.id, req.body))
             .end();
