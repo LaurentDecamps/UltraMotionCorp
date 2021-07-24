@@ -16,18 +16,16 @@ class ClientController {
           path: 'projets',
           populate: {
             path: 'prestations'
+          }
+        })
+        .populate("notifications")          
+        .populate({
+          path: 'projets',
+          populate: {
+            path: 'entreprises'
             }            
         })
-        // .populate("notifications")
-        //   path: 'notifications'
-        // })
-        // .populate({
-        //   path: 'projets',
-        //   populate: {
-        //     path: 'devis'
-        //     }            
-        // })
-        )
+      )
       .end();
     next();
   }

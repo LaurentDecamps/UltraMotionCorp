@@ -22,17 +22,22 @@ export class ProjetsComponent implements OnInit {
   entreprisePreSelectionnee: Entreprise;
 
   constructor(private clientService: ClientService,
-    private evaluationService: EvaluationsService) { }
+    private evaluationService: EvaluationsService,
+    private entrepriseService: EntreprisesService) { }
 
   ngOnInit(): void {
     this.clientService.findById(localStorage.getItem('clientCourant')).subscribe((data) => {
       this.clientConnecte = data;
     });
+
+    this.entrepriseService.findById(this.idEntrepriseSelectionnee).subscribe((data) => {
+      this.entreprisePreSelectionnee = data;
+    })
   }
 
-  creerEvaluationAFaire = (evaluationAFaire : Evaluation) => {
+  creerEvaluationAFaire = (evaluationAFaire: Evaluation) => {
     evaluationAFaire.client = this.clientConnecte;
     console.log("Je suis remonté aux projet ", evaluationAFaire);
-    this.evaluationService.createEvaluation(evaluationAFaire).subscribe(() => {});
+    this.evaluationService.createEvaluation(evaluationAFaire).subscribe(() => { });
   }
 }

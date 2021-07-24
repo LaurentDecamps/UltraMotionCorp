@@ -1,10 +1,5 @@
-<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in quia sed fugiat sequi ea ex harum reprehenderit
-  excepturi? Deleniti, cupiditate id. Quibusdam odio nisi earum minima neque veniam libero!</p> -->
 <form *ngIf="evaluationsAFaire" [formGroup]="evaluationForm">
   <h2>Donnez votre avis</h2>
-  <!-- <select>
-    <option *ngFor="let evaluationAFaire of evaluationsAFaire">{{evaluationAFaire.prestation}</option>
-  </select> -->
   <label>
     <h3>Facilité de communication</h3>
     <ngb-rating formControlName="noteFacilite" [max]="5">
@@ -15,7 +10,6 @@
     <input type="text" placeholder="Rajouter un Commentaire" formControlName="commentaireFacilite">
   </label>
   <label>
-    <!-- [(rate)]="selectedCommunication" [(rate)]="selectedQualite" [(rate)]="evaluationsAFaire.noteExpertise" [(rate)]="selectedQualite" -->
     <h3>Qualité du dossier technique fourni</h3>
     <ngb-rating formControlName="noteQualite" [max]="5">
       <ng-template let-fill="fill" let-index="index">

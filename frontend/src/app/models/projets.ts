@@ -1,14 +1,16 @@
+import { Entreprise } from "./entreprise";
 import { Prestation } from "./prestation";
 
 export class Projet {
-  private _typeBien : string;
-  private _niveauBien : string;
-  private _description : string;
-  private _surfacem2 : number;
-  private _dateDebut : Date;
-  private _prestations : Prestation[]
+  private _typeBien: string;
+  private _niveauBien: string;
+  private _description: string;
+  private _surfacem2: number;
+  private _dateDebut: Date;
+  private _prestations: Prestation[];
+  private _entreprises: Entreprise[];
 
-  _id : string;
+  _id: string;
   // typeBien : String;
   // niveauBien : String;
   // Description : String;
@@ -16,13 +18,20 @@ export class Projet {
   // DateDebut : Date;
   // prestations : Prestation[]
 
-  constructor(typeBien : string, niveauBien : string, description : string, surfacem2 : number, dateDebut : Date, prestations : Prestation[]) {
+  constructor(typeBien: string,
+      niveauBien: string,
+      description: string,
+      surfacem2: number,
+      dateDebut: Date,
+      prestations: Prestation[],
+      entreprises: Entreprise[]) {
     this._typeBien = typeBien;
     this._niveauBien = niveauBien;
     this._description = description;
     this._surfacem2 = surfacem2;
     this._dateDebut = dateDebut;
-    this._prestations = prestations
+    this._prestations = prestations;
+    this._entreprises = entreprises;
   }
 
   public get typeBien(): string {
@@ -71,5 +80,12 @@ export class Projet {
 
   public set prestations(value: Prestation[]) {
     this._prestations = value;
+  }
+
+  public get entreprises(): Entreprise[] {
+    return this._entreprises;
+  }
+  public set entreprises(value: Entreprise[]) {
+    this._entreprises = value;
   }
 }

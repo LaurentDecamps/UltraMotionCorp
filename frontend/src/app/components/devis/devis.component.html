@@ -1,5 +1,4 @@
 <div *ngIf="listedevis?.length === 0">
-  <!-- On appelle la demande de devis pour CarreleurCo -->
   Pas de devis demandée pour cette prestation
   <button type="submit" (click)="demanderDevis()">Demander un devis</button>
 </div>
@@ -42,6 +41,4 @@
     </ngb-panel>
   </ngb-accordion>
 </div>
-<div class="boutonRechercherEntreprise">
-  <a routerLink="/fnprst" class="bouton">Rechercher une entreprise pour cette prestation</a>
-</div>
+

@@ -19,7 +19,6 @@ export class EvaluationComponent implements OnInit {
 
   transmettreDemandeEvaluation(evaluationsATransmettre : Evaluation)  {
     console.log("Evaluation a transmettre", evaluationsATransmettre);
-
     this.evaluationsCourante = evaluationsATransmettre;
     console.log("Evaluation transmise",this.evaluationsCourante);
   }

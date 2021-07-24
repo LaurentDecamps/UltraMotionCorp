@@ -19,19 +19,16 @@
       <ngb-panel title="Prestation {{prestation.description}}">
         <ng-template ngbPanelContent>
           <p>Type de prestation : {{prestation.type}}</p>
-          <p>Entreprise préselectionné pour cette prestation : {{entreprisePreSelectionnee?.nom}}</p>
-          <app-devis [idProjet]="projet._id" [idPrestation]="prestation._id" [idEntreprise]="idEntrepriseSelectionnee" (creerEvaluationAFaire)="creerEvaluationAFaire($event)"></app-devis>
+          <div *ngFor="let entreprise of projet.entreprises">
+            <p>Entreprise préselectionné pour cette prestation : {{entreprise.nom}}</p>
+            <app-devis [idProjet]="projet._id" [idPrestation]="prestation._id" [idEntreprise]="entreprise._id" (creerEvaluationAFaire)="creerEvaluationAFaire($event)"></app-devis>
+          </div>
+          <div class="boutonRechercherEntreprise">
+            <a routerLink="/fnprst" class="bouton">Rechercher une entreprise pour cette prestation</a>
+          </div>
         </ng-template>
       </ngb-panel>
     </ngb-accordion>
-    <!-- <div class ="mesPrestations" *ngFor="let prestation of projet.prestations; let indexPrestation = index">
-        <button class="accordion" >Prestation {{prestation.description}}</button>
-        <div class ="panel">
-          <p>Type de prestation : {{prestation.type}}</p>
-          <p>Entreprise préselectionné pour cette prestation : {{entreprisePreSelectionnee?.nom}}</p>
-          <app-devis [idProjet]="projet._id" [idPrestation]="prestation._id" [idEntreprise]="idEntrepriseSelectionnee"></app-devis>
-        </div>
-    </div> -->
   </div>
   <div>
     Envie d'un nouveau projet ? Créer votre projet pour trouver LE professionnel de vos rêves !
