@@ -4,17 +4,13 @@
 </div>
 <div *ngIf="listedevis?.length > 0">
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let devis of listedevis" class="accordeonDevis">
-    <ngb-panel title="Devis : {{devis.entreprise.nom}}" class="accordeonDevis">
+    <ngb-panel title="Devis : {{devis.titre}} Etat : {{devis.etat}}" class="accordeonDevis">
       <ng-template ngbPanelContent class="accordeonDevis">
-        <!-- ;else devisEncours<ng-template #devisEncours> </ng-template> -->
         <div>
           <div>
             Devis {{devis.etat}}
           </div>
           <div *ngIf="testerDevisAValider(devis)">
-            <!-- <div>
-              Prestation : {{devis.prestation.description}}
-            </div> -->
             <div>
               Prix du matériel : {{devis.prixMateriel}} €
             </div>
