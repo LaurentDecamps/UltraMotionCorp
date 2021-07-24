@@ -16,7 +16,6 @@ export class DisplayCompaniesComponent implements OnInit {
     history.state.data
       ? this.filteredCompanies = history.state.data.sort((a,b) => a.adresse.split(" ").pop().localeCompare(b.adresse.split(" ").pop()))
       : this.router.navigate(["/"])
-    console.log(this.filteredCompanies)
   }
 
 }
