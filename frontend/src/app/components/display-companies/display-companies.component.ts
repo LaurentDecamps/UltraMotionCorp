@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Entreprise } from '../../models/entreprise'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-display-companies',
@@ -7,12 +8,15 @@ import { Entreprise } from '../../models/entreprise'
   styleUrls: ['./display-companies.component.css']
 })
 export class DisplayCompaniesComponent implements OnInit {
-  filteredCompanies: Entreprise[] = null
+  filteredCompanies: Entreprise[]
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.filteredCompanies = history.state.data
+    history.state.data
+      ? this.filteredCompanies = history.state.data.sort((a,b) => a.adresse.split(" ").pop().localeCompare(b.adresse.split(" ").pop()))
+      : this.router.navigate(["/"])
+    console.log(this.filteredCompanies)
   }
 
 }

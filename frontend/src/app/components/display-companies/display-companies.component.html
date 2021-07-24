@@ -1,8 +1,12 @@
 <ngb-accordion *ngFor="let company of filteredCompanies">
-  <ngb-panel title="{{company.adresse.split(' ').pop()}} - {{company.nom}}" type="success">
-    <ng-template ngbPanelContent>
+  <ngb-panel title="{{company.adresse.split(' ').pop()}} - {{company.nom}}" type="warning">
+    <ng-template ngbPanelContent type="warning">
+      <div>{{company.description}}</div>
+      <div>{{company.adresse}}</div>
+      <div>{{company.email}}</div>
+      <div>{{company.numeroTelephone}}</div>         
       <div *ngFor="let prestation of company.prestations">
-        {{prestation.type}}
+        {{prestation.type}}: {{prestation.description}}
       </div>
     </ng-template>
   </ngb-panel>
