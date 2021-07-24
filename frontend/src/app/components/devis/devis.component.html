@@ -4,7 +4,7 @@
 </div>
 <div *ngIf="listedevis?.length > 0">
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let devis of listedevis" class="accordeonDevis">
-    <ngb-panel title="Devis : {{devis.titre}} Etat : {{devis.etat}}" class="accordeonDevis">
+    <ngb-panel title="Devis : {{devis.titre}} // Etat : {{devis.etat}}" class="accordeonDevis">
       <ng-template ngbPanelContent class="accordeonDevis">
         <div>
           <div>
