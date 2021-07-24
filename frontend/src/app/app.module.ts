@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +27,7 @@ import { EvaluationFormComponent } from './components/evaluation-form/evaluation
 import { MesdevisComponent } from './components/mesdevis/mesdevis.component';
 import { NotifComponent } from './components/notif/notif.component';
 import { DevisFormComponent } from './components/devis-form/devis-form.component';
+import { DisplayCompaniesComponent } from './components/display-companies/display-companies.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { DevisFormComponent } from './components/devis-form/devis-form.component
     MesdevisComponent,
     NotifComponent,
     DevisFormComponent,
+    DisplayCompaniesComponent,
   ],
   imports: [
     BrowserModule,
