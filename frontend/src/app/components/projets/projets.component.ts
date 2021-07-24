@@ -30,8 +30,9 @@ export class ProjetsComponent implements OnInit {
     });
   }
 
-  creerEvaluationAFaire = (prestation) => {
-    let evaluationAFaire: Evaluation = new Evaluation(-1, "", -1, "", -1, "", -1, "",this.clientConnecte,prestation);
+  creerEvaluationAFaire = (evaluationAFaire : Evaluation) => {
+    evaluationAFaire.client = this.clientConnecte;
+    console.log("Je suis remonté aux projet ", evaluationAFaire);
     this.evaluationService.createEvaluation(evaluationAFaire).subscribe(() => {});
   }
 }

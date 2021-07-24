@@ -20,6 +20,6 @@ export class EvaluationsService {
   }
 
   miseAJourEvaluation = (evaluation : Evaluation) => {
-return this.httpClient.put<Evaluation>(`${environment.apiUrl}/evaluations`, evaluation)
+return this.httpClient.put<Evaluation>(`${environment.apiUrl}/evaluations/${evaluation._id}`, evaluation)
   }
 }
