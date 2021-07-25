@@ -30,7 +30,7 @@ export class InfosComponent implements OnInit {
       this.compteClient = true;
     }
     else { // Si on a pas de client Courant on essaie de récupérer l'entreprise courante
-      this.idConnexion = JSON.parse(localStorage.getItem('entrepriseCourante')).entreprise.id;
+      this.idConnexion = JSON.parse(localStorage.getItem('entrepriseCourante'))?.entreprise.id;
       if (this.idConnexion) {
         this.compteEntreprise = true;
       }
