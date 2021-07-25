@@ -8,6 +8,7 @@ export class Devis {
   etat: string;
   tempsPrestationJours: number;
   prixMateriel: number;
+  prixPrestation: number;
   projet: Projet;
   prestation: Prestation;
   entreprise: Entreprise;

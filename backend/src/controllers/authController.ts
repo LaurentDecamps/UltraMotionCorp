@@ -210,7 +210,7 @@ class AuthController {
     signinEntreprise = async (req, res, next) => {
 
         // Créer une variable email et une variable password qui prennent la valeur du body
-        const { email, password } = req.body;
+        const { email, motDePasse } = req.body;
 
         try {
             // Chercher si l'entreprise avec cet email existe
@@ -224,7 +224,7 @@ class AuthController {
                 });
 
             // Vérifier que le mot de passe entré correspond au mot de passe en base de données
-            const isMatch = await bcrypt.compare(password, entreprise.password);
+            const isMatch = await bcrypt.compare(motDePasse, entreprise.motDePasse);
 
             // Si les mots de passes ne correspondent pas, afficher erreur
             if (!isMatch)

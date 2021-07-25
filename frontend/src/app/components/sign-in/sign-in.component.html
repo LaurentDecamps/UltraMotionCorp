@@ -1,35 +1,58 @@
-<!-- <div class="container h-100"> -->
-<form class="form-signin text-center" (ngSubmit)="connecterClient()" [formGroup]="loginClientForm">
-  <h1 class="h1 mb-3 font-weight-normal">Connexion</h1>
-  <div class="d-flex justify-content-center h-100">
-    <div class="user_card justify-content-md-center">
-      <div class="col">
-        <label class="sr-only">Email * :
-        </label>
-        <div class="input-group mb-3">
-          <span class="input-group-text">
-            <i class="fas fa-user"></i>
-          </span>
-          <input type="email" placeholder="Adresse email" pattern=".+@globex\.com" size="30" required
-            class="form-control input_user" formControlName="email">
+<div class="container ">
+  <h1 class="h1 mb-3 font-weight-normal text-center">Connexion</h1>
+
+  <div>
+    <div class="row justify-content-md-center">
+      <div class="col-2 ">
+        <h2>Vous êtes : </h2>
+      </div>
+
+      <div class="col-2">
+        <div class="list-group" type="checkbox" id="toggle">
+          <a class="bouton" (click)="clientDisplay()" [class.disabled]="isClientDisplay">CLIENT</a>
+          <a class="bouton" (click)="entrepriseDisplay()" [class.disabled]="isEntrepriseDisplay">ENTREPRISE</a>
         </div>
       </div>
 
-      <label class="sr-only"> Mot de passe * :
-      </label>
-      <div class="input-group mb-3">
-        <span class="input-group-text"><i class="fas fa-key"></i></span>
-        <input type="password" required placeholder="Mot de passe" class="form-control" formControlName="motDePasse">
+      <div *ngIf="isClientDisplay || isEntrepriseDisplay">
+        <form class="form-signin text-center" (ngSubmit)="connecter()" [formGroup]="loginForm">
+
+          <div class="d-flex justify-content-center h-100">
+            <div class="user_card justify-content-md-center">
+              <div class="col">
+                <label class="sr-only">Email * :
+                </label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <input type="email" placeholder="Adresse email" pattern=".+@globex\.com" size="30" required
+                    class="form-control input_user" formControlName="email">
+                </div>
+              </div>
+
+              <label class="sr-only"> Mot de passe * :
+              </label>
+              <div class="input-group mb-3">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                <input type="password" required placeholder="Mot de passe" class="form-control"
+                  formControlName="motDePasse">
+              </div>
+            </div>
+          </div>
+
+          <button *ngIf="isEntrepriseDisplay" class="">SE CONNECTER EN TANT QUE PROFESSIONNEL</button>
+          <button *ngIf="isClientDisplay" class="">SE CONNECTER EN TANT QUE CLIENT</button>
+
+          <div>
+            <span>Vous ne possédez pas de compte ? <a routerLink="/auth/signup">Se créer un compte !</a></span>
+          </div>
+        </form>
+      </div>
+
+      <div class="text-center" *ngIf="messageErreur">
+        Erreur : {{messageErreur}}
       </div>
     </div>
   </div>
-
-  <button class="">SE CONNECTER</button>
-
-  <div>
-    <span>Vous ne possédez pas de compte ? <a routerLink="/auth/signup">Se créer un compte !</a></span>
-  </div>
-</form>
-<div class="text-center"  *ngIf="messageErreur">
-  Erreur : {{messageErreur}}
 </div>

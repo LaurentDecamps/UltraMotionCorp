@@ -7,7 +7,7 @@
       <div class="boutonsClient" >
         <a *ngIf="compteClientConnecte" routerLink="mncpt/projets">MES PROJETS</a>
         <a *ngIf="compteEntrepriseConnecte" routerLink="mncpt/devis">MES DEVIS</a>
-        <a *ngIf="!compteClientConnecte" class="bouton" routerLink="auth/signup">S'INSCRIRE</a>
+        <a *ngIf="!compteClientConnecte && !compteEntrepriseConnecte" class="bouton" routerLink="auth/signup">S'INSCRIRE</a>
         <a routerLink="newprjct" class="bouton">NOUVEAU PROJET</a>
       </div>
       <a routerLink="auth/signin">

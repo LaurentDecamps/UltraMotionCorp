@@ -33,3 +33,16 @@
 .input-group-text{
   background-color: #DBBD45;
 }
+
+.bouton {
+  border-radius: 15px;
+  background-color: #7BC248;
+  color: white;
+  padding: 10px;
+  width: 80vw;
+}
+
+.bouton:hover {
+  background-color : #DBBD45;
+  transition : 0.5s;
+}

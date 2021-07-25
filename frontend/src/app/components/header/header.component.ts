@@ -17,14 +17,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.idConnexion = JSON.parse(localStorage.getItem('clientCourant')).client.id;
+    this.idConnexion = JSON.parse(localStorage.getItem('clientCourant'))?.client.id;
     // Si on a pas de client Courant on essaie de
     if (this.idConnexion) {
       this.compteClientConnecte = true;
     }
     else {
       this.compteClientConnecte = false;
-      this.idConnexion = JSON.parse(localStorage.getItem('entrepriseCourante')).entreprise.id;
+      this.idConnexion = JSON.parse(localStorage.getItem('entrepriseCourante'))?.entreprise.id;
       if (this.idConnexion){
         this.compteEntrepriseConnecte = true;
       }else{

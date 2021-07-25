@@ -118,9 +118,9 @@ export class AuthentificationService {
    * @param password
    * @returns
    */
-  loginEntreprise(email: string, password: string) {
+  loginEntreprise(email: string, motDePasse: string) {
     // Envoie une méthode HTTP post au BACK
-    return this.http.post<any>(`${environment.apiUrl}/auth/client/signin`, { email, password })
+    return this.http.post<any>(`${environment.apiUrl}/auth/entreprise/signin`, { email, motDePasse })
       .pipe(map(entreprise => {
         localStorage.setItem('entrepriseCourante', JSON.stringify(entreprise));
         this.currentClientSubject.next(entreprise);

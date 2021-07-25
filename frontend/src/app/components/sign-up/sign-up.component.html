@@ -41,24 +41,27 @@
                 </label>
                 <input type="email" formControlName="email" placeholder="Adresse email" pattern=".+@globex\.com"
                   size="30" class="form-control" required placeholder="Email">
-                  <div *ngIf="emailClient.invalid && (emailClient.dirty || emailClient.touched)" class="alert">
-                    <div class="form-text small" *ngIf="emailClient.errors?.required">
-                      Email obligatoire
-                    </div>
+                <div *ngIf="emailClient.invalid && (emailClient.dirty || emailClient.touched)" class="alert">
+                  <div class="form-text small" *ngIf="emailClient.errors?.required">
+                    Email obligatoire
                   </div>
+                </div>
                 <label>Numéro de téléphone* :
                 </label>
                 <input type="text" formControlName="numeroTelephone" placeholder="Numéro de téléphone"
                   class="form-control">
-                  <div *ngIf="numeroTelephoneClient.invalid && (numeroTelephoneClient.dirty || numeroTelephoneClient.touched)" class="alert">
-                    <div class="form-text small" *ngIf="numeroTelephoneClient.errors?.required">
-                      Numéro de téléphone obligatoire
-                    </div>
+                <div
+                  *ngIf="numeroTelephoneClient.invalid && (numeroTelephoneClient.dirty || numeroTelephoneClient.touched)"
+                  class="alert">
+                  <div class="form-text small" *ngIf="numeroTelephoneClient.errors?.required">
+                    Numéro de téléphone obligatoire
                   </div>
+                </div>
                 <label> Mot de passe*:
                 </label>
                 <input type="password" formControlName="motDePasse" class="form-control">
-                <div *ngIf="motDePasseClient.invalid && (motDePasseClient.dirty || motDePasseClient.touched)" class="alert">
+                <div *ngIf="motDePasseClient.invalid && (motDePasseClient.dirty || motDePasseClient.touched)"
+                  class="alert">
                   <div class="form-text small" *ngIf="motDePasseClient.errors?.required">
                     Mot de passe obligatoire
                   </div>
@@ -110,3 +113,5 @@
       <span>Vous possédez déjà un compte ? <a routerLink="/auth/signin"> Identifiez-vous</a> </span>
 
     </div>
+  </div>
+</div>

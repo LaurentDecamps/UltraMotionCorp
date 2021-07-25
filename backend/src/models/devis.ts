@@ -23,6 +23,10 @@ const DevisSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  prixPrestation: {
+    type: Number,
+    required: true
+  },
   prestation: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Prestation"
