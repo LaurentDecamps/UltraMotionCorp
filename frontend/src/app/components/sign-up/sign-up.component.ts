@@ -15,8 +15,8 @@ export class SignUpComponent implements OnInit {
   clientForm : FormGroup;
   entrepriseForm : FormGroup;
 
-  isDisplay = true;
-  entrepriseIsDisplay = true;
+  isClientDisplay = false;
+  isEntrepriseDisplay = false;
 
   get nomClient() { return this.clientForm.get('nom'); }
   get prenomClient() { return this.clientForm.get('prenom'); }
@@ -56,11 +56,13 @@ export class SignUpComponent implements OnInit {
   }
 
   clientDisplay = () => {
-    this.isDisplay = !this.isDisplay;
+    this.isClientDisplay = !this.isClientDisplay;
+    this.isEntrepriseDisplay = false;
   }
 
   entrepriseDisplay = () => {
-    this.entrepriseIsDisplay = !this.entrepriseIsDisplay;
+    this.isEntrepriseDisplay = !this.isEntrepriseDisplay;
+    this.isClientDisplay = false;
   }
 
   inscrireClient = () => {

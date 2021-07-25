@@ -4,7 +4,20 @@
     margin-bottom: 2%;
 }
 
-button {
+.bouton {
+  border-radius: 15px;
+  background-color: #7BC248;
+  color: white;
+  padding: 10px;
+  width: 80vw;
+}
+
+.bouton:hover {
+  background-color : #DBBD45;
+  transition : 0.5s;
+}
+
+/* button {
   border: none !important;
   font-weight: 700 !important;
   width:33% !important;
@@ -20,6 +33,11 @@ button {
 button:hover{
   background-color : #DBBD45;
   transition : 0.5s;
+} */
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
 }
 
 .list-group a {
