@@ -85,6 +85,43 @@
     </div>
   </div>
   <div class="details">
-    <input type="date" name="" value="">
+    <h1>Détails de votre projet<span class="red">*</span></h1>
+    <div>type de bien:</div>
+    <input type="radio" name="type" value="">
+    <label for="">appartement</label>
+    <input type="radio" name="type" value="">
+    <label for="">maison</label>
+    <input type="radio" id="other" name="type" value="">
+    <label for="">autres</label>
+    <input type="text" class="other" name="other" placeholder="Préciser votre type de bien">
+    <div>résidence:</div>
+    <input type="radio" name="residence" value="">
+    <label for="">principale</label>
+    <input type="radio" name="residence" value="">
+    <label for="">secondaire</label>
+    <div>combien de mètres carrés fait votre bien?</div>
+    <input type="text" name="" placeholder="165.3">
+    <label for="">m²</label>
+    <label for="">décrivez votre projet en quelques mots</label>
+    <input type="textarea" name="" placeholder="Je veux une nouvelle salle de bain">
+    <div>date de début de votre projet: {{startDate}}</div>
+    <div class="calendar">
+      <div class="year">
+        <p (click)="decrementYear()"><</p>
+        <p>{{year}}</p>
+        <p (click)="incrementYear()">></p>
+      </div>
+      <div class="month">
+        <p (click)="decrementMonth()"><</p>
+        <p>{{months[monthIndex]["month"]}}</p>
+        <p (click)="incrementMonth()">></p>
+      </div>
+      <div class="weekDays">
+        <p *ngFor="let day of weekDays">{{day}}</p>
+      </div>
+      <div class="days">
+        <p *ngFor="let day of days" (click)="setStartDate(day)">{{day}}</p>
+      </div>
+    </div>
   </div>
 </form>
