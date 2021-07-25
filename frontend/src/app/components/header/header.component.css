@@ -24,7 +24,7 @@ a {
     margin: 30px;
 }
 
-.newProjet {
+.bouton {
   border-radius: 15px;
   background-color: #7BC248;
   color: white;
@@ -32,14 +32,14 @@ a {
   width: 80vw;
 }
 
-.newProjet:hover {
+.bouton:hover {
   background-color : #DBBD45;
   transition : 0.5s;
 }
 
 .flex {
     display: flex;
-    align-items: center;   
+    align-items: center;
 }
 
 .contain {

@@ -1,7 +1,5 @@
-import { isNull } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Entreprise } from 'src/app/models/entreprise';
+import { AuthentificationService } from 'src/app/services/authentification.service';
 
 @Component({
   selector: 'app-header',
@@ -11,23 +9,26 @@ import { Entreprise } from 'src/app/models/entreprise';
 export class HeaderComponent implements OnInit {
 
   idConnexion : String | null;
-  compteEntreprise : boolean = false;
-  compteClient : boolean = false;
+  compteEntrepriseConnecte : boolean = false;
+  compteClientConnecte : boolean = false;
   compteAdmin : boolean = false;
 
-  constructor() { }
+  constructor(public authenticationService : AuthentificationService) { }
 
   ngOnInit(): void {
 
-    this.idConnexion = localStorage.getItem('clientCourant');
+    this.idConnexion = JSON.parse(localStorage.getItem('clientCourant')).client.id;
     // Si on a pas de client Courant on essaie de
     if (this.idConnexion) {
-      this.compteClient = true;
+      this.compteClientConnecte = true;
     }
     else {
-      this.idConnexion = localStorage.getItem('entrepriseCourante');
+      this.compteClientConnecte = false;
+      this.idConnexion = JSON.parse(localStorage.getItem('entrepriseCourante')).entreprise.id;
       if (this.idConnexion){
-        this.compteEntreprise = true;
+        this.compteEntrepriseConnecte = true;
+      }else{
+        this.compteEntrepriseConnecte = false;
       }
     }
   }

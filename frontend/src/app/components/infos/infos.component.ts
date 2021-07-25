@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client';
 import { Entreprise } from 'src/app/models/entreprise';
+import { AuthentificationService } from 'src/app/services/authentification.service';
 import { ClientService } from 'src/app/services/client.service';
 import { EntreprisesService } from 'src/app/services/entreprises.service';
 
@@ -19,16 +20,17 @@ export class InfosComponent implements OnInit {
   clientconnecte: Client;
 
   constructor(private entreprisesService: EntreprisesService,
-    private clientsService: ClientService) { }
+              private clientsService: ClientService,
+              private authentificationService: AuthentificationService) { }
 
   ngOnInit(): void {
-    this.idConnexion = localStorage.getItem('clientCourant');
+    this.idConnexion = JSON.parse(localStorage.getItem('clientCourant')).client.id;
 
     if (this.idConnexion) {
       this.compteClient = true;
     }
     else { // Si on a pas de client Courant on essaie de récupérer l'entreprise courante
-      this.idConnexion = localStorage.getItem('entrepriseCourante');
+      this.idConnexion = JSON.parse(localStorage.getItem('entrepriseCourante')).entreprise.id;
       if (this.idConnexion) {
         this.compteEntreprise = true;
       }
@@ -44,6 +46,10 @@ export class InfosComponent implements OnInit {
         this.clientconnecte = data;
       });
     }
+  }
+
+  deconnecter = () => {
+    this.authentificationService.logout();
   }
 
 }
