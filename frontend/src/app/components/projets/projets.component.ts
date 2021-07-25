@@ -26,7 +26,7 @@ export class ProjetsComponent implements OnInit {
     private entrepriseService: EntreprisesService) { }
 
   ngOnInit(): void {
-    this.clientService.findById(localStorage.getItem('clientCourant')).subscribe((data) => {
+    this.clientService.findById(JSON.parse(localStorage.getItem('clientCourant')).client.id).subscribe((data) => {
       this.clientConnecte = data;
     });
 

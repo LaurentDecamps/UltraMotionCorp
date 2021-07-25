@@ -8,6 +8,7 @@ import { setEvaluationRouting } from './routes/evaluationRoutes';
 import { setPrestationsRouting } from './routes/prestationRoutes';
 import { setNotificationRouting } from './routes/notificationRoutes';
 import { setProjetRouting } from './routes/projetRoutes';
+import { setAuthRoutes } from './routes/authRoutes';
 
 const port = 8080;
 
@@ -24,6 +25,7 @@ app.listen(port, () => {
 });
 
 setClientRouting(app);
+setAuthRoutes(app);
 setDevisRouting(app);
 setEntrepriseRouting(app);
 setEvaluationRouting(app);

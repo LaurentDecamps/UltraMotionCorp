@@ -9,7 +9,6 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { RecherchePrestationComponent } from './pages/recherche-prestation/recherche-prestation.component';
 import { NouveauProjetComponent } from './pages/nouveau-projet/nouveau-projet.component';
 import { MonCompteComponent } from './pages/mon-compte/mon-compte.component';
-import { DevisComponent } from './components/devis/devis.component';
 import { ProjetsComponent } from './components/projets/projets.component';
 import { InfosComponent } from './components/infos/infos.component';
 import { PrestasComponent } from './components/prestas/prestas.component';

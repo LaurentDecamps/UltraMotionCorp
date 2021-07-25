@@ -8,6 +8,24 @@
 }
 
 * {
-  font-family: "caviar_dreams", 'arial', sans-serif;
-  color: #231F20;
+  font-family: "caviar_dreams", "arial", sans-serif;
+  color: #231f20;
+}
+
+button {
+  border: none !important;
+  font-weight: 700 !important;
+  width: 33% !important;
+  margin: 25px auto;
+  background-color: #7bc248 !important;
+  padding: 5 20px;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #dbbd45;
+  transition: 0.5s;
 }

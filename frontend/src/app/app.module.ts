@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -27,6 +27,8 @@ import { EvaluationFormComponent } from './components/evaluation-form/evaluation
 import { MesdevisComponent } from './components/mesdevis/mesdevis.component';
 import { NotifComponent } from './components/notif/notif.component';
 import { DevisFormComponent } from './components/devis-form/devis-form.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,11 @@ import { DevisFormComponent } from './components/devis-form/devis-form.component
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  // Utilise les classes interceptors que nous avons créé
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
