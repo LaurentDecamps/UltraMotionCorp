@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -60,7 +60,7 @@ export class AuthentificationService {
    * @param password
    * @returns
    */
-  loginClient(email: string, motDePasse: string) {
+  loginClient (email: string, motDePasse: string){
     // Envoie une méthode HTTP post au BACK
     console.log("On envoie le mot de passe", motDePasse);
     return this.http.post<any>(`${environment.apiUrl}/auth/client/signin`, { email, motDePasse })
@@ -69,32 +69,7 @@ export class AuthentificationService {
         this.currentClientSubject.next(client);
         this.isClientConnect = true;
         return client;
-      }))
-      .pipe(
-        catchError((erreur) => {
-          console.log('Erreur dans le service')
-          console.error(erreur);
-          if (erreur instanceof HttpErrorResponse) {
-            if (erreur.error instanceof ErrorEvent) {
-              console.error("Erreur coté client dans la génération de le requête");
-            } else {
-              console.log(`Statut de l'erreur: ${erreur.status} ${erreur.statusText}`);
-              switch (erreur.status) {
-                case 401:      //login
-                  this.router.navigateByUrl("/");
-                  break;
-                case 403:     //forbidden
-                  this.router.navigateByUrl("/");
-                  break;
-              }
-            }
-          } else {
-            console.error("Autre chose qu'une erreur HTTP");
-          }
-
-          return throwError(erreur);    //On renvoit l'erreur au composant
-        })
-      );
+      }));
   }
 
   /**

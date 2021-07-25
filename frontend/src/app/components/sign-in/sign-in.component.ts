@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
     if (this.authentificationService.currentClientValue || this.authentificationService.currentEntrepriseValue) {
       this.router.navigateByUrl("/mncpt/infos");
     }
-    this.loginForm.setValue({ email: "toto@lolo.com", motDePasse: "123456" })
+    this.loginForm.setValue({ email: "toto@lolococo.fr", motDePasse: "123456" })
   }
 
   clientDisplay = () => {
@@ -50,24 +50,25 @@ export class SignInComponent implements OnInit {
   connecter = () => {
     this.loading = true;
     if (this.isClientDisplay) {
-      this.authenticationService.loginClient(this.loginForm.value.email, this.loginForm.value.motDePasse).subscribe(() => {
-        this.loading = false;
-        console.log("On s'en est sorti !");
-        this.router.navigateByUrl("/mncpt/infos");
-      }, (erreur) => {
-        console.log("Gestion d'erreur dans le composant");
-        this.loading = false;
-        this.messageErreur = erreur;
-      })
+      this.authenticationService.loginClient(this.loginForm.value.email, this.loginForm.value.motDePasse).subscribe(
+        () => {
+          this.loading = false;
+          console.log("On s'en est sorti !");
+          this.router.navigateByUrl("/mncpt/infos");
+        }
+        , (erreur) => {
+          this.loading = false;
+          this.messageErreur = erreur;        }
+        )
     }
     else {
-      if (this.isEntrepriseDisplay){
+      if (this.isEntrepriseDisplay) {
         this.authenticationService.loginEntreprise(this.loginForm.value.email, this.loginForm.value.motDePasse).subscribe(() => {
           this.loading = false;
           console.log("On s'en est sorti !");
           this.router.navigateByUrl("/mncpt/infos");
         }, (erreur) => {
-          console.log("Gestion d'erreur dans le composant");
+          console.log("Gestion d'erreur dans le composant", erreur.message);
           this.loading = false;
           this.messageErreur = erreur;
         })
