@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+.divbouton {
+  margin-top: 3%;
+}
+
 .bouton:hover{
   background-color : #DBBD45;
   transition : 0.5s;

@@ -1,5 +1,5 @@
-<div class="container" *ngIf="clientConnecte?.projets;else pasdeProjet">
-  <h2>Mes projets :</h2>
+<h2>Mes projets :</h2>
+<div class="container" *ngIf="clientConnecte?.projets.length > 0;else pasdeProjet">
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"
   *ngFor="let projet of clientConnecte?.projets; let indexprojet = index">
         <ngb-panel title="Projet #{{indexprojet+1}}">
@@ -39,14 +39,14 @@
     Envie d'un nouveau projet ? Créer votre projet pour trouver LE professionnel de vos rêves !
   </div>
   <div class="container">
-    <a routerLink="newprjct" class="bouton">NOUVEAU PROJET</a>
+    <a routerLink="/newprjct" class="bouton">NOUVEAU PROJET</a>
   </div>
 </div>
 <ng-template #pasdeProjet>
-  <div class="container">
-    Pas encore de projet. Créer votre projet pour trouver LE professionnel de vos rêves !
+  <div>
+    Pas encore de projet.Créer votre projet pour trouver LE professionnel de vos rêves !
   </div>
-  <div class="container">
+  <div class="divbouton">
     <a routerLink="/newprjct" class="bouton">NOUVEAU PROJET</a>
   </div>
 </ng-template>
