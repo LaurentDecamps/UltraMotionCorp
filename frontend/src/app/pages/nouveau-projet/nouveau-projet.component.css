@@ -126,3 +126,8 @@ h1 {
 .calendar div {
   display: flex;
 }
+
+.boutonAdroite {
+  display: flex;
+  flex-direction: row-reverse;
+}
