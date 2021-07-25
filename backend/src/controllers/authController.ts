@@ -152,7 +152,7 @@ class AuthController {
 
         try {
             // Chercher un client qui possède déjà cet email
-            let entrepriseExist = await Client.findOne({
+            let entrepriseExist = await Entreprise.findOne({
                 email: entreprise.email
             });
             // Si on récupère un client, on affiche une erreur
@@ -164,10 +164,10 @@ class AuthController {
 
             // "salt" est une chaine de caractère random
             const salt = await bcrypt.genSalt(10);
-            entreprise.password = await bcrypt.hash(entreprise.password, salt);
+            entreprise.motDePasse = await bcrypt.hash(entreprise.motDePasse, salt);
 
             //Enregistrer l'utilisateur en base
-            entreprise = await Client.create(entreprise);
+            entreprise = await Entreprise.create(entreprise);
 
             const payload = {
                 entreprise: {

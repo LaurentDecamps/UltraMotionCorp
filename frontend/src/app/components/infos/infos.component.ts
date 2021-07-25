@@ -24,7 +24,7 @@ export class InfosComponent implements OnInit {
               private authentificationService: AuthentificationService) { }
 
   ngOnInit(): void {
-    this.idConnexion = JSON.parse(localStorage.getItem('clientCourant')).client.id;
+    this.idConnexion = JSON.parse(localStorage.getItem('clientCourant'))?.client.id;
 
     if (this.idConnexion) {
       this.compteClient = true;

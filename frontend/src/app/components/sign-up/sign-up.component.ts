@@ -73,7 +73,7 @@ export class SignUpComponent implements OnInit {
   }
 
   inscrireEntreprise = () => {
-    console.log(this.entrepriseForm.value);
+    console.log("Entreprise à inscrire",this.entrepriseForm.value);
     this.authentificationService.signupEntreprise(this.entrepriseForm.value).subscribe( () => {
       this.router.navigateByUrl("/mncpt/infos");
     })
