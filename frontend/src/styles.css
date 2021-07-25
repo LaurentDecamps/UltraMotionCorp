@@ -3,6 +3,11 @@
 
 @font-face {
   font-family: "caviar_dreams";
+  src: url(./assets/font/caviar_dreams/CaviarDreams.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "caviar_dreams";
   src: url(./assets/font/caviar_dreams/CaviarDreams_Bold.ttf) format("truetype");
   font-weight: bold;
 }

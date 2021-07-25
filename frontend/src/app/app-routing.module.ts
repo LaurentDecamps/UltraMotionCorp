@@ -15,9 +15,11 @@ import { InfosComponent } from './components/infos/infos.component';
 import { PrestasComponent } from './components/prestas/prestas.component';
 import { NotifsComponent } from './components/notifs/notifs.component';
 import { MesdevisComponent } from './components/mesdevis/mesdevis.component';
+import { DisplayCompaniesComponent } from './components/display-companies/display-companies.component';
 
 const routes: Routes = [
   { path: "", component: AccueilComponent },
+  { path:"search", component: DisplayCompaniesComponent },
   {
     path: "auth", component: AuthenticationComponent, children: [
       { path: "signin", component: SignInComponent },
