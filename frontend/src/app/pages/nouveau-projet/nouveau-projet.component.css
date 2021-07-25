@@ -115,3 +115,14 @@ h1 {
   margin-bottom: 30px;
 }
 
+.other {
+  display: none;
+}
+
+#other:checked ~ .other {
+  display: inline;
+}
+
+.calendar div {
+  display: flex;
+}
