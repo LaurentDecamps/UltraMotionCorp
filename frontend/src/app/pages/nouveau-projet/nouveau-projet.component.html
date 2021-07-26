@@ -1,5 +1,5 @@
 <form class="" (ngSubmit)="submitNewProject($event)">
-  <div class="contact">
+  <!-- <div class="contact">
     <h1>Mon nouveau projet</h1>
     <div class="container">
       <label for="name">NOM<span class="red">*</span> <span class="green"> :</span></label>
@@ -17,28 +17,28 @@
       <label for="phone">TÉLÉPHONE<span class="red">*</span> <span class="green"> :</span></label>
       <input type="tel" name="phone" class="greenInput">
     </div>
-  </div>
+  </div> -->
 
   <div class="details">
     <h1>Détails de votre projet<span class="red">*</span></h1>
     <div>type de bien:</div>
-    <input type="radio" name="type" value="">
-    <label for="">appartement</label>
-    <input type="radio" name="type" value="">
-    <label for="">maison</label>
-    <input type="radio" id="other" name="type" value="">
-    <label for="">autres</label>
+    <input type="radio" class="flat" name="typeBien" value="">
+    <label for="flat">appartement</label>
+    <input type="radio" id="house" name="typeBien" value="">
+    <label for="house">maison</label>
+    <input type="radio" id="other" name="typeBien" value="">
+    <label for="other">autres</label>
     <input type="text" class="other" name="other" placeholder="Préciser votre type de bien">
     <div>résidence:</div>
-    <input type="radio" name="residence" value="">
-    <label for="">principale</label>
-    <input type="radio" name="residence" value="">
-    <label for="">secondaire</label>
+    <input type="radio" id="main" name="niveauBien" value="">
+    <label for="main">principale</label>
+    <input type="radio" id="second" name="niveauBien" value="">
+    <label for="second">secondaire</label>
     <div>combien de mètres carrés fait votre bien?</div>
-    <input type="text" name="" placeholder="165.3">
+    <input type="text" name="surfacem2" placeholder="165.3">
     <label for="">m²</label>
     <label for="">décrivez votre projet en quelques mots</label>
-    <input type="textarea" name="" placeholder="Je veux une nouvelle salle de bain">
+    <input type="textarea" name="description" placeholder="Je veux une nouvelle salle de bain">
     <div>date de début de votre projet: {{startDate}}</div>
     <div class="calendar">
       <div class="year">

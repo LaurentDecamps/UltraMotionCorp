@@ -118,7 +118,20 @@ export class NouveauProjetComponent implements OnInit {
   }
 
   submitNewProject(event) {
-    console.log(event.target)
+    let array = []
+    let object = {}
+    for (let key in event.target) {
+      if (Number.isInteger(parseInt(key)) && event.target[key].checked) {
+        object[event.target[key].name] = event.target[key].labels[0].innerText
+      }
+      if (Number.isInteger(parseInt(key)) && event.target[key].value.length) {
+        object[event.target[key].name] = event.target[key].name === "surfacem2"
+          ? parseInt(event.target[key].value)
+          : event.target[key].value
+      }
+    }
+    object["dateDebut"] = new Date(this.year, this.monthIndex, parseInt(this.startDate.split("/")[0]))
+    console.log(object)
   }
 
 }
