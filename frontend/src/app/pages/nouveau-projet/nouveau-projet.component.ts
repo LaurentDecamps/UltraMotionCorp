@@ -31,6 +31,7 @@ export class NouveauProjetComponent implements OnInit {
 
   ngOnInit(): void {
     this.prestationsChoisies.push(history.state.data)
+    console.log(this.prestationsChoisies)
     this.getFirstWeekDay()
   }
 
@@ -131,7 +132,18 @@ export class NouveauProjetComponent implements OnInit {
       }
     }
     object["dateDebut"] = new Date(this.year, this.monthIndex, parseInt(this.startDate.split("/")[0]))
-    console.log(object)
+    object["prestations"] = []
+    object["entreprises"] = []
+    if (this.prestationsChoisies.length) {
+      this.prestationsChoisies.forEach(p => {
+        object["prestations"].push(p["prestation"])
+        object["entreprises"].push(p["company"])
+      })
+    }
+    localStorage.setItem("newProject", JSON.stringify(object))
+    let test = localStorage.getItem("newProject")
+    console.log(JSON.parse(test))
+
   }
 
 }
