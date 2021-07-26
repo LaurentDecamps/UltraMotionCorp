@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nouveau-projet.component.css']
 })
 export class NouveauProjetComponent implements OnInit {
+  prestationsChoisies: object[] = []
   startDate: string
   year: number = 2021
   months: object[] = [
@@ -29,6 +30,7 @@ export class NouveauProjetComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.prestationsChoisies.push(history.state.data)
     this.getFirstWeekDay()
   }
 
@@ -75,7 +77,6 @@ export class NouveauProjetComponent implements OnInit {
       ? Array(6).fill("").concat(this.days)
       : Array(j - 1).fill("").concat(this.days)
     this.days = this.days.concat(Array(7 - this.days.length % 7).fill(""))
-    console.log(this.days)
   }
 
   setYear(value: number) {
@@ -102,6 +103,22 @@ export class NouveauProjetComponent implements OnInit {
     }
   }
 
+  findMorePrestations(event) {
+    let array = []
+    for (let key in event.target) {
+      if (event.target[key] && event.target[key].checked) {
+        array.push(event.target[key].labels[0].innerText)
+      }
+    }
+    console.log(array)
+  }
 
+  displayNeeds() {
+    document.getElementById("needs").style.display = "flex"
+  }
+
+  submitNewProject(event) {
+    console.log(event.target)
+  }
 
 }

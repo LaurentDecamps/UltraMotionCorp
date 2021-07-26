@@ -8,7 +8,9 @@
       <ngb-accordion *ngFor="let prestation of company.prestations">
         <ngb-panel title="{{prestation.type}}: {{prestation.description}}">
           <ng-template ngbPanelContent>
-            Coucou
+            <p>Taux horaire: {{prestation.tauxHoraire}}€ {{prestation.TVA ? "HT" : "TTC"}}</p>
+            <p *ngIf="prestation.TVA">TVA: {{prestation.TVA * 100}}%</p>
+            <button type="button" routerLink="/newprjct" [state]="{data: {company: company, prestation: prestation}}" name="button">Choisir cette prestation</button>
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
