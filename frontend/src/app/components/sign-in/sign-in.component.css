@@ -39,10 +39,18 @@
   background-color: #7BC248;
   color: white;
   padding: 10px;
-  width: 80vw;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom:10px;
 }
 
 .bouton:hover {
   background-color : #DBBD45;
   transition : 0.5s;
+}
+
+button {
+  border-radius: 25px;
+  padding:5px 26px;
 }

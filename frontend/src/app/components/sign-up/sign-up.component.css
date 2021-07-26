@@ -10,13 +10,16 @@
   color: white;
   padding: 10px;
   width: 80vw;
+  text-decoration: none;
 }
 
 .bouton:hover {
   background-color : #DBBD45;
   transition : 0.5s;
 }
-
+.button:visited {
+  background-color : #DBBD45;
+}
 /* button {
   border: none !important;
   font-weight: 700 !important;
@@ -95,5 +98,10 @@ span {
 label {
 
     margin-top: 1%;
+    text-align:justify!important;
+    width:100%;
 }
 
+button {
+  margin-top:15px;
+}
