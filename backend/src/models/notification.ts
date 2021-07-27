@@ -9,7 +9,7 @@ export interface INotificationDocument extends mongoose.Document {
 }
 
 const NotificationSchema = new mongoose.Schema({
-    idDevis: {
+    devis: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Devis"
     },

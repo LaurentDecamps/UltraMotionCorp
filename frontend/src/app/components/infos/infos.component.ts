@@ -18,6 +18,7 @@ export class InfosComponent implements OnInit {
   compteAdmin: boolean = false;
   entrepriseConnectee: Entreprise;
   clientconnecte: Client;
+  creationCompteReussi;
 
   constructor(private entreprisesService: EntreprisesService,
               private clientsService: ClientService,
@@ -44,6 +45,7 @@ export class InfosComponent implements OnInit {
     else {
       this.clientsService.findById(this.idConnexion).subscribe((data) => {
         this.clientconnecte = data;
+        this.creationCompteReussi = localStorage.getItem("creationCompteReussi");
       });
     }
   }

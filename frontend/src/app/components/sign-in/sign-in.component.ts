@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
     if (this.authentificationService.currentClientValue || this.authentificationService.currentEntrepriseValue) {
       this.router.navigateByUrl("/mncpt/infos");
     }
-    // this.loginForm.setValue({ email: "toto@lolococo.fr", motDePasse: "123456" })
+    this.loginForm.setValue({ email: "toto@lolococo.fr", motDePasse: "123456789" })
   }
 
   clientDisplay = () => {

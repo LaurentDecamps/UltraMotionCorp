@@ -11,12 +11,17 @@ class EntrepriseController {
   }
 
   findById = async (req, res, next) => {
-    // console.log("Appel à findById sur entreprises");
+    console.log("Appel à findById sur entreprises");
     // console.log(req.params.id);
     res.status(200)
       .send(await Entreprise.findById(req.params.id)
         .populate("prestations")
-        .populate("notifications")
+        .populate({
+          path: 'notifications',
+          populate: {
+            path: 'devis'
+          }
+        })
         )
       .end();
     next();

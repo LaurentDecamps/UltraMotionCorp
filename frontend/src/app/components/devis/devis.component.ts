@@ -42,6 +42,7 @@ export class DevisComponent implements OnInit {
     console.log(`ID prestation du ${this.idPrestation}`);
     console.log(`ID entreprise du ${this.idEntreprise}`);
 
+    // Récupération du devis à partir des trois
     this.devisService.getDevisByProjetByPrestationByEntreprise(this.idProjet, this.idPrestation, this.idEntreprise).subscribe((data) => {
       console.log("Devis récupéré", data);
       this.listedevis = data;
@@ -96,6 +97,7 @@ export class DevisComponent implements OnInit {
       etat: "demandé",
       tempsPrestationJours: 0,
       prixMateriel: 0,
+      prixPrestation: 0,
       projet: this.projetCourant,
       prestation: this.prestationCourante,
       entreprise: this.entreprisePreSelectionnee
@@ -105,21 +107,19 @@ export class DevisComponent implements OnInit {
     // L'identifiant du nouveau devis demandé
     let idNouveauDevis;
 
-    this.devisService.addDevis(nouveauDevis).subscribe((data) => {
-      this.listedevis.push(data);
-      idNouveauDevis = data['_id'];
+    this.devisService.addDevis(nouveauDevis).subscribe((nouveaudevisBDD) => {
+      this.listedevis.push(nouveaudevisBDD);
+      idNouveauDevis = nouveaudevisBDD['_id'];
 
       // On crée une notification pour l'entreprise
-      let notification: Notification = {
-        type: "Devisdemandé",
-        idDevis: idNouveauDevis,
-        description: "Nouvelle demande de devis en attente",
-        lue: false
-      };
+      let notification: Notification = new Notification("Devisdemandé", "Nouvelle demande de devis en attente",false, nouveaudevisBDD);
 
       this.notificationService.addNotification(notification).subscribe((nouvelleNotification) => {
         this.entreprisePreSelectionnee.notifications.push(nouvelleNotification);
-        this.entrepriseService.updateEntreprise(this.entreprisePreSelectionnee).subscribe(() => { })
+        this.entrepriseService.updateEntreprise(this.entreprisePreSelectionnee).subscribe((data) => {
+          console.log("Entreprise avec nouvelle notification non lue",data);
+
+         })
       });
     });
   }

@@ -1,25 +1,23 @@
 <div class="containerResult">
   <h2>Résultat(s) de recherches :</h2>
-
-
-     <ngb-accordion *ngFor="let company of filteredCompanies">
-<ngb-panel title="{{company.adresse.split(' ').pop()}} - {{company.nom}}">
-    <ng-template ngbPanelContent>
-      <h3>{{company.description}}</h3>
-      <p>{{company.adresse}}</p>
-      <p>{{company.email}}</p>
-      <p>{{company.numeroTelephone}}</p>
-      <ngb-accordion *ngFor="let prestation of company.prestations">
-        <ngb-panel title="{{prestation.type}}: {{prestation.description}}">
-          <ng-template class="elementResult" ngbPanelContent>
-            <p>Taux horaire: {{prestation.tauxHoraire}}€ {{prestation.TVA ? "HT" : "TTC"}}</p>
-            <p *ngIf="prestation.TVA">TVA: {{prestation.TVA * 100}}%</p>
-            <button type="button" routerLink="/newprjct" [state]="{data: {company: company, prestation: prestation}}" name="button">Choisir cette prestation</button>
-          </ng-template>
-        </ngb-panel>
-      </ngb-accordion>
-    </ng-template>
-  </ngb-panel>
-</ngb-accordion>
-  </div>
-
+  <ngb-accordion *ngFor="let company of filteredCompanies; let i= index" [activeIds]="activeIds">
+    <ngb-panel title="{{company.adresse.split(' ').pop()}} - {{company.nom}}" id="panel-{{i}}">
+      <ng-template ngbPanelContent >
+        <h3>{{company.description}}</h3>
+        <p>{{company.adresse}}</p>
+        <p>{{company.email}}</p>
+        <p>{{company.numeroTelephone}}</p>
+        <ngb-accordion *ngFor="let prestation of company.prestations">
+          <ngb-panel title="{{prestation.type}}: {{prestation.description}}">
+            <ng-template class="elementResult" ngbPanelContent>
+              <p>Taux horaire: {{prestation.tauxHoraire}}€ {{prestation.TVA ? "HT" : "TTC"}}</p>
+              <p *ngIf="prestation.TVA">TVA: {{prestation.TVA * 100}}%</p>
+              <button type="button" routerLink="/newprjct" [state]="{data: {company: company, prestation: prestation}}"
+                name="button">Choisir cette prestation</button>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

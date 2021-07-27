@@ -13,4 +13,8 @@ export class NotificationsService {
   addNotification = (notification : Notification) => {
     return this.httpClient.post<Notification>(`${environment.apiUrl}/notifications`, notification);
   }
+
+  update(notification : Notification) {
+    return this.httpClient.put<Notification>(`${environment.apiUrl}/notifications/${notification["_id"]}`, notification)
+  }
 }

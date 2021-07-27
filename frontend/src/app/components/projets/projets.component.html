@@ -2,8 +2,8 @@
 <div class="container" *ngIf="clientConnecte?.projets.length > 0;else pasdeProjet">
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"
     *ngFor="let projet of clientConnecte?.projets; let indexprojet = index">
-    <ngb-panel title="Projet #{{indexprojet+1}}">
-      <ng-template ngbPanelContent>
+    <ngb-panel title="Projet #{{indexprojet+1}}" >
+      <ng-template ngbPanelContent let-opened="opened">
         <div>
           Description du projet : {{projet.description}}
         </div>
@@ -20,7 +20,7 @@
         <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"
           *ngFor="let prestation of projet.prestations; let indexPrestation = index">
           <ngb-panel title="Prestation {{prestation.description}}">
-            <ng-template ngbPanelContent>
+            <ng-template ngbPanelContent let-opened="opened">
               <p>Type de prestation : {{prestation.type}}</p>
               <div *ngFor="let entreprise of projet.entreprises">
                 <p>Entreprise préselectionné pour cette prestation : {{entreprise.nom}}</p>

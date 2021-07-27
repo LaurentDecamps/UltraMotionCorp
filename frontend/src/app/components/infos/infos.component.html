@@ -18,6 +18,9 @@
     </div>
   </div>
   <div *ngIf="clientconnecte">
+    <div *ngIf="creationCompteReussi">
+      {{creationCompteReussi}}, Rendez-vous dans Mes Projets pour lui faire une demande de devis !
+    </div>
     <h1>Bonjour {{clientconnecte?.prenom}},</h1>
     <div>
       <h2>Information du compte :</h2>
@@ -43,10 +46,6 @@
     <label>
       <input type="checkbox" id="scales" name="scales">
       NEWSLETTER
-    </label>
-    <label>
-      <input type="checkbox" id="scales" name="scales">
-      SOMETHING
     </label>
   </div>
   <button class="bouton" (click)="deconnecter()">SE DECONNECTER</button>
