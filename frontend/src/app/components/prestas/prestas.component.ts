@@ -15,18 +15,25 @@ export class PrestasComponent implements OnInit {
   @Input() set prestationAAjouter (value: Prestation) {
     this._prestationAAjouter = value;
     console.log("Set prestationAAjouter", value);
-    this.prestations.push(value);
+    if (value) {
+      this.prestations.push(value);
+    }
   }
 
   prestations: Prestation[];
 
   constructor(private entrepriseService: EntreprisesService,
-    private authentificationService: AuthentificationService) { }
+    private authentificationService: AuthentificationService) {
+      this.prestations = [];
+    }
 
   ngOnInit(): void {
-    this.entrepriseService.findById(this.authentificationService.currentEntrepriseValue).subscribe((entreprise) => {
-      this.prestations = entreprise.prestations;
-    });
+    // this.authentificationService.currentEntrepriseValue
+    // this.entrepriseService.findById(this.authentificationService.currentEntrepriseValue).subscribe((entreprise) => {
+    //   this.prestations = entreprise.prestations;
+    //   console.log("Prestations", this.prestations);
+
+    // });
   }
 
 }

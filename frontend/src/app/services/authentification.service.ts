@@ -34,9 +34,9 @@ export class AuthentificationService {
     this.currentEntrepriseSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('entrepriseCourante')));
 
     if (this.currentEntrepriseValue) {
-      this.isClientConnect = true;
+      this.isEntrepriseConnect = true;
     } else {
-      this.isClientConnect = false;
+      this.isEntrepriseConnect = false;
     }
   }
 
