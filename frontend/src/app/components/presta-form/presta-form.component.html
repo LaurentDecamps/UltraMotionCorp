@@ -1,0 +1,19 @@
+Ajouter une prestation
+<form [formGroup]="prestationGroupForm">
+  <div class="">
+    <label>Type de prestation :
+      <input type="text" id="typePrestation" formControlName="typePrestation" required>
+    </label>
+    <label>Description :
+      <input type="text" id="description" formControlName="description" size="3" required> €
+    </label>
+    <label>Taux horaire :
+      <input type="number" id="tauxHoraire" formControlName="tauxHoraire" size="4" required> €
+    </label>
+    <label>TVA :
+      <input type="text" id="TVA" formControlName="TVA" size="3" required> %
+    </label>
+  </div>
+  <!-- <button (click)="modifierPrestation()" >Modifier la prestation</button> -->
+  <button (click)="ajouterPrestation()">Ajouter la prestation</button>
+</form>

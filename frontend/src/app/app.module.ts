@@ -30,6 +30,8 @@ import { DevisFormComponent } from './components/devis-form/devis-form.component
 import { DisplayCompaniesComponent } from './components/display-companies/display-companies.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { PrestaComponent } from './components/presta/presta.component';
+import { PrestaFormComponent } from './components/presta-form/presta-form.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     NotifComponent,
     DevisFormComponent,
     DisplayCompaniesComponent,
+    PrestaComponent,
+    PrestaFormComponent,
   ],
   imports: [
     BrowserModule,
