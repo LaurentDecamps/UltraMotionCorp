@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nouveau-projet.component.css']
 })
 export class NouveauProjetComponent implements OnInit {
+  prestationsChoisies: object[] = []
   startDate: string
   year: number = 2021
   months: object[] = [
@@ -29,6 +30,8 @@ export class NouveauProjetComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.prestationsChoisies.push(history.state.data)
+    console.log(this.prestationsChoisies)
     this.getFirstWeekDay()
   }
 
@@ -75,7 +78,6 @@ export class NouveauProjetComponent implements OnInit {
       ? Array(6).fill("").concat(this.days)
       : Array(j - 1).fill("").concat(this.days)
     this.days = this.days.concat(Array(7 - this.days.length % 7).fill(""))
-    console.log(this.days)
   }
 
   setYear(value: number) {
@@ -102,6 +104,46 @@ export class NouveauProjetComponent implements OnInit {
     }
   }
 
+  findMorePrestations(event) {
+    let array = []
+    for (let key in event.target) {
+      if (event.target[key] && event.target[key].checked) {
+        array.push(event.target[key].labels[0].innerText)
+      }
+    }
+    console.log(array)
+  }
 
+  displayNeeds() {
+    document.getElementById("needs").style.display = "flex"
+  }
+
+  submitNewProject(event) {
+    let array = []
+    let object = {}
+    for (let key in event.target) {
+      if (Number.isInteger(parseInt(key)) && event.target[key].checked) {
+        object[event.target[key].name] = event.target[key].labels[0].innerText
+      }
+      if (Number.isInteger(parseInt(key)) && event.target[key].value.length) {
+        object[event.target[key].name] = event.target[key].name === "surfacem2"
+          ? parseInt(event.target[key].value)
+          : event.target[key].value
+      }
+    }
+    object["dateDebut"] = new Date(this.year, this.monthIndex, parseInt(this.startDate.split("/")[0]))
+    object["prestations"] = []
+    object["entreprises"] = []
+    if (this.prestationsChoisies.length) {
+      this.prestationsChoisies.forEach(p => {
+        object["prestations"].push(p["prestation"])
+        object["entreprises"].push(p["company"])
+      })
+    }
+    localStorage.setItem("newProject", JSON.stringify(object))
+    let test = localStorage.getItem("newProject")
+    console.log(JSON.parse(test))
+
+  }
 
 }
