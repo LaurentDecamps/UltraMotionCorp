@@ -10,6 +10,7 @@ h5 {
     display: flex;
     flex-direction: column;
     margin-bottom: 5%;
+    padding: 5px 15px;
 }
 
 label {
@@ -21,9 +22,13 @@ label {
 input {
 
     margin-bottom: 5%;
+    padding-bottom: 5px;
+    border-bottom: #7BC248;
 }
 
 button {
 
     margin-bottom: 5%;
+    margin-left: 15px;
+    border-radius: 25px;
 }
