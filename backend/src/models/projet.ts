@@ -25,7 +25,7 @@ const ProjetSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  surfaceM2: {
+  surfacem2: {
     type: Number,
     required: true
   },
