@@ -30,7 +30,7 @@ export class NouveauProjetComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.prestationsChoisies.push(history.state.data)
+    history.state.data && this.prestationsChoisies.push(history.state.data)
     console.log(this.prestationsChoisies)
     this.getFirstWeekDay()
   }
@@ -119,7 +119,6 @@ export class NouveauProjetComponent implements OnInit {
   }
 
   submitNewProject(event) {
-    let array = []
     let object = {}
     for (let key in event.target) {
       if (Number.isInteger(parseInt(key)) && event.target[key].checked) {
