@@ -15,7 +15,7 @@ class EntrepriseController {
     // console.log(req.params.id);
     res.status(200)
       .send(await Entreprise.findById(req.params.id)
-        // .populate("prestations")
+        .populate("prestations")
         .populate("notifications")
         )
       .end();

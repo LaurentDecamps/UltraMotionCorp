@@ -22,7 +22,6 @@ export class EntreprisesService {
   }
 
   create(entreprise: Entreprise) : Observable<Entreprise> {
-
     return this.httpClient.post<Entreprise>(`${environment.apiUrl}/entreprises`, entreprise);
   }
 }

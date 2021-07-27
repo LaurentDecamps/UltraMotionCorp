@@ -18,4 +18,8 @@ export class PrestationsService {
   getPrestationById(idPrestations : string) : Observable<Prestation>{
     return this.httpClient.get<Prestation>(`${environment.apiUrl}/prestations/${idPrestations}`);
   }
+
+  create(prestation: Prestation) : Observable<Prestation> {
+    return this.httpClient.post<Prestation>(`${environment.apiUrl}/prestations`, prestation);
+  }
 }

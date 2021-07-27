@@ -1,18 +1,16 @@
 <h2>Vos prestations</h2>
-<div *ngIf="prestations.length > 0">
-  <div *ngFor="let prestation of prestations">
+<div *ngIf="entrepriseCourante?.prestations?.length > 0">
+  <div *ngFor="let prestation of entrepriseCourante.prestations">
     <h2>Type de prestation : {{prestation.type}}</h2>
     <div class="presentationPrestation">
       <p class="description">{{prestation.description}}</p>
     </div>
     <div class="prixPrestation">
-      <p class="tauxHoraire">Taux horaire : {{prestation.tauxHoraire}}/p>
+      <p class="tauxHoraire">Taux horaire : {{prestation.tauxHoraire}} </p>
       <p class="PrixTotalTva">TVA {{prestation.TVA}} %</p>
     </div>
   </div>
 </div>
-<div *ngIf="(prestations.length === 0)">
-  <!-- <ng-template #pasdePrestations> -->
+<div *ngIf="(entrepriseCourante?.prestations?.length === 0)">
   Pas de prestations pour le moment. Merci d'en saisir une ci-dessous.
-  <!-- </ng-template> -->
 </div>
