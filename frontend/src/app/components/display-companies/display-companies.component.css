@@ -1,6 +1,15 @@
-.choose {
-  margin: 20px;
-  border: 1px solid #33DDFF;
-  border-radius: 1px;
-  padding-top: 8px;
+.containerResult {
+  width: 80%;
+  margin:auto;
 }
+button {
+  border-radius: 25px;
+  padding:5px 15px;
+  background-color: #dbbd45!important;
+}
+
+h2 {
+  margin-bottom : 15px;
+}
+
+

@@ -124,6 +124,7 @@ export class NouveauProjetComponent implements OnInit {
   submitNewProject(event) {
     let object = {}
     for (let key in event.target) {
+
       if (Number.isInteger(parseInt(key)) && event.target[key].checked) {
         object[event.target[key].name] = event.target[key].labels[0].innerText
       }

@@ -24,7 +24,7 @@ button {
   background-color: #7bc248 !important;
   padding: 5 20px;
   border-radius: 5px;
-  color: white;
+  color: white!important;
   text-transform: uppercase;
   text-align: center;
 }
