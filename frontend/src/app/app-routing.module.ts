@@ -11,10 +11,10 @@ import { NouveauProjetComponent } from './pages/nouveau-projet/nouveau-projet.co
 import { MonCompteComponent } from './pages/mon-compte/mon-compte.component';
 import { ProjetsComponent } from './components/projets/projets.component';
 import { InfosComponent } from './components/infos/infos.component';
-import { PrestasComponent } from './components/prestas/prestas.component';
 import { NotifsComponent } from './components/notifs/notifs.component';
 import { MesdevisComponent } from './components/mesdevis/mesdevis.component';
 import { DisplayCompaniesComponent } from './components/display-companies/display-companies.component';
+import { PrestaComponent } from './components/presta/presta.component';
 
 const routes: Routes = [
   { path: "", component: AccueilComponent },
@@ -31,7 +31,7 @@ const routes: Routes = [
     path: "mncpt", component: MonCompteComponent,
     children: [
       { path: "infos", component: InfosComponent },
-      { path: "prestas", component: PrestasComponent },
+      { path: "prestas", component: PrestaComponent },
       { path: "projets", component: ProjetsComponent },
       { path: "devis", component: MesdevisComponent },
       { path: "devis/:id", component: MesdevisComponent },
