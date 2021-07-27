@@ -124,5 +124,28 @@ h1 {
 }
 
 .calendar div {
+  width: calc(21vw + 2px);
+  border: 1px solid #000000;
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.calendar p {
+  margin: 0;
+}
+
+.weekDays p {
+  width: 3vw;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.days p {
+  width: 3vw;
+  height: 3vw;
+  border: 1px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
