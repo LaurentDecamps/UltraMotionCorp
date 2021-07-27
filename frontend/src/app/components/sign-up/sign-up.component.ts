@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AuthentificationService } from 'src/app/services/authentification.service';
 import { ClientService } from 'src/app/services/client.service';
 import { EntreprisesService } from 'src/app/services/entreprises.service';
+import { ProjetsService } from '../../services/projets.service';
+import { Client } from '../../models/client';
 
 @Component({
   selector: 'app-sign-up',
@@ -29,25 +31,28 @@ export class SignUpComponent implements OnInit {
     private entreprisesService : EntreprisesService,
     private router : Router,
     private fb : FormBuilder,
-    private authentificationService : AuthentificationService) {
-    this.clientForm = this.fb.group({
-      nom : ["", Validators.required],
-      prenom : ["", Validators.required],
-      email : ["", Validators.required],
-      numeroTelephone : ["", Validators.required],
-      motDePasse : ["", Validators.required],
-      adresse : ["", Validators.required]
-    })
-    this.entrepriseForm = this.fb.group({
-      nom : ["", Validators.required],
-      description : ["", Validators.required],
-      logoUri : ["", Validators.required],
-      email : ["", Validators.required],
-      numeroTelephone : ["", Validators.required],
-      motDePasse : ["", Validators.required],
-      adresse : ["", Validators.required]
-    })
+    private authentificationService : AuthentificationService,
+    private projetsService: ProjetsService
+  ) {
+      this.clientForm = this.fb.group({
+        nom : ["", Validators.required],
+        prenom : ["", Validators.required],
+        email : ["", Validators.required],
+        numeroTelephone : ["", Validators.required],
+        motDePasse : ["", Validators.required],
+        adresse : ["", Validators.required]
+      })
+      this.entrepriseForm = this.fb.group({
+        nom : ["", Validators.required],
+        description : ["", Validators.required],
+        logoUri : ["", Validators.required],
+        email : ["", Validators.required],
+        numeroTelephone : ["", Validators.required],
+        motDePasse : ["", Validators.required],
+        adresse : ["", Validators.required]
+      })
    }
+
 
   ngOnInit(): void {
     if(this.authentificationService.currentClientValue || this.authentificationService.currentEntrepriseValue) {
@@ -68,6 +73,17 @@ export class SignUpComponent implements OnInit {
   inscrireClient = () => {
     console.log(this.clientForm.value);
     this.authentificationService.signupClient(this.clientForm.value).subscribe( () => {
+      let newProject = JSON.parse(localStorage.getItem("newProject"))
+      localStorage.removeItem("newProject")
+      this.projetsService.create(newProject).subscribe(project => {
+        let clientId = JSON.parse(localStorage.getItem("clientCourant")).client.id
+        let clientToPut: Client
+        this.clientService.findById(clientId).subscribe(client => {
+          clientToPut = client
+          clientToPut.projets.push(project)
+          this.clientService.update(clientToPut).subscribe()
+        })
+      })
       this.router.navigateByUrl("/mncpt/infos");
     })
   }

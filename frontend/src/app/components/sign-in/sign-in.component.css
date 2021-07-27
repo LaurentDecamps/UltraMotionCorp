@@ -34,12 +34,18 @@
   background-color: #DBBD45;
 }
 
+.list-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .bouton {
   border-radius: 15px;
   background-color: #7BC248;
   color: white;
   padding: 10px;
-  width: auto;
+  width: 200px;
   text-align: center;
   text-decoration: none;
   margin-bottom:10px;

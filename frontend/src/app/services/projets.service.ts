@@ -18,4 +18,9 @@ export class ProjetsService {
   getProjetById(idProjet : string) : Observable<Projet>{
     return this.httpClient.get<Projet>(`${environment.apiUrl}/projets/${idProjet}`);
   }
+
+  create(projet : Projet) {
+    console.log("Creation Projet",projet);
+    return this.httpClient.post<Projet>(`${environment.apiUrl}/projets`, projet)
+  }
 }

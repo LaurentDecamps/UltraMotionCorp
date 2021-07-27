@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nouveau-projet',
@@ -27,10 +28,12 @@ export class NouveauProjetComponent implements OnInit {
   weekDays: string[] = ["L", "M", "M", "J", "V", "S", "D"]
   days: string[] = []
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    history.state.data && this.prestationsChoisies.push(history.state.data)
+    if (history.state.data) {
+      this.prestationsChoisies.push(history.state.data)
+    }
     console.log(this.prestationsChoisies)
     this.getFirstWeekDay()
   }
@@ -142,8 +145,12 @@ export class NouveauProjetComponent implements OnInit {
     }
     localStorage.setItem("newProject", JSON.stringify(object))
     let test = localStorage.getItem("newProject")
-    console.log(JSON.parse(test))
-
+    if (!localStorage.getItem("clientCourant")) {
+      this.router.navigate(["/auth/signup"])
+    }
+    else {
+      console.log(JSON.parse(test))
+    }
   }
 
 }

@@ -9,7 +9,7 @@
   background-color: #7BC248;
   color: white;
   padding: 10px;
-  width: 80vw;
+  width: 200px;
   text-decoration: none;
 }
 
@@ -43,21 +43,15 @@ a.disabled {
   cursor: default;
 }
 
-.list-group a {
-    display: flex;
-    margin-left: 30px;
-    justify-content: center;
-}
-
 a {
     display: flex;
     justify-content: center;
 }
 
 .list-group {
-
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .container h1 {

@@ -19,4 +19,8 @@ export class ClientService {
 
     return this.httpClient.post<Client>(`${environment.apiUrl}/clients`, client);
   }
+
+  update(client: Client) {
+    return this.httpClient.put<Client>(`${environment.apiUrl}/clients/${client["_id"]}`, client)
+  }
 }
