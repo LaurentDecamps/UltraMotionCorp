@@ -15,14 +15,15 @@ export class AuthentificationService {
 
   private currentClientSubject: BehaviorSubject<any>;
   private currentEntrepriseSubject: BehaviorSubject<any>;
-  // private currentUser: Observable<any>;
+  currentClient: Observable<any>;
+  currentEntreprise: Observable<any>;
   isClientConnect: boolean;
   isEntrepriseConnect: boolean;
 
   constructor(private router: Router, private http: HttpClient) {
     this.currentClientSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('clientCourant')));
 
-    // this.currentUser = this.currentClientSubject.asObservable();
+    this.currentClient = this.currentClientSubject.asObservable();
 
     // Fait référence au getter
     if (this.currentClientValue) {
@@ -32,6 +33,8 @@ export class AuthentificationService {
     }
 
     this.currentEntrepriseSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('entrepriseCourante')));
+
+    this.currentEntreprise = this.currentEntrepriseSubject.asObservable();
 
     if (this.currentEntrepriseValue) {
       this.isEntrepriseConnect = true;
@@ -98,8 +101,8 @@ export class AuthentificationService {
     return this.http.post<any>(`${environment.apiUrl}/auth/entreprise/signin`, { email, motDePasse })
       .pipe(map(entreprise => {
         localStorage.setItem('entrepriseCourante', JSON.stringify(entreprise));
-        this.currentClientSubject.next(entreprise);
-        this.isClientConnect = true;
+        this.currentEntrepriseSubject.next(entreprise);
+        this.isEntrepriseConnect = true;
         return entreprise;
       }));
   }
@@ -113,8 +116,8 @@ export class AuthentificationService {
     // Envoie une méthode HTTP post au BACK
     return this.http.post<any>(`${environment.apiUrl}/auth/entreprise/signup`, entreprise).pipe(map(entreprise => {
       localStorage.setItem('entrepriseCourante', JSON.stringify(entreprise));
-      this.currentClientSubject.next(entreprise);
-      this.isClientConnect = true;
+      this.currentEntrepriseSubject.next(entreprise);
+      this.isEntrepriseConnect = true;
       return entreprise;
     }));
   }
@@ -126,7 +129,9 @@ export class AuthentificationService {
     localStorage.removeItem('clientCourant');
     localStorage.removeItem('entrepriseCourante');
     this.currentClientSubject.next(null);
+    this.currentEntrepriseSubject.next(null);
     this.isClientConnect = false;
+    this.isEntrepriseConnect = false;
     this.router.navigate(['/']);
   }
 }

@@ -1,15 +1,15 @@
 <div class="container ">
   <div *ngIf="newProject">
-    <h1>Enregistrer pour enregistrer votre nouveau projet</h1>
+    <h1>Pour enregistrer votre nouveau projet</h1>
   </div>
-  <h1>Créer mon compte </h1>
+  <h1>Créez votre compte </h1>
   <div>
     <div class="row justify-content-md-center">
-      <div class="col-2 ">
+      <div class="col-2 " *ngIf="!newProject">
         <h2>Vous êtes : </h2>
       </div>
 
-      <div class="col-4">
+      <div class="col-4" *ngIf="!newProject">
         <div class="list-group" type="checkbox" id="toggle">
           <a class="bouton" (click)="clientDisplay()" [class.disabled]="isClientDisplay">CLIENT</a>
           <a class="bouton" (click)="entrepriseDisplay()" [class.disabled]="isEntrepriseDisplay">ENTREPRISE</a>
