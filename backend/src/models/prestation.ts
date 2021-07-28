@@ -18,6 +18,10 @@ const PrestationSchema = new mongoose.Schema({
   tauxHoraire: {
     type: Number,
     required: true
+  },
+  TVA: {
+    type: Number,
+    required: true
   }
 });
 

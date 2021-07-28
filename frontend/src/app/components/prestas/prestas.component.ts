@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Entreprise } from 'src/app/models/entreprise';
 import { Prestation } from 'src/app/models/prestation';
 import { AuthentificationService } from 'src/app/services/authentification.service';
 import { EntreprisesService } from 'src/app/services/entreprises.service';
+import { PrestationsService } from 'src/app/services/prestations.service';
 
 @Component({
   selector: 'app-prestas',
@@ -10,30 +12,34 @@ import { EntreprisesService } from 'src/app/services/entreprises.service';
 })
 export class PrestasComponent implements OnInit {
 
+  entrepriseCourante: Entreprise;
+
   private _prestationAAjouter: Prestation;
 
   @Input() set prestationAAjouter (value: Prestation) {
     this._prestationAAjouter = value;
     console.log("Set prestationAAjouter", value);
     if (value) {
-      this.prestations.push(value);
+      this.prestationService.create(value).subscribe((prestationMAJ) => {
+        this.entrepriseCourante.prestations.push(prestationMAJ);
+        console.log("prestationMAJ",prestationMAJ);
+        this.entrepriseService.updateEntreprise(this.entrepriseCourante).subscribe();
+      })
     }
   }
 
-  prestations: Prestation[];
-
   constructor(private entrepriseService: EntreprisesService,
-    private authentificationService: AuthentificationService) {
-      this.prestations = [];
+    private authentificationService: AuthentificationService,
+    private prestationService: PrestationsService) {
+      
     }
 
   ngOnInit(): void {
-    // this.authentificationService.currentEntrepriseValue
-    // this.entrepriseService.findById(this.authentificationService.currentEntrepriseValue).subscribe((entreprise) => {
-    //   this.prestations = entreprise.prestations;
-    //   console.log("Prestations", this.prestations);
+    this.entrepriseService.findById(this.authentificationService.currentEntrepriseValue.entreprise.id).subscribe((entreprise) => {
+      this.entrepriseCourante = entreprise;
+      console.log("Entreprise courante", entreprise);
 
-    // });
+    });
   }
 
 }
