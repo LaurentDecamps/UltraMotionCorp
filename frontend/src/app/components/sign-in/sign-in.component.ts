@@ -31,17 +31,18 @@ export class SignInComponent implements OnInit {
     if (this.authentificationService.currentClientValue || this.authentificationService.currentEntrepriseValue) {
       this.router.navigateByUrl("/mncpt/infos");
     }
-    this.loginForm.setValue({ email: "toto@lolococo.fr", motDePasse: "123456789" })
   }
 
   clientDisplay = () => {
     this.isClientDisplay = !this.isClientDisplay;
     this.isEntrepriseDisplay = false;
+    this.loginForm.setValue({ email: "helene@chantepie.fr", motDePasse: "123456" })
   }
 
   entrepriseDisplay = () => {
     this.isEntrepriseDisplay = !this.isEntrepriseDisplay;
     this.isClientDisplay = false;
+    this.loginForm.setValue({ email: "noxtaria@gmail.com", motDePasse: "Pournoxtaria" })
   }
 
   /**

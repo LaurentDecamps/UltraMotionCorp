@@ -65,6 +65,8 @@ export class SignUpComponent implements OnInit {
   clientDisplay = () => {
     this.isClientDisplay = !this.isClientDisplay;
     this.isEntrepriseDisplay = false;
+    this.clientForm.setValue({nom: "Chantepie", prenom: "Hélène", email: "helene@chantepie.fr",
+        numeroTelephone: "0606060606", motDePasse: "123456", adresse: "221 B Bakerstreet London"});
   }
 
   entrepriseDisplay = () => {
