@@ -97,7 +97,7 @@ h1 {
   content: "";
   background-color: #FFFFFF;
   vertical-align: middle;
-  color: #000000;
+  color: #DBBD45;
   font-size: 26pt;
   display: inline-flex;
   align-items: center;
@@ -123,11 +123,23 @@ h1 {
   display: inline;
 }
 
-.calendar div {
-  width: calc(21vw + 2px);
-  border: 1px solid #000000;
+.containerCalendarSubmit {
+  margin-bottom: 200px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  width: 493px;
+  margin-right: 25vw;
+}
+
+.calendar div:not(.year, .month) {
+  border-top: 3px solid #DBBD45;
+  border-left: 3px solid #DBBD45;
+  font-weight: bold;
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -135,22 +147,78 @@ h1 {
   margin: 0;
 }
 
-.weekDays p {
-  width: 3vw;
-  border: 1px solid #000000;
+.year, .month {
+  border-right: 3px solid #DBBD45;
+  border-bottom: 3px solid #DBBD45;
+  background-color: #DBBD45;
+  color: #FFFFFF;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.month {
+  width: 280px;
+}
+
+.year {
+  width: 210px;
+}
+
+.month p, .year p {
+  color: #FFFFFF;
+  font-size: 14pt;
+}
+
+.month p:nth-child(2) {
+  width: 190px;
   text-align: center;
 }
 
+.year p:nth-child(2) {
+  width: 120px;
+  text-align: center;
+}
+
+.month p:not(:nth-child(2)):hover, .year p:not(:nth-child(2)):hover {
+  cursor: pointer;
+}
+
+.weekDays p {
+  width: 70px;
+  border-right: 3px solid #DBBD45;
+  text-align: center;
+  background-color: #DBBD45;
+  font-weight: normal;
+  color: #231F20;
+}
+
 .days p {
-  width: 3vw;
-  height: 3vw;
-  border: 1px solid #000000;
+  width: 70px;
+  height: 70px;
+  border-right: 3px solid #DBBD45;
+  border-bottom: 3px solid #DBBD45;
+  font-size: 14pt;
+  color: #DBBD45;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.boutonAdroite {
+.days p:hover {
+  background-color: #DBBD45;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.createProject {
+  width: 450px;
+  height: 70px;
+  border-radius: 35px;
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+/* .boutonAdroite {
   display: flex;
   flex-direction: row-reverse;
-}
+} */
