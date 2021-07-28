@@ -81,7 +81,7 @@ export class SignUpComponent implements OnInit {
   inscrireClient = () => {
     console.log(this.clientForm.value);
     this.authentificationService.signupClient(this.clientForm.value).subscribe(() => {
-      // localStorage.removeItem("newProject")
+      localStorage.removeItem("newProject")
       this.projetsService.create(this.newProject).subscribe(project => {
         let clientId = JSON.parse(localStorage.getItem("clientCourant")).client.id
         let clientToPut: Client

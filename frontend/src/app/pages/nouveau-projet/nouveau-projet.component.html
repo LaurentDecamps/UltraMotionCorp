@@ -33,18 +33,25 @@
       <label for="house" class="labelRadio">maison</label>
       <input type="radio" id="other" class="radio" name="typeBien" value="">
       <label for="other" class="labelRadio">autres</label>
-      <input type="text" class="other" name="typeBien" placeholder="Préciser votre type de bien">
+      <input type="text" class="other text" name="typeBien" placeholder="Préciser votre type de bien">
       <div>résidence:</div>
       <input type="radio" id="main" class="radio" name="niveauBien" value="">
       <label for="main" class="labelRadio">principale</label>
       <input type="radio" id="second" class="radio" name="niveauBien" value="">
       <label for="second" class="labelRadio">secondaire</label>
-      <div>combien de mètres carrés fait votre bien?</div>
-      <input type="number" name="surfacem2" placeholder="165.3">
-      <label>m²</label>
-      <label>décrivez votre projet en quelques mots</label>
-      <input type="textarea" name="description" placeholder="Je veux une nouvelle salle de bain">
-      <div>date de début de votre projet: <span class="bold">{{startDate}}</span></div>
+      <div class="textInput">
+        <div class="m2">
+          <div>combien de mètres carrés fait votre bien?</div>
+          <input type="number" class="text" name="surfacem2" placeholder="165.3">
+          <label>m²</label>
+        </div>
+        <div class="description">
+          <label>décrivez votre projet en quelques mots</label>
+          <input type="textarea" class="text" name="description" placeholder="Je veux une nouvelle salle de bain">
+        </div>
+      </div>
+
+      <div class="date">date de début de votre projet: <span class="bold">{{startDate}}</span></div>
     </div>
     <div class="containerCalendarSubmit">
       <div class="calendar">
