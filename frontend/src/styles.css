@@ -29,7 +29,7 @@ button {
   text-align: center;
 }
 
-button:hover {
+button:not(.createProject):hover {
   background-color: #dbbd45;
   transition: 0.5s;
 }
