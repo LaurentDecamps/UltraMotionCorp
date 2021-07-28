@@ -139,8 +139,8 @@ h1 {
 .blue {
   margin-top: 20px;
   margin-left: 2vw;
-  border: 2px solid #0000CC;
-  background-color: #0000CC40;
+  border: 2px solid #7BC248;
+  background-color: #7BC24840;
 }
 
 .form {
@@ -182,6 +182,7 @@ h1 {
 }
 
 .text {
+  outline: none;
   border: 2px solid #DBBD45;
   border-radius: 4px;
 }
@@ -317,16 +318,10 @@ h1 {
 .createProject {
   width: 450px;
   height: 70px;
-  background-color: #F248;
   border-radius: 35px;
   margin-right: 14vw;
   font-size: 20pt;
   font-weight: bold;
-}
-
-.createProject:hover {
-  background-color: #DBBD45;
-  /* transition: 0.5s; */
 }
 
 /* .boutonAdroite {
