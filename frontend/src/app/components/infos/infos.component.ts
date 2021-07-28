@@ -54,4 +54,7 @@ export class InfosComponent implements OnInit {
     this.authentificationService.logout();
   }
 
+  ngAfterContentInit() {
+    localStorage.removeItem("creationCompteReussi");
+  }
 }

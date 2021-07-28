@@ -1,6 +1,7 @@
 import { Evaluation } from './../../models/evaluations';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { EvaluationsService } from 'src/app/services/evaluations.service';
+import { AuthentificationService } from 'src/app/services/authentification.service';
 
 @Component({
   selector: 'app-evaluations',
@@ -14,11 +15,14 @@ export class EvaluationsComponent implements OnInit {
 
   @Output() transmettreDemandeEvaluation = new EventEmitter<any>();
 
-  constructor(private evaluationsService: EvaluationsService) {}
+  constructor(private evaluationsService: EvaluationsService,
+    private authentificationService: AuthentificationService) {}
 
   ngOnInit(): void {
+    console.log("Client",this.authentificationService.currentClientValue.client.id);
+
     this.evaluationsService
-      .getEvaluationByClient(localStorage.getItem('clientCourant'))
+      .getEvaluationByClient(this.authentificationService.currentClientValue?.client.id)
       .subscribe((data) => {
         this.evaluations = data;
       });
