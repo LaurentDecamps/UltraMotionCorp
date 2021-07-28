@@ -56,9 +56,13 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.newProject = JSON.parse(localStorage.getItem("newProject"));
-    if (this.authentificationService.currentClientValue?.client?.id || this.authentificationService.currentEntrepriseValue?.entreprise?.id) {
+    if (this.authentificationService.isClientConnect || this.authentificationService.isEntrepriseConnect) {
       this.router.navigateByUrl("/mncpt/infos");
+    }
+    this.newProject = JSON.parse(localStorage.getItem("newProject"));
+    if (this.newProject) {
+      this.clientForm.setValue({nom: "Chantepie", prenom: "Hélène", email: "helene@chantepie.fr",
+        numeroTelephone: "0606060606", motDePasse: "123456", adresse: "221 B Bakerstreet London"});
     }
   }
 
