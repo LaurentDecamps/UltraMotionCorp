@@ -39,13 +39,17 @@ export class NotifsComponent implements OnInit {
       this.idConnexion = this.authentificationService.currentEntrepriseValue?.entreprise.id;
       if (this.idConnexion) {
         this.compteEntreprise = true;
+        console.log("Compte entreprise", this.compteEntreprise);
+
       }
     }
 
     if (this.compteEntreprise) {
       this.entreprisesService.findById(this.idConnexion).subscribe((data) => {
         this.entrepriseConnectee = data;
-        this.entrepriseConnectee.notifications = this.entrepriseConnectee.notifications.filter((notification) => {return notification.lue == false})
+        console.log(this.entrepriseConnectee);
+        this.entrepriseConnectee.notifications = this.entrepriseConnectee.notifications
+            .filter((notification) => notification.lue == false);
         this.entrepriseConnectee.notifications.forEach(notification => {
           notification.lue = true;
           this.notificationService.update(notification).subscribe();

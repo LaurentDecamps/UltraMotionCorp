@@ -2,19 +2,17 @@
   <div>
     <h2>Mes dernières évaluations</h2>
     <h3>Mes évaluations à faire</h3>
-    <div *ngIf="evaluationsAFaire.length == 0">
+    <div *ngIf="evaluationsAFaire?.length == 0">
       Pas de prestations à évaluer
     </div>
     <div class="mesAvis" *ngFor="let evaluation of evaluationsAFaire">
-      <!-- <p><span>Note globale</span> : {{ evaluation.noteGlobale }}/5</p>
-      <p>
-        <span>Commentaire global</span> :
-        {{ evaluation.commentaireGlobal }}
-      </p> -->
       <p><span>La prestation</span> :{{ evaluation.prestation.description }}</p>
       <button (click)="evaluer(evaluation)">Evaluer</button>
     </div>
     <h3>Mes évaluations faites</h3>
+    <div *ngIf="evaluationsFaites?.length == 0">
+      Pas d'évaluation déjà faites.
+    </div>
     <ngb-accordion
       activeIds="ngb-panel-0"
       *ngFor="let evaluationFaite of evaluationsFaites"
@@ -48,6 +46,5 @@
         </ng-template>
       </ngb-panel>
     </ngb-accordion>
-
   </div>
 </div>

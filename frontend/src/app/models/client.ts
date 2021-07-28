@@ -1,3 +1,4 @@
+import { Notification } from "./notification";
 import { Projet } from "./projets";
 
 export class Client {

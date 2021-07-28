@@ -14,17 +14,12 @@ export class EvaluationFormComponent implements OnInit {
 
   evaluationForm: FormGroup;
 
-  // @Output
-
   selectedCommunication = 0;
   selectedQualite = 0;
   selectedExpertise = 0;
   noteQualiteMoyenne = () => {
     return this.selectedCommunication + this.selectedQualite + this.selectedExpertise;
   }
-
-  // hovered = 0;
-  // readonly = false;
 
   constructor(private fb: FormBuilder,
     private evaluationService: EvaluationsService) {
@@ -41,7 +36,6 @@ export class EvaluationFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.evaluationForm.setValue(this.evaluationsAFaire);
   }
 
   miseAJourEvaluation() {
