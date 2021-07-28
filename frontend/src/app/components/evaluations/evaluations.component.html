@@ -10,6 +10,9 @@
       <button (click)="evaluer(evaluation)">Evaluer</button>
     </div>
     <h3>Mes évaluations faites</h3>
+    <div *ngIf="evaluationsFaites?.length == 0">
+      Pas d'évaluation déjà faites.
+    </div>
     <ngb-accordion
       activeIds="ngb-panel-0"
       *ngFor="let evaluationFaite of evaluationsFaites"

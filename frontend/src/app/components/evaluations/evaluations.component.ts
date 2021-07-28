@@ -19,25 +19,23 @@ export class EvaluationsComponent implements OnInit {
     private authentificationService: AuthentificationService) {}
 
   ngOnInit(): void {
-    // console.log("Client",this.authentificationService.currentClientValue.client.id);
+    console.log("Client",this.authentificationService.currentClientValue.client.id);
 
     this.evaluationsService
       .getEvaluationByClient(this.authentificationService.currentClientValue?.client.id)
       .subscribe((data) => {
         this.evaluations = data;
-        // console.log(this.evaluations);
+        console.log(this.evaluations);
 
         // Les évaluations à faire son
-        this.evaluationsAFaire = this.evaluations.filter((evaluation) => {
-          evaluation.noteGlobale === 0
-        })
+        this.evaluationsAFaire = this.evaluations.filter((evaluation) => evaluation.noteGlobale === 0)
 
-        // console.log(this.evaluationsAFaire);
+        console.log(this.evaluationsAFaire);
 
 
         this.evaluationsFaites = this.evaluations.filter((evaluation) => evaluation.noteGlobale !== 0 )
 
-        // console.log(this.evaluationsFaites);
+        console.log(this.evaluationsFaites);
 
       });
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthentificationService } from 'src/app/services/authentification.service';
 import { ClientService } from 'src/app/services/client.service';
 import { EntreprisesService } from 'src/app/services/entreprises.service';
 
@@ -9,27 +10,26 @@ import { EntreprisesService } from 'src/app/services/entreprises.service';
 })
 export class MonCompteComponent implements OnInit {
 
-  idConnexion: string | null;
-  compteEntreprise: boolean = false;
-  compteClient: boolean = false;
-  compteAdmin: boolean = false;
+  nbNotification: number;
 
   constructor(
-    private entreprisesService: EntreprisesService,
-    private clientsService: ClientService) { }
+    public authentificationService: AuthentificationService,
+    private clientService: ClientService,
+    private entrepriseService: EntreprisesService) { }
 
   ngOnInit(): void {
-
-    this.idConnexion = localStorage.getItem('clientCourant');
-
-    if (this.idConnexion) {
-      this.compteClient = true;
+    if (this.authentificationService.isClientConnect) {
+      this.clientService.findById(this.authentificationService.currentClientValue?.client.id).subscribe(
+        (client) => {
+          this.nbNotification = client.notifications.filter((notification) => notification.lue == false).length;
+        })
     }
-    else { // Si on a pas de client courant on essaie de récupérer l'entreprise courante
-      this.idConnexion = localStorage.getItem('entrepriseCourante');
-      if (this.idConnexion) {
-        this.compteEntreprise = true;
-      }
+    else if (this.authentificationService.isEntrepriseConnect) {
+      this.entrepriseService.findById(this.authentificationService.currentEntrepriseValue?.entreprise.id).subscribe(
+        (entreprise) => {
+          // let notifications
+          this.nbNotification = entreprise.notifications.filter((notification) => notification.lue == false).length;
+        })
     }
   }
 }
