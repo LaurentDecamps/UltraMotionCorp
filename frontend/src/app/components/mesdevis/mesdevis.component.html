@@ -5,21 +5,21 @@
     <div class="myDevis" *ngFor="let devisDemande of listeDevis">
       <div>
         <!-- <p>{{devisDemande.prestation.description}}</p> -->
-        <p>Description : {{devisDemande.projet.description}} </p>
-        <p>Type de Bien : {{devisDemande.projet.typeBien}} </p>
-        <p>Surface M2 : {{devisDemande.projet.surfacem2}} </p>
-        <p>Début des travaux : {{devisDemande.projet.dateDebut | date:'dd MMM YYYY' }} </p>
+        <p><span>Description :</span> {{devisDemande.projet.description}} </p>
+        <p><span>Type de Bien :</span> {{devisDemande.projet.typeBien}} </p>
+        <p><span>Surface M2 :</span> {{devisDemande.projet.surfacem2}} </p>
+        <p><span>Début des travaux :</span> {{devisDemande.projet.dateDebut | date:'dd MMM YYYY' }} </p>
         <p class="status">Statut : {{devisDemande.etat}}</p>
       </div>
       <div>
-        <p>Prix Matériel: {{devisDemande.prixPrestation}} €</p>
-        <p>Prix matériel : {{devisDemande.prixMateriel}} € </p>
-        <p>Durée de la prestation : {{devisDemande.tempsPrestationJours }} jours </p>
+        <p><span>Prix prestations:</span> {{devisDemande.prixPrestation}} €</p>
+        <p><span>Prix matériel :</span> {{devisDemande.prixMateriel}} € </p>
+        <p><span>Durée de la prestation :</span> {{devisDemande.tempsPrestationJours }} jours </p>
       </div>
       <div class="boutonDevis">
-        <button class="btn btn-primary bouton" (click)="selectionDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Modification du
+        <button class="btn btn-primary bouton color" (click)="selectionDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Modification du
           devis <i class="fas fa-chevron-down"></i></button>
-        <button class="btn btn-primary bouton" [disabled]="!devisDemande.prixPrestation" (click)="envoyerDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Envoyer le
+        <button class="btn btn-primary bouton color" [hidden]="!devisDemande.prixPrestation" (click)="envoyerDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Envoyer le
           devis</button>
       </div>
     </div>

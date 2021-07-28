@@ -47,3 +47,8 @@ a {
     justify-content: space-between;
     padding: 2%;
 }
+
+.lolo {
+  position:absolute;
+  left:80%;
+}

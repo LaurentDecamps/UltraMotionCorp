@@ -6,7 +6,7 @@
     <div class="flex">
       <div class="boutonsClient" >
         <a *ngIf="authenticationService.isClientConnect" routerLink="mncpt/projets">MES PROJETS</a>
-        <a *ngIf="authenticationService.isEntrepriseConnect" routerLink="mncpt/devis">MES DEVIS</a>
+        <a class="lolo" *ngIf="authenticationService.isEntrepriseConnect" routerLink="mncpt/devis">MES DEVIS</a>
         <a *ngIf="!authenticationService.isClientConnect && !authenticationService.isEntrepriseConnect" class="bouton" routerLink="auth/signup">S'INSCRIRE</a>
         <a *ngIf="!authenticationService.isEntrepriseConnect" routerLink="newprjct" class="bouton">NOUVEAU PROJET</a>
       </div>
