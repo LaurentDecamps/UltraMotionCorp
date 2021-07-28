@@ -25,6 +25,20 @@ export class EvaluationsComponent implements OnInit {
       .getEvaluationByClient(this.authentificationService.currentClientValue?.client.id)
       .subscribe((data) => {
         this.evaluations = data;
+        // console.log(this.evaluations);
+
+        // Les évaluations à faire son
+        this.evaluationsAFaire = this.evaluations.filter((evaluation) => {
+          evaluation.noteGlobale === 0
+        })
+
+        // console.log(this.evaluationsAFaire);
+
+
+        this.evaluationsFaites = this.evaluations.filter((evaluation) => evaluation.noteGlobale !== 0 )
+
+        // console.log(this.evaluationsFaites);
+
       });
   }
 

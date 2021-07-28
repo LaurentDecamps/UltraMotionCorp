@@ -2,7 +2,10 @@
   <div>
     <h2>Mes dernières évaluations</h2>
     <h3>Mes évaluations à faire</h3>
-    <div class="mesAvis" *ngFor="let evaluation of evaluations">
+    <div *ngIf="evaluationsAFaire.length == 0">
+      Pas de prestations à évaluer
+    </div>
+    <div class="mesAvis" *ngFor="let evaluation of evaluationsAFaire">
       <!-- <p><span>Note globale</span> : {{ evaluation.noteGlobale }}/5</p>
       <p>
         <span>Commentaire global</span> :
