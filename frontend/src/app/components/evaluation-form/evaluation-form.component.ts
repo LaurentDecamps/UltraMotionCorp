@@ -50,7 +50,9 @@ export class EvaluationFormComponent implements OnInit {
     evaluationsAFaire._id = this.evaluationsAFaire._id;
     console.log("Evaluation faite : ", evaluationsAFaire);
     this.evaluationService.miseAJourEvaluation(evaluationsAFaire).subscribe((params) => {
+      this.evaluationsAFaire = undefined
     })
+
   }
 
 }
