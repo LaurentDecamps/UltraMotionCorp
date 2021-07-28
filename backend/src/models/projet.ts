@@ -6,7 +6,7 @@ export interface IProjetDocument extends mongoose.Document {
   typeBien: string,
   niveauBien: string,
   description: string,
-  surfaceM2: string,
+  surfacem2: string,
   dateDebut: Date,
   prestations: IPrestationDocument,
   devis: IDevisDocument
