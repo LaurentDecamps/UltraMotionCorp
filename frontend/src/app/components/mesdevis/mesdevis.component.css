@@ -24,10 +24,32 @@ h4 {
   display: block;
   vertical-align: center;
   font-size: 1rem;
-  margin: auto 10px;
+  margin:10px;
+  padding:5px 15px;
+  border:2px solid #DBBD45;
 }
 
 .boutonDevis{
   display: flex;
   flex-direction: column;
+}
+
+span {
+  font-weight: 700;
+}
+
+.status {
+  border:3px solid #7BC248;
+  font-weight: 700;
+  border-radius: 25px;
+  padding:5px 15px;;
+}
+
+button {
+  margin-bottom:5px;
+}
+
+.color:hover {
+  background-color: #DBBD45;
+  transition:0.5s;
 }
