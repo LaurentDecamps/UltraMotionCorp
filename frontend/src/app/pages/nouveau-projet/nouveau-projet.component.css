@@ -123,24 +123,28 @@ h1 {
 
 }
 
-.alert {
-  margin: 0 0 0 2vw;
-  border: 2px solid #880000;
+.alert, .blue {
   border-radius: 8px;
-  background-color: #BB000040;
   font-size: 14pt;
+  padding: 7px 14px;
+}
+
+.alert {
+  margin: 20px 0 0 2vw;
+  border: 2px solid #880000;
+  background-color: #BB000040;
+
 }
 
 .blue {
+  margin-top: 20px;
   margin-left: 2vw;
   border: 2px solid #0000CC;
-  border-radius: 8px;
-  padding: 1rem;
   background-color: #0000CC40;
-  font-size: 14pt;
 }
 
 .form {
+  margin-top: 40px;
   margin-left: 4vw;
   font-variant: small-caps;
   font-size: 18pt;
@@ -157,20 +161,29 @@ h1 {
   margin-bottom: 4px;
   border: 2px solid #DDBB45;
   border-radius: 13px;
-  padding-bottom: 7px;
-  padding-left: 1px;
+  padding-bottom: 5px;
   content: "";
   background-color: #FFFFFF;
   vertical-align: middle;
   color: #DBBD45;
-  font-size: 24pt;
+  font-size: 60pt;
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 
 .radio:checked + .labelRadio::before {
-  content: "●"
+  content: "•";
+}
+
+.labelRadio {
+  margin: 50px 0;
+  margin-right: 60px;
+}
+
+.text {
+  border: 2px solid #DBBD45;
+  border-radius: 4px;
 }
 
 .other {
@@ -179,6 +192,33 @@ h1 {
 
 #other:checked ~ .other {
   display: inline;
+}
+
+.textInput {
+  width: 88vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.m2 {
+  width: 38%;
+}
+
+.m2 input {
+  margin-right: 8px;
+}
+
+.description {
+    width: 62%;
+}
+
+.description input {
+  width: 100%;
+}
+
+.date {
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .bold {
@@ -279,6 +319,7 @@ h1 {
   height: 70px;
   background-color: #F248;
   border-radius: 35px;
+  margin-right: 14vw;
   font-size: 20pt;
   font-weight: bold;
 }
