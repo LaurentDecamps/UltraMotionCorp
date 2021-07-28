@@ -79,7 +79,7 @@ export class SignUpComponent implements OnInit {
   }
 
   inscrireClient = () => {
-    console.log(this.clientForm.value);
+    // // console.log(this.clientForm.value;
     this.authentificationService.signupClient(this.clientForm.value).subscribe(() => {
       localStorage.removeItem("newProject")
       this.projetsService.create(this.newProject).subscribe(project => {
@@ -100,7 +100,7 @@ export class SignUpComponent implements OnInit {
   }
 
   inscrireEntreprise = () => {
-    console.log("Entreprise à inscrire", this.entrepriseForm.value);
+    // // console.log("Entreprise à inscrire", this.entrepriseForm.value);
     this.authentificationService.signupEntreprise(this.entrepriseForm.value).subscribe(() => {
       this.router.navigateByUrl("/mncpt/infos");
     })

@@ -28,7 +28,7 @@ export class ProjetsComponent implements OnInit {
   ngOnInit(): void {
     this.clientService.findById(JSON.parse(localStorage.getItem('clientCourant')).client.id).subscribe((data) => {
       this.clientConnecte = data;
-      console.log("Client connecté",this.clientConnecte.projets);
+      // console.log("Client connecté",this.clientConnecte.projets);
 
     });
 
@@ -40,7 +40,7 @@ export class ProjetsComponent implements OnInit {
 
   creerEvaluationAFaire = (evaluationAFaire: Evaluation) => {
     evaluationAFaire.client = this.clientConnecte;
-    console.log("Je suis remonté aux projet ", evaluationAFaire);
+    // console.log("Je suis remonté aux projet ", evaluationAFaire);
     this.evaluationService.createEvaluation(evaluationAFaire).subscribe(() => { });
   }
 }

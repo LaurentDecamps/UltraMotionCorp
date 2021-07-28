@@ -20,7 +20,7 @@ export class ProjetsService {
   }
 
   create(projet : Projet) {
-    console.log("Creation Projet",projet);
+    // console.log("Creation Projet",projet);
     return this.httpClient.post<Projet>(`${environment.apiUrl}/projets`, projet)
   }
 }

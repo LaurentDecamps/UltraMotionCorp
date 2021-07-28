@@ -54,7 +54,7 @@ export class SignInComponent implements OnInit {
       this.authenticationService.loginClient(this.loginForm.value.email, this.loginForm.value.motDePasse).subscribe(
         () => {
           this.loading = false;
-          console.log("On s'en est sorti !");
+          // console.log("On s'en est sorti !");
           this.router.navigateByUrl("/mncpt/infos");
         }
         , (erreur) => {
@@ -66,10 +66,10 @@ export class SignInComponent implements OnInit {
       if (this.isEntrepriseDisplay) {
         this.authenticationService.loginEntreprise(this.loginForm.value.email, this.loginForm.value.motDePasse).subscribe(() => {
           this.loading = false;
-          console.log("On s'en est sorti !");
+          // console.log("On s'en est sorti !");
           this.router.navigateByUrl("/mncpt/infos");
         }, (erreur) => {
-          console.log("Gestion d'erreur dans le composant", erreur.message);
+          // console.log("Gestion d'erreur dans le composant", erreur.message);
           this.loading = false;
           this.messageErreur = erreur;
         })

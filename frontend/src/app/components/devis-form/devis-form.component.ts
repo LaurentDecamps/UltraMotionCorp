@@ -14,7 +14,7 @@ export class DevisFormComponent implements OnInit {
 
   @Input() set devisEncours(value: Devis) {
     this._devisEncours = value;
-    console.log("Set devis en cours");
+    // console.log("Set devis en cours");
     this.devisForm.patchValue(this._devisEncours);
   }
 
@@ -34,7 +34,7 @@ export class DevisFormComponent implements OnInit {
       prixMateriel : [0, Validators.required],
       tempsPrestationJours : [1, Validators.required],
     });
-    console.log("Devis en cours avant modification",this.devisEncours);
+    // console.log("Devis en cours avant modification",this.devisEncours);
   }
 
   ngOnInit(): void {
@@ -45,9 +45,9 @@ export class DevisFormComponent implements OnInit {
     this.devisEncours.prixMateriel = this.devisForm.controls['prixMateriel'].value;
     this.devisEncours.tempsPrestationJours = this.devisForm.controls['tempsPrestationJours'].value;
     // this.devisEncours.etat = "A valider";
-    console.log("Devis en cours après modification",this.devisEncours);
+    // console.log("Devis en cours après modification",this.devisEncours);
     this.devisService.updateDevis(this.devisEncours).subscribe((devisMisAJour) => {
-      console.log("Devis en cours après maj BDD", devisMisAJour);
+      // console.log("Devis en cours après maj BDD", devisMisAJour);
       this.miseAjourDevis.emit(devisMisAJour);
     });
   }

@@ -45,10 +45,10 @@ export class EvaluationFormComponent implements OnInit {
   }
 
   miseAJourEvaluation() {
-    console.log("Evaluation a faire : ", this.evaluationsAFaire);
+    // console.log("Evaluation a faire : ", this.evaluationsAFaire);
     let evaluationsAFaire = this.evaluationForm.value;
     evaluationsAFaire._id = this.evaluationsAFaire._id;
-    console.log("Evaluation faite : ", evaluationsAFaire);
+    // console.log("Evaluation faite : ", evaluationsAFaire);
     this.evaluationService.miseAJourEvaluation(evaluationsAFaire).subscribe((params) => {
     })
   }

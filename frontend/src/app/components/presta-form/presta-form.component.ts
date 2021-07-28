@@ -31,7 +31,7 @@ export class PrestaFormComponent implements OnInit {
       this.prestationGroupForm.get("tauxHoraire").value,
       this.prestationGroupForm.get("TVA").value
     );
-    console.log("Prestation", prestationAAjouter);
+    // console.log("Prestation", prestationAAjouter);
     this.ajouterprestation.emit(prestationAAjouter);
   }
 

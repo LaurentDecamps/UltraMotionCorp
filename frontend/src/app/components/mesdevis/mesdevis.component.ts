@@ -37,13 +37,13 @@ export class MesdevisComponent implements OnInit {
   }
 
   selectionDevis(devisSelectionne : Devis) {
-    console.log("Devis selectionné pour mise à jour", devisSelectionne);
+    // console.log("Devis selectionné pour mise à jour", devisSelectionne);
     this.formulaireIsVisible = true;
     this.devisEnCours = devisSelectionne;
   }
 
   miseAjourDevis = (devis) => {
-    console.log("Devis remonté du formulaire", devis);
+    // console.log("Devis remonté du formulaire", devis);
     this.formulaireIsVisible = false;
     this.devisEnCours = devis;
   }

@@ -38,19 +38,19 @@ export class DevisComponent implements OnInit {
     private prestationService: PrestationsService,) { }
 
   ngOnInit(): void {
-    console.log(`ID projet du ${this.idProjet}`);
-    console.log(`ID prestation du ${this.idPrestation}`);
-    console.log(`ID entreprise du ${this.idEntreprise}`);
+    // console.log(`ID projet du ${this.idProjet}`);
+    // console.log(`ID prestation du ${this.idPrestation}`);
+    // console.log(`ID entreprise du ${this.idEntreprise}`);
 
     // Récupération du devis à partir des trois
     this.devisService.getDevisByProjetByPrestationByEntreprise(this.idProjet, this.idPrestation, this.idEntreprise).subscribe((data) => {
-      console.log("Devis récupéré", data);
+      // console.log("Devis récupéré", data);
       this.listedevis = data;
     });
 
     this.entrepriseService.findById(this.idEntreprise).subscribe((data) => {
       this.entreprisePreSelectionnee = data;
-      console.log(`Entreprise récupérée ${this.idEntreprise}`, data);
+      // console.log(`Entreprise récupérée ${this.idEntreprise}`, data);
     });
 
     this.projetService.getProjetById(this.idProjet).subscribe((data) => {
@@ -117,7 +117,7 @@ export class DevisComponent implements OnInit {
       this.notificationService.addNotification(notification).subscribe((nouvelleNotification) => {
         this.entreprisePreSelectionnee.notifications.push(nouvelleNotification);
         this.entrepriseService.updateEntreprise(this.entreprisePreSelectionnee).subscribe((data) => {
-          console.log("Entreprise avec nouvelle notification non lue",data);
+          // console.log("Entreprise avec nouvelle notification non lue",data);
 
          })
       });

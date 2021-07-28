@@ -65,7 +65,7 @@ export class AuthentificationService {
    */
   loginClient (email: string, motDePasse: string){
     // Envoie une méthode HTTP post au BACK
-    console.log("On envoie le mot de passe", motDePasse);
+    // console.log("On envoie le mot de passe", motDePasse);
     return this.http.post<any>(`${environment.apiUrl}/auth/client/signin`, { email, motDePasse })
       .pipe(map(client => {
         localStorage.setItem('clientCourant', JSON.stringify(client));

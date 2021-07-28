@@ -34,7 +34,6 @@ export class NouveauProjetComponent implements OnInit {
     if (history.state.data) {
       this.prestationsChoisies.push(history.state.data)
     }
-    console.log(this.prestationsChoisies)
     this.getFirstWeekDay()
   }
 
@@ -114,7 +113,6 @@ export class NouveauProjetComponent implements OnInit {
         array.push(event.target[key].labels[0].innerText)
       }
     }
-    console.log(array)
   }
 
   displayNeeds() {
@@ -148,9 +146,9 @@ export class NouveauProjetComponent implements OnInit {
     if (!localStorage.getItem("clientCourant")) {
       this.router.navigate(["/auth/signup"])
     }
-    else {
-      console.log(JSON.parse(test))
-    }
+    // else {
+    //   // console.log(JSON.parse(test))
+    // }
   }
 
 }

@@ -18,11 +18,11 @@ export class PrestasComponent implements OnInit {
 
   @Input() set prestationAAjouter (value: Prestation) {
     this._prestationAAjouter = value;
-    console.log("Set prestationAAjouter", value);
+    // console.log("Set prestationAAjouter", value);
     if (value) {
       this.prestationService.create(value).subscribe((prestationMAJ) => {
         this.entrepriseCourante.prestations.push(prestationMAJ);
-        console.log("prestationMAJ",prestationMAJ);
+        // console.log("prestationMAJ",prestationMAJ);
         this.entrepriseService.updateEntreprise(this.entrepriseCourante).subscribe();
       })
     }
@@ -37,7 +37,7 @@ export class PrestasComponent implements OnInit {
   ngOnInit(): void {
     this.entrepriseService.findById(this.authentificationService.currentEntrepriseValue.entreprise.id).subscribe((entreprise) => {
       this.entrepriseCourante = entreprise;
-      console.log("Entreprise courante", entreprise);
+      // console.log("Entreprise courante", entreprise);
 
     });
   }

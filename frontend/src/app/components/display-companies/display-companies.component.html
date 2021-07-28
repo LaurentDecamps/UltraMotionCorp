@@ -1,5 +1,5 @@
 <div class="containerResult">
-  <h2>Résultat(s) de recherches :</h2>
+  <h2>Entreprise(s) correspondant à votre recherche :</h2>
   <ngb-accordion *ngFor="let company of filteredCompanies; let i= index" [activeIds]="activeIds">
     <ngb-panel title="{{company.adresse.split(' ').pop()}} - {{company.nom}}" id="panel-{{i}}">
       <ng-template ngbPanelContent >

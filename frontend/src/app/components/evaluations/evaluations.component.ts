@@ -19,7 +19,7 @@ export class EvaluationsComponent implements OnInit {
     private authentificationService: AuthentificationService) {}
 
   ngOnInit(): void {
-    console.log("Client",this.authentificationService.currentClientValue.client.id);
+    // console.log("Client",this.authentificationService.currentClientValue.client.id);
 
     this.evaluationsService
       .getEvaluationByClient(this.authentificationService.currentClientValue?.client.id)

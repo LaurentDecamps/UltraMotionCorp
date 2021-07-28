@@ -12,7 +12,7 @@ export class EntreprisesService {
   constructor(private httpClient: HttpClient) { }
 
   findById(id : string) : Observable<Entreprise> {
-    console.log("Id entrep", id);
+    // console.log("Id entrep", id);
 
     return this.httpClient.get<Entreprise>(`${environment.apiUrl}/entreprises/${id}`);
   }

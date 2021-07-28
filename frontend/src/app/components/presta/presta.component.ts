@@ -17,7 +17,7 @@ export class PrestaComponent implements OnInit {
   }
 
   ajouterprestation(prestationAAjouter : Prestation){
-    console.log("Prestation passé au père", prestationAAjouter);
+    // console.log("Prestation passé au père", prestationAAjouter);
 
     this.prestationAAjouter = prestationAAjouter;
   }
