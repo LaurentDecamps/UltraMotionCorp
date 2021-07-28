@@ -11,20 +11,20 @@ export class NouveauProjetComponent implements OnInit {
   startDate: string
   year: number = 2021
   months: object[] = [
-    {month: "janvier", days: 31},
-    {month: "février", days: 28},
-    {month: "mars", days: 31},
-    {month: "avril", days: 30},
-    {month: "mai", days: 31},
-    {month: "juin", days: 30},
-    {month: "juillet", days: 31},
-    {month: "août", days: 31},
-    {month: "septembre", days: 30},
-    {month: "octobre", days: 31},
-    {month: "novembre", days: 30},
-    {month: "décembre", days: 31}
+    {month: "JANVIER", days: 31},
+    {month: "FÉVRIER", days: 28},
+    {month: "MARS", days: 31},
+    {month: "AVRIL", days: 30},
+    {month: "MAI", days: 31},
+    {month: "JUIN", days: 30},
+    {month: "JUILLET", days: 31},
+    {month: "AOÛT", days: 31},
+    {month: "SEPTEMBRE", days: 30},
+    {month: "OCTOBRE", days: 31},
+    {month: "NOVEMBRE", days: 30},
+    {month: "DÉCEMBRE", days: 31}
   ]
-  monthIndex: number = 11
+  monthIndex: number = 6
   weekDays: string[] = ["L", "M", "M", "J", "V", "S", "D"]
   days: string[] = []
 
