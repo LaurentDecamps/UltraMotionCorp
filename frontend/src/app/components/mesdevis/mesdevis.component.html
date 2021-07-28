@@ -12,14 +12,13 @@
         <p class="status">Statut : {{devisDemande.etat}}</p>
       </div>
       <div>
-        <p><span>Prix Matériel:</span> {{devisDemande.prixPrestation}} €</p>
         <p><span>Prix matériel :</span> {{devisDemande.prixMateriel}} € </p>
         <p><span>Durée de la prestation :</span> {{devisDemande.tempsPrestationJours }} jours </p>
       </div>
       <div class="boutonDevis">
-        <button class="btn btn-primary bouton" (click)="selectionDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Modification du
+        <button class="btn btn-primary bouton color" (click)="selectionDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Modification du
           devis <i class="fas fa-chevron-down"></i></button>
-        <button class="btn btn-primary bouton" [hidden]="!devisDemande.prixPrestation" (click)="envoyerDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Envoyer le
+        <button class="btn btn-primary bouton color" [hidden]="!devisDemande.prixPrestation" (click)="envoyerDevis(devisDemande)" [hidden]="estDevisDemande(devisDemande)">Envoyer le
           devis</button>
       </div>
     </div>
