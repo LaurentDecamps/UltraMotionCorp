@@ -1,0 +1,28 @@
+<div class="mesDevis">
+  <h3>Mes devis </h3>
+  <section *ngIf="listeDevis" class="mesDevisEnCours">
+    <h4>Mes demande de devis</h4>
+    <div class="myDevis" *ngFor="let devisDemande of listeDevis">
+      <div>
+        <!-- <p>{{devisDemande.prestation.description}}</p> -->
+        <p><span>Description :</span> {{devisDemande.projet.description}} </p>
+        <p><span>Type de Bien :</span> {{devisDemande.projet.typeBien}} </p>
+        <p><span>Surface M2 :</span> {{devisDemande.projet.surfacem2}} </p>
+        <p><span>Début des travaux :</span> {{devisDemande.projet.dateDebut | date:'dd MMM YYYY' }} </p>
+        <p class="status">Statut : {{devisDemande.etat}}</p>
+      </div>
+      <div>
+        <p><span>Prix prestations:</span> {{devisDemande.prixPrestation}} €</p>
+        <p><span>Prix matériel :</span> {{devisDemande.prixMateriel}} € </p>
+        <p><span>Durée de la prestation :</span> {{devisDemande.tempsPrestationJours }} jours </p>
+      </div>
+      <div class="boutonDevis">
+        <button class="btn btn-primary bouton color" (click)="selectionDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Modification du
+          devis <i class="fas fa-chevron-down"></i></button>
+        <button class="btn btn-primary bouton color" [hidden]="!devisDemande.prixPrestation" (click)="envoyerDevis(devisDemande)" [disabled]="estDevisDemande(devisDemande)">Envoyer le
+          devis</button>
+      </div>
+    </div>
+  </section>
+  <app-devis-form [formulaireIsVisible]="formulaireIsVisible" [devisEncours]="devisEnCours" (miseAjourDevis)="miseAjourDevis($event)"></app-devis-form>
+</div>

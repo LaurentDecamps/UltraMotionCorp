@@ -1,36 +1,49 @@
 # UltraMotionCorp
 
-## Documentation
+# Description
+Projet fil rouge de la formation POEC Front End IB Formation CEGOS - Groupe 3 - Hélène - Yassine - Kevin et Laurent 
 
-Retrouvez les fichiers 
+Le besoin est disponible dans le répertoire doc\spec\Projet_fil_rouge_-_POE_Front.docx
 
-## Suivi des 
+# Analyse
+
+Les wireframes se trouvent dans le répertoire doc\wireframe
+
+## Suivi des tâches
 
 https://lameilleuredesequipes.atlassian.net/
 
+# BRICOOL : LA BRICOLE A LA COOL
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+![Le logo de bricool](frontend/media/Bricool.png "Logo BRICOOL La bricole à la cool")
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Logiciel requis
 
-## Code scaffolding
+## Uniquement Environnement de dev
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Base de donnée
 
-## Build
+[MongoDB Community Server Edition](https://www.mongodb.com/try/download/community?tck=docs_server)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+[MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools?tck=docs_databasetools)
 
-## Running unit tests
+Le répertoire bin des *MongoDB Database Tools* doit être ajouté aux variables d'environnement.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Une fois la base de donnée de test utilisée, on remets les données de test dans la base de donnée local (*localhost:27017*) avec le script *BddTestRestore.bat*
 
-## Running end-to-end tests
+Après avoir amélioré les données de tests, on peut les sauvegarder avec le script *SauvegardeDonneeTest.bat* qui mets à jour les fichiers dans le répertoire du nom de la base de donnée ("bricocool").
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Environnement de test
 
-## Further help
+# Lancer le projet
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Installation des dépendances de modules nodes 
+
+Dans une invite de commande, ouvrir le répertoire *backend*, lancer la commande 
+
+```shell
+npm i
+...
+npm 
+```

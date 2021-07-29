@@ -1,0 +1,27 @@
+/* ng-template .bouton {
+
+} */
+
+.bouton {
+  border-radius: 15px;
+  background-color: #7BC248;
+  color: white;
+  padding: 10px;
+  /* text-decoration: none; */
+}
+
+.bouton:first-child{
+  margin-right: 25px;
+}
+.accordion-item {
+  height: 1500px;
+}
+
+.lesBoutonsValidationRefusDevis {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.boutonRechercherEntreprise{
+  margin-top: 30px;
+}

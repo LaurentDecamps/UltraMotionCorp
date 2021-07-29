@@ -1,0 +1,16 @@
+<div class="containerInfos">
+  <h2>Vos notifications non lues</h2>
+  <div *ngIf="entrepriseConnectee?.notifications?.length == 0">
+    Pas de notifications non lues
+  </div>
+  <div *ngIf="entrepriseConnectee?.notifications">
+    <div *ngFor="let notification of entrepriseConnectee.notifications">
+      <app-notif [notification]="notification"></app-notif>
+    </div>
+  </div>
+  <div *ngIf="clientconnecte?.notifications">
+    <div *ngFor="let notification of clientconnecte.notifications">
+      <app-notif [notification]="notification"></app-notif>
+    </div>
+  </div>
+</div>

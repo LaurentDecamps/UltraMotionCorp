@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "caviar_dreams";
+    src: url(../../../assets/font/caviar_dreams/CaviarDreams.ttf) format("opentype");
+}
+
+* {
+    font-family: "caviar_dreams", 'arial', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #7BC248;
+}
+
+.boutonsClient {
+    width: 300px;
+}
+
+.boutonsClient a:first-child {
+    margin-right: 5%;
+}
+
+.imgNav {
+    margin: 30px;
+}
+
+.bouton {
+  border-radius: 15px;
+  background-color: #7BC248;
+  color: white;
+  padding: 10px;
+  width: 80vw;
+}
+
+.bouton:hover {
+  background-color : #DBBD45;
+  transition : 0.5s;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.contain {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.lolo {
+  position:absolute;
+  left:80%;
+}

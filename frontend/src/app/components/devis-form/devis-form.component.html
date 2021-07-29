@@ -1,0 +1,19 @@
+<div *ngIf="formulaireIsVisible">
+  <form [formGroup]="devisForm" (ngSubmit)="envoyerEtMettreAJourDevis() ">
+    <div class="devisInputFormulaire">
+      Modification du devis
+      <label>Durée de la prestation en jours :
+        <input type="number" id="tempsPrestationJours" step="10" formControlName="tempsPrestationJours" max="182"
+          required>
+      </label>
+      <label>Prix du materiel :
+        <input type="number" formControlName="prixMateriel" size="3" required> €
+      </label>
+      <label>Prix Prestation :
+        <input type="number" formControlName="prixPrestation" size="4" required> €
+      </label>
+    </div>
+    <button type="submit" [disabled]="!devisForm.valid">Enregistrer le devis</button>
+  </form>
+</div>
+<!-- // (ngSubmit)="modifierDevis()" *ngIf="user">  class="devisFormulaire"-->

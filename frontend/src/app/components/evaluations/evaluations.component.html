@@ -1,0 +1,50 @@
+<div class="evaluationContainer">
+  <div>
+    <h2>Mes dernières évaluations</h2>
+    <h3>Mes évaluations à faire</h3>
+    <div *ngIf="evaluationsAFaire?.length == 0">
+      Pas de prestations à évaluer
+    </div>
+    <div class="mesAvis" *ngFor="let evaluation of evaluationsAFaire">
+      <p><span>La prestation</span> :{{ evaluation.prestation.description }}</p>
+      <button (click)="evaluer(evaluation)">Evaluer</button>
+    </div>
+    <h3>Mes évaluations faites</h3>
+    <div *ngIf="evaluationsFaites?.length == 0">
+      Pas d'évaluation déjà faites.
+    </div>
+    <ngb-accordion
+      activeIds="ngb-panel-0"
+      *ngFor="let evaluationFaite of evaluationsFaites"
+    >
+      <ngb-panel title="{{ evaluationFaite.prestation.description }} , Note globale: {{ evaluationFaite.noteGlobale }}/5">
+        <ng-template ngbPanelContent>
+          <ul>
+            <li>
+              <h5>Commentaire global :</h5>
+              <p>{{evaluationFaite.commentaireGlobal}}</p>
+            </li>
+            <li><h5>Expertise</h5>
+              <ul>
+                <li>{{evaluationFaite.commentaireExpertise}}</li>
+                <li>Note : {{evaluationFaite.noteExpertise}}</li>
+              </ul>
+            </li>
+            <li><h5>Communication</h5>
+              <ul>
+                <li>{{evaluationFaite.commentaireFacilite}}</li>
+                <li>Note : {{evaluationFaite.noteFacilite}}</li>
+              </ul>
+            </li>
+            <li><h5>Communication</h5>
+              <ul>
+                <li>{{evaluationFaite.commentaireQualite}}</li>
+                <li>Note : {{evaluationFaite.noteQualite}}</li>
+              </ul>
+            </li>
+          </ul>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+</div>

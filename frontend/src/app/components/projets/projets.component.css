@@ -1,0 +1,48 @@
+.bouton {
+  border: none;
+  font-weight: 700;
+  width:33%;
+  margin:25px auto;
+  background-color: #7BC248;
+  padding: 2%;
+  border-radius:15px;
+  color : white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.divbouton {
+  margin-top: 3%;
+}
+
+.bouton:hover{
+  background-color : #DBBD45;
+  transition : 0.5s;
+}
+
+a {text-decoration: none;}
+.prestation {
+  font-weight: bold;
+}
+
+.container{
+  height : 1200px;
+}
+
+.container div {
+  font-weight: 700;
+  margin-top : 25px;
+  margin-bottom : 25px;
+}
+
+h2 {
+  background-color: #7BC248;
+  width : 100%;
+  color:white;
+  padding : 5px 15px;
+}
+
+/****** CSS  ACCORDERON ****/
+ng-template p {
+  font-weight: 500;
+}

@@ -1,0 +1,22 @@
+<h2>Vos prestations</h2>
+<div *ngIf="entrepriseCourante?.prestations?.length > 0">
+  <h3>{{entrepriseCourante?.prestations?.length}} prestations visibles aux clients</h3>
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let prestation of entrepriseCourante.prestations"
+    class="accordeonPrestations">
+    <ngb-panel title="{{prestation.description}} " class="accordeonPrestations">
+      <ng-template ngbPanelContent class="accordeonPrestations">
+        <p>Type de prestation : {{prestation.type}}</p>
+        <div class="presentationPrestation">
+          <p class="description">{{prestation.description}}</p>
+        </div>
+        <div class="prixPrestation">
+          <p class="tauxHoraire">Taux horaire : {{prestation.tauxHoraire}} </p>
+          <p class="PrixTotalTva">TVA {{prestation.TVA}} %</p>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>
+<div *ngIf="(entrepriseCourante?.prestations?.length === 0)">
+  Pas de prestations pour le moment. Merci d'en saisir une ci-dessous.
+</div>

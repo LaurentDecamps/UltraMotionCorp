@@ -1,0 +1,54 @@
+.bouton {
+  border: none;
+  font-weight: 700;
+  width:33%;
+  margin:25px auto;
+  background-color: #7BC248;
+  padding: 2%;
+  border-radius:15px;
+  color : white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  width : 100%;
+  font-weight:700;
+}
+.everywhereInfo{
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  padding : 15px;
+  border-radius:15px;
+  text-align: center;
+  display: inline-block;
+  width:80px;
+  margin-right:10px;
+  margin-left:10px;
+}
+a i {
+  color:white;
+}
+.supress {
+  background-color: red;
+}
+.modify {
+  background-color: #7BC248;
+}
+label, .containerInfos div, a {
+  margin-top : 10px;
+}
+span {
+  font-weight: 700;
+}
+
+.decoContainer {
+  width:500px;
+}
+.decoContainer bouton {
+  margin-right:25px;
+}

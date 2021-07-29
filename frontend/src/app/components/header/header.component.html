@@ -1,0 +1,21 @@
+<header>
+  <nav class="contain">
+    <a routerLink="">
+      <img class="logoBricool" src="../../assets/images/Bricool.png" alt="Logo Bricool">
+    </a>
+    <div class="flex">
+      <div class="boutonsClient" >
+        <a *ngIf="authenticationService.isClientConnect" routerLink="mncpt/projets">MES PROJETS</a>
+        <a class="lolo" *ngIf="authenticationService.isEntrepriseConnect" routerLink="mncpt/devis">MES DEVIS</a>
+        <a *ngIf="!authenticationService.isClientConnect && !authenticationService.isEntrepriseConnect" class="bouton" routerLink="auth/signup">S'INSCRIRE</a>
+        <a *ngIf="!authenticationService.isEntrepriseConnect" routerLink="newprjct" class="bouton">NOUVEAU PROJET</a>
+      </div>
+      <a routerLink="auth/signin">
+        <img class="imgNav" src="../../assets/images/profil.png" alt="Profil">
+      </a>
+      <a routerLink="mncpt/notifs">
+        <img src="../../assets/images/mail.png" alt="Notifications">
+      </a>
+    </div>
+  </nav>
+</header>

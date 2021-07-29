@@ -1,0 +1,35 @@
+/* @import url('~bootstrap/dist/css/bootstrap.min.css'); */
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: "caviar_dreams";
+  src: url(./assets/font/caviar_dreams/CaviarDreams.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "caviar_dreams";
+  src: url(./assets/font/caviar_dreams/CaviarDreams_Bold.ttf) format("truetype");
+  font-weight: bold;
+}
+
+* {
+  font-family: "caviar_dreams", "arial", sans-serif;
+  color: #231f20;
+}
+
+button {
+  border: none !important;
+  font-weight: 700 !important;
+  margin: 25px auto;
+  background-color: #7bc248 !important;
+  padding: 5 20px;
+  border-radius: 5px;
+  color: white!important;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+button:not(.createProject):hover {
+  background-color: #dbbd45;
+  transition: 0.5s;
+}

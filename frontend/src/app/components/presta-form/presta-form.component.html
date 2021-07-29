@@ -1,0 +1,24 @@
+<h5>Ajouter une prestation :</h5>
+
+<form [formGroup]="prestationGroupForm">
+  <div class="presta">
+    <label>Type de prestation :
+    </label>
+    <input type="text" id="typePrestation" formControlName="typePrestation" required>
+
+    <label>Description :
+    </label>
+    <input type="text" id="description" formControlName="description" size="3" required> 
+
+    <label>Taux horaire (€):
+    </label>
+    <input type="number" id="tauxHoraire" formControlName="tauxHoraire" size="4" required>
+
+    <label>TVA (%):
+    </label>
+    <input type="text" id="TVA" formControlName="TVA" size="3" required>
+
+  </div>
+  <!-- <button (click)="modifierPrestation()" >Modifier la prestation</button> -->
+  <button (click)="ajouterPrestation()">Ajouter la prestation</button>
+</form>

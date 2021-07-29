@@ -1,0 +1,62 @@
+.container {
+
+    background-color: whitesmoke;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.container h1 {
+
+    text-align: center;
+    padding-bottom: 3%;
+
+}
+
+.container h5 {
+
+    font-weight: bold;
+
+}
+
+.container h6 {
+
+    padding-top: 2%;
+}
+
+.formulaire {
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1%;
+}
+
+.input-group-text{
+  background-color: #DBBD45;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.bouton {
+  border-radius: 15px;
+  background-color: #7BC248;
+  color: white;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom:10px;
+}
+
+.bouton:hover {
+  background-color : #DBBD45;
+  transition : 0.5s;
+}
+
+button {
+  border-radius: 25px;
+  padding:5px 26px;
+}

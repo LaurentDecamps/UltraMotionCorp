@@ -1,0 +1,43 @@
+.navCompte {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  margin-right: 20px;
+}
+
+.containerCompte {
+  display: flex;
+}
+
+.boutonCompte {
+  border : none;
+  background-color: #7bc248;
+  color: white;
+  padding: 10px;
+}
+
+.boutonCompte:hover {
+  background-color: #DBBD45;
+  transition: 0.2s;;
+}
+
+.navCompte button:last-child{
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #7BC248;
+}
+
+span {
+  border-radius: 10px;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  align-items: center;
+}

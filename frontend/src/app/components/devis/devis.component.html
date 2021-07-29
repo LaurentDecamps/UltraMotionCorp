@@ -1,0 +1,40 @@
+<div *ngIf="listedevis?.length === 0">
+  Pas de devis demandée pour cette prestation et cette entreprise
+  <button type="submit" (click)="demanderDevis()">Demander un devis</button>
+</div>
+<div *ngIf="listedevis?.length > 0">
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let devis of listedevis" class="accordeonDevis">
+    <ngb-panel title="Devis : {{devis.titre}} // Etat : {{devis.etat}}" class="accordeonDevis">
+      <ng-template ngbPanelContent class="accordeonDevis">
+        <div>
+          <div>
+            Devis {{devis.etat}}
+          </div>
+          <div *ngIf="testerDevisAValider(devis)">
+            <div>
+              Prix de la prestation : {{devis.prixPrestation}} €
+            </div>
+            <div>
+              Prix du matériel : {{devis.prixMateriel}} €
+            </div>
+            <div>
+              Durée de la prestation : {{devis.tempsPrestationJours}} jours ouvrés
+            </div>
+            <div class="lesBoutonsValidationRefusDevis">
+              <button class="bouton" (click)="validerDevis(devis)">
+                Valider
+              </button>
+              <button class="bouton" (click)="refuserDevis(devis)">
+                Refuser
+              </button>
+            </div>
+          </div>
+          <div *ngIf="devis.etat === 'validé'">
+            Prestation terminé ? Merci de l'<a routerLink="/mncpt/evaluation">évaluer</a>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>
+

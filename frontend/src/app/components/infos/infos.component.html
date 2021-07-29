@@ -1,0 +1,57 @@
+<div class="containerInfos">
+  <div *ngIf="entrepriseConnectee">
+    <h1>Bonjour {{entrepriseConnectee?.nom}},</h1>
+    <div>
+      Information du compte :
+    </div>
+    <div>
+      description : {{entrepriseConnectee.description}}
+    </div>
+    <div>
+      numeroTelephone : {{entrepriseConnectee.numeroTelephone}}
+    </div>
+    <div>
+      email : {{entrepriseConnectee.email}}
+    </div>
+    <div>
+      adresse : {{entrepriseConnectee.adresse}}
+    </div>
+  </div>
+  <div *ngIf="clientconnecte">
+    <div *ngIf="creationCompteReussi">
+      {{creationCompteReussi}}, Rendez-vous dans Mes Projets pour lui faire une demande de devis !
+    </div>
+    <h1>Bonjour {{clientconnecte?.prenom}},</h1>
+    <div>
+      <h2>Information du compte :</h2>
+    </div>
+    <div>
+      <span>Nom Prénom :</span> {{clientconnecte?.nom}} {{clientconnecte?.prenom}}
+    </div>
+    <div>
+      <span>Numero de Telephone :</span> {{clientconnecte.numeroTelephone}}
+    </div>
+    <div>
+      <span>Email :</span> {{clientconnecte.email}}
+    </div>
+    <div>
+      <span>Adresse :</span> {{clientconnecte.adresse}}
+    </div>
+  </div>
+  <div class="everywhereInfo">
+    <label>
+      <input type="checkbox" id="scales" name="scales" checked>
+      COOKIES
+    </label>
+    <label>
+      <input type="checkbox" id="scales" name="scales">
+      NEWSLETTER
+    </label>
+  </div>
+  <div class="decoContainer">
+      <button class="bouton" (click)="deconnecter()">SE DECONNECTER</button>
+      <a href="#" class="modify"><i class="fas fa-user-cog fa-2x"></i></a>
+      <a href="#" class="supress"><i class="fas fa-dumpster fa-2x"></i></a>
+  </div>
+
+</div>

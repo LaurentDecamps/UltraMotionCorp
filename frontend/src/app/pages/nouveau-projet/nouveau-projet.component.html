@@ -1,0 +1,179 @@
+<form class="" (ngSubmit)="submitNewProject($event)">
+  <!-- <div class="contact">
+    <h1>Mon nouveau projet</h1>
+    <div class="container">
+      <label for="name">NOM<span class="red">*</span> <span class="green"> :</span></label>
+      <input type="text" name="name" class="greenInput" placeholder="Dupont, Morris, ...">
+    </div>
+    <div class="container">
+      <label for="surname">PRÉNOM<span class="red">*</span><span class="green"> :</span></label>
+      <input type="text" name="surname" class="greenInput" placeholder="Églantine, Jamie, ...">
+    </div>
+    <div class="container">
+      <label for="email">E-MAIL<span class="red">*</span> <span class="green"> :</span></label>
+      <input type="email" name="email"class="greenInput" placeholder="eglantine.dupont@mail.fr, ...">
+    </div>
+    <div class="container">
+      <label for="phone">TÉLÉPHONE<span class="red">*</span> <span class="green"> :</span></label>
+      <input type="tel" name="phone" class="greenInput">
+    </div>
+  </div> -->
+
+  <div class="details">
+    <h1>Détails de votre projet<span class="red">*</span></h1>
+    <p class="alert" *ngIf="!prestationsChoisies.length">Aucune prestation séléctionnée<p>
+    <ng-container *ngFor="let thatOne of prestationsChoisies">
+      <p class="blue" *ngIf="thatOne">{{thatOne["company"].nom}} - {{thatOne["prestation"].description}}</p>
+    </ng-container>
+    <div class="form">
+      <div>type de bien:</div>
+      <input type="radio" id="flat" class="radio" name="typeBien" value="">
+      <label for="flat" class="labelRadio">appartement</label>
+      <input type="radio" id="house" class="radio" name="typeBien" value="">
+      <label for="house" class="labelRadio">maison</label>
+      <input type="radio" id="other" class="radio" name="typeBien" value="">
+      <label for="other" class="labelRadio">autres</label>
+      <input type="text" class="other text" name="typeBien" placeholder="Préciser votre type de bien">
+      <div>résidence:</div>
+      <input type="radio" id="main" class="radio" name="niveauBien" value="">
+      <label for="main" class="labelRadio">principale</label>
+      <input type="radio" id="second" class="radio" name="niveauBien" value="">
+      <label for="second" class="labelRadio">secondaire</label>
+      <div class="textInput">
+        <div class="m2">
+          <div>combien de mètres carrés fait votre bien?</div>
+          <input type="number" class="text" name="surfacem2" placeholder="165.3">
+          <label>m²</label>
+        </div>
+        <div class="description">
+          <label>décrivez votre projet en quelques mots</label>
+          <input type="textarea" class="text" name="description" placeholder="Je veux une nouvelle salle de bain">
+        </div>
+      </div>
+
+      <div class="date">date de début de votre projet: <span class="bold">{{startDate}}</span></div>
+    </div>
+    <div class="containerCalendarSubmit">
+      <div class="calendar">
+        <div>
+          <div class="month">
+            <p (click)="decrementMonth()"><</p>
+            <p>{{months[monthIndex]["month"]}}</p>
+            <p (click)="incrementMonth()">></p>
+          </div>
+          <div class="year">
+            <p (click)="decrementYear()"><</p>
+            <p>{{year}}</p>
+            <p (click)="incrementYear()">></p>
+          </div>
+        </div>
+        <div class="weekDays">
+          <p *ngFor="let day of weekDays">{{day}}</p>
+        </div>
+        <div class="days">
+          <p *ngFor="let day of days" (click)="setStartDate(day)">{{day}}</p>
+        </div>
+      </div>
+      <!-- <button type="button" (click)="displayNeeds()">Ajouter prestations</button> -->
+      <button type="submit" class="createProject" name="button">CREER MON PROJET</button>
+    </div>
+  </div>
+</form>
+
+<form (ngSubmit)="findMorePrestations($event)">
+  <div id="needs">
+    <h1>De quoi j'ai besoin ?<span class="red">*</span></h1>
+    <div class="grosOeuvre">
+      <h5>Gros Œuvre</h5>
+      <div class="checkboxes">
+        <div class="column">
+          <input type="checkbox" id="fondts" name="fondts">
+          <label for="fondts">fondations</label>
+          <input type="checkbox" id="soubssmt" name="soubssmt">
+          <label for="soubssmt">le soubassement</label>
+          <input type="checkbox" id="assnssmt" name="assnssmt">
+          <label for="assnssmt">l'assainissement</label>
+        </div>
+        <div class="column">
+          <input type="checkbox" id="charp" name="charp">
+          <label for="charp">charpente & menuiserie</label>
+          <input type="checkbox" id="murs" name="murs">
+          <label for="murs">murs</label>
+          <input type="checkbox" id="toitrs" name="toitrs">
+          <label for="toitrs">toitures</label>
+        </div>
+      </div>
+    </div>
+    <div class="secondOeuvre">
+      <h5>Second Œuvre</h5>
+      <div class="checkboxes">
+        <div class="column">
+          <input type="checkbox" id="escals" name="escals">
+          <label for="escals">escaliers</label>
+          <input type="checkbox" id="isoTherm" name="isoTherm">
+          <label for="isoTherm">isolation thermique</label>
+          <input type="checkbox" id="cloisns" name="cloisns">
+          <label for="cloisns">cloisons & mezzanine</label>
+        </div>
+        <div class="column">
+          <input type="checkbox" id="plomb" name="plomb">
+          <label for="plomb">plomberie & climatisation</label>
+          <input type="checkbox" id="fumstr" name="fumstr">
+          <label for="fumstr">charpentes & fumisterie</label>
+          <input type="checkbox" id="cuisn" name="cuisn">
+          <label for="cuisn">cuisine, salle de bain, sanitaire</label>
+        </div>
+      </div>
+    </div>
+    <div class="amelioration">
+      <h5>Amélioration</h5>
+      <div class="checkboxes">
+        <div class="column">
+          <input type="checkbox" id="nrjs" name="nrjs">
+          <label for="nrjs">énergies</label>
+          <input type="checkbox" id="amngmt" name="amngmt">
+          <label for="amngmt">aménagement</label>
+          <input type="checkbox" id="combles" name="combles">
+          <label for="combles">combles</label>
+        </div>
+        <div class="column">
+          <input type="checkbox" id="toitr" name="toitr">
+          <label for="toitr">toiture</label>
+          <input type="checkbox" id="facds" name="facds">
+          <label for="facds">ravalement de façades</label>
+          <input type="checkbox" id="esthtq" name="esthtq">
+          <label for="esthtq">travaux esthétiques</label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" name="button">Rechercher</button>
+  </div>
+</form>
+
+<!-- <h1>Inscris toi pour enregistrer ton projet</h1>
+<div class="contact">
+  <div class="container">
+    <label for="name">NOM<span class="red">*</span> <span class="green"> :</span></label>
+    <input type="text" name="name" class="greenInput" placeholder="Dupont, Morris, ...">
+  </div>
+  <div class="container">
+    <label for="surname">PRÉNOM<span class="red">*</span><span class="green"> :</span></label>
+    <input type="text" name="surname" class="greenInput" placeholder="Églantine, Jamie, ...">
+  </div>
+  <div class="container">
+    <label for="email">E-MAIL<span class="red">*</span> <span class="green"> :</span></label>
+    <input type="email" name="email" class="greenInput" placeholder="eglantine.dupont@mail.fr, ...">
+  </div>
+  <div class="container">
+    <label for="phone">TÉLÉPHONE<span class="red">*</span> <span class="green"> :</span></label>
+    <input type="tel" name="phone" class="greenInput" placeholder="0612345678">
+  </div>
+  <div class="container">
+    <label for="phone">ADRESSE<span class="red">*</span> <span class="green"> :</span></label>
+    <input type="tel" name="phone" class="greenInput" placeholder="31 rue de la bouteille 75000 Paris">
+  </div>>
+  <div class="container">
+    <button>ENREGISTRE TON PROJET ET INSCRIS TOI</button>
+  </div>
+
+</div> -->

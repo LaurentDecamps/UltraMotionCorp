@@ -1,0 +1,40 @@
+<form *ngIf="evaluationsAFaire" [formGroup]="evaluationForm">
+  <h2>Donnez votre avis</h2>
+  <label>
+    <h3>Facilité de communication</h3>
+    <ngb-rating formControlName="noteFacilite" [max]="5">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="etoile" [class.rempli]="fill === 100" [class.mauvais]="index < 2">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <input type="text" placeholder="Rajouter un Commentaire" formControlName="commentaireFacilite">
+  </label>
+  <label>
+    <h3>Qualité du dossier technique fourni</h3>
+    <ngb-rating formControlName="noteQualite" [max]="5">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="etoile" [class.rempli]="fill === 100" [class.mauvais]="index < 2">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <input type="text" placeholder="Rajouter un Commentaire" formControlName="commentaireQualite">
+  </label>
+  <label>
+    <h3>Niveau d expertise</h3>
+    <ngb-rating formControlName="noteExpertise" [max]="5">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="etoile" [class.rempli]="fill === 100" [class.mauvais]="index < 2">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <input type="text" placeholder="Rajouter un Commentaire" formControlName="commentaireExpertise">
+  </label>
+  <label>
+    <h3>Votre note globale est : </h3>
+    <ngb-rating formControlName="noteGlobale" [max]="5">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="etoile" [class.rempli]="fill === 100" [class.mauvais]="index < 2">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <input type="text" placeholder="Rajouter un Commentaire" formControlName="commentaireGlobal">
+  </label>
+  <button type="submit" (click)="miseAJourEvaluation()">Donner son avis</button>
+</form>

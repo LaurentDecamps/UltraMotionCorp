@@ -1,0 +1,101 @@
+.container {
+    background-color: whitesmoke;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.bouton {
+  border-radius: 15px;
+  background-color: #7BC248;
+  color: white;
+  padding: 10px;
+  width: 200px;
+  text-decoration: none;
+}
+
+.bouton:hover {
+  background-color : #DBBD45;
+  transition : 0.5s;
+}
+.button:visited {
+  background-color : #DBBD45;
+}
+/* button {
+  border: none !important;
+  font-weight: 700 !important;
+  width:33% !important;
+  margin:25px auto;
+  background-color: #7BC248 !important;
+  padding : 5 20px;
+  border-radius:5px;;
+  color : white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+button:hover{
+  background-color : #DBBD45;
+  transition : 0.5s;
+} */
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container h1 {
+
+    text-align: center;
+    padding-bottom: 3%;
+
+}
+
+.container h5 {
+
+    font-weight: bold;
+    padding-top: 3%
+
+}
+
+.container h6 {
+
+    padding-top: 2%;
+}
+
+.formulaire {
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1%;
+}
+
+span {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+
+label {
+
+    margin-top: 1%;
+    text-align:justify!important;
+    width:100%;
+}
+
+button {
+  margin-top:15px;
+}
